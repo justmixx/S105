@@ -14,23 +14,20 @@ $titre='TITRE';
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <img src="img/logo.svg" alt="Logo Mouches de Combat">
-        </div>
-        <h1>Bienvenue sur Mouches de Combat</h1>
-        <div class="cart-link">
-            <a href="panier.php">Mon Panier</a>
-        </div>
-    </header>
-
     <nav>
-        <ul>
-            <li><a href="index.php">Accueil</a></li>
-            <li><a href="pagetest/catalogue.php">Catalogue</a></li>
-            <li><a href="combat.php">combat</a></li>
-            <li><a href="pagetest/contact.php">Contact</a></li>
-        </ul>
+        <div class="nav-container">
+                <a href="index.php" class="logo">
+                    <img src="../img/logo.svg" alt="Logo Mouches de Combat">
+                </a>
+            <ul class="nav-links">
+                <li><a href="index.php">Accueil</a></li>
+                <li><a href="catalogue.php">Catalogue</a></li>
+                <li><a href="contact.php">Contact</a></li>
+            </ul>
+            <div class="cart-link">
+                <a href="panier.php">Mon Panier</a>
+            </div>
+        </div>
     </nav>
 
     <main>

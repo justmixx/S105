@@ -1,6 +1,7 @@
 /* Styles spécifiques pour la page produit */
 .product-details {
     display: flex;
+    flex-direction: row;
     align-items: flex-start;
     justify-content: center;
     gap: 40px;
@@ -9,10 +10,20 @@
     margin: 0 auto;
 }
 
+/* Responsive */
+@media (max-width: 768px) {
+    .product-details {
+        flex-direction: column; /* Les éléments s'empilent verticalement */
+        align-items: center; /* Centrer les éléments */
+        gap: 20px;
+    }
+}
+
 .product-image img {
     max-width: 300px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Prend toute la largeur de son conteneur */
 }
 
 .product-info {
@@ -20,9 +31,24 @@
     text-align: left;
 }
 
+/* Responsive */
+@media (max-width: 768px) {
+    .product-info {
+        text-align: center; /* Aligner le texte au centre pour les petits écrans */
+        max-width: 100%; /* Laisser occuper tout l'espace disponible */
+    }
+}
+
 .product-info h2 {
     font-size: 1.8rem;
     margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .product-info h2 {
+        font-size: 1.5rem;
+    }
 }
 
 .product-info p {
@@ -31,17 +57,32 @@
     color: #666;
 }
 
+/* Responsive */
+@media (max-width: 768px) {
+    .product-info p {
+        font-size: 0.9rem;
+    }
+}
+
 .product-info strong {
     color: #333;
 }
 
 form {
     margin-top: 15px;
+    text-align: center; /* Centrer le formulaire pour les petits écrans */
 }
 
 label {
     font-weight: bold;
     margin-right: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    label {
+        margin-right: 5px;
+    }
 }
 
 select {
@@ -53,7 +94,7 @@ select {
 
 .add-to-cart-button {
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: #7883F3;
     color: white;
     border: none;
     border-radius: 5px;
@@ -61,6 +102,14 @@ select {
     transition: background-color 0.3s ease;
 }
 
+/* Ajustement pour les petits écrans */
+@media (max-width: 768px) {
+    .add-to-cart-button {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+}
+
 .add-to-cart-button:hover {
-    background-color: #45a049;
+    background-color: #C2C7FA;
 }

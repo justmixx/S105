@@ -83,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
         <div class="product-details">
             <!-- Image du produit -->
             <div class="product-image">
-                <img id="product-image" src="../img/mouche_gladiator.svg" alt="Mouche Gladiator">
+                <img id="product-image" src="../img/png/mouchegladiator/big.png" alt="Mouche Gladiator">
             </div>
             <!-- Détails et formulaire -->
             <div class="product-info">

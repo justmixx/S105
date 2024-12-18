@@ -17,11 +17,12 @@ $titre='TITRE';
     <nav>
         <div class="nav-container">
                 <a href="index.php" class="logo">
-                    <img src="../img/logo.svg" alt="Logo Mouches de Combat">
+                    <img src="img/logo.svg" alt="Logo Mouches de Combat">
                 </a>
             <ul class="nav-links">
-                <li><a href="index.php">Accueil</a></li>
-                <li><a href="catalogue.php">Catalogue</a></li>
+                <li><a href="index.php">Catalogue</a></li>
+                <li><a href="catalogue.php">Arène</a></li>
+                <li><a href="#">Vendre</a></li>
                 <li><a href="contact.php">Contact</a></li>
             </ul>
             <div class="cart-link">

@@ -10,6 +10,7 @@ $titre='TITRE';
     <title>Accueil - Mouches de Combat</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="website icon" type="svg" href="img/logo.svg">
 </head>
 
 <body>
@@ -26,7 +27,7 @@ $titre='TITRE';
     <nav>
         <ul>
             <li><a href="index.php">Accueil</a></li>
-            <li><a href="catalogue.php">Catalogue</a></li>
+            <li><a href="pagetest/catalogue.php">Catalogue</a></li>
             <li><a href="combat.php">combat</a></li>
             <li><a href="contact.php">Contact</a></li>
         </ul>

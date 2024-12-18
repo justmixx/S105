@@ -15,16 +15,6 @@ body {
     padding: 0;
 }
 
-/* En-tête */
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
 .logo img {
     height: 50px;
 }
@@ -44,42 +34,58 @@ header .cart-link a {
 /* Barre de navigation */
 nav {
     background-color: #4D59D6;
-    padding: 10px 20px;
+    padding: 10px 0;
 }
 
 .nav-container {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
 }
 
-/* Logo */
-nav .logo img {
-    height: 50px;
-}
-
-/* Liens de navigation */
 .nav-links {
     list-style: none;
-    display: flex;
     margin: 0;
     padding: 0;
+    display: flex;
 }
 
 .nav-links li {
-    position: relative;
+    margin-right: 20px;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: white;
-    font-size: 1.2rem;
-    padding: 10px;
-    transition: color 0.3s ease;
+    color: #fff;
+    font-size: 20px;
+    position: relative;
+    padding: 5px 0;
 }
 
+/* Effet de soulignement au survol du lien */
 .nav-links a:hover {
-    color: #4CAF50;
+    color: #C2C7FA;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #C2C7FA;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Retirer la marge droite du dernier élément */
+.nav-links li:last-child {
+    margin-right: 0;
 }
 
 /* Panier */
@@ -88,13 +94,13 @@ nav .logo img {
     color: white;
     font-size: 1rem;
     padding: 10px 15px;
-    background-color: #4CAF50;
+    background-color: #7883F3;
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
 .cart-link a:hover {
-    background-color: #45a049;
+    background-color: #C2C7FA;
 }
 
 

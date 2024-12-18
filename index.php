@@ -11,6 +11,8 @@ $titre='TITRE';
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="website icon" type="svg" href="img/logo.svg">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=shopping_cart" />
 </head>
 
 <body>
@@ -23,11 +25,13 @@ $titre='TITRE';
                 <li><a href="catalogue.php">Catalogue</a></li>
                 <li><a href="catalogue.php">Arène</a></li>
                 <li><a href="#">Vendre</a></li>
-                <li><a href="#">notre laboratoire</a></li>
+                <li><a href="#">Notre laboratoire</a></li>
                 <li><a href="contact.php">Contact</a></li>
             </ul>
             <div class="cart-link">
-                <a href="panier.php"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=shopping_cart" />Mon Panier</a>
+                <a href="panier.php"><span class="material-symbols-outlined">
+        shopping_cart
+        </span>mon panier</a>
             </div>
         </div>
     </nav>

@@ -10,16 +10,24 @@
 </head>
 
 <body>
-        <nav>
-            <ul>
-                <li class="logo"><img src="../img/logo.svg" alt="Logo Mouches de Combat"></li>
-                <li><a href="../index.php">Accueil</a></li>
-                <li><a href="pagetest/catalogue.php">Catalogue</a></li>
-                <li><a href="combat.php">combat</a></li>
-                <li><a href="contact.php">Contact</a></li>
-                <li><a href="panier.php">Mon Panier</a></li>
-            </ul>
-        </nav>
+<nav>
+    <div class="nav-container">
+        <div class="logo">
+            <a href="index.php">
+                <img src="img/logo.png" alt="Logo Mouches de Combat">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.php">Accueil</a></li>
+            <li><a href="catalogue.php">Catalogue</a></li>
+            <li><a href="contact.php">Contact</a></li>
+        </ul>
+        <div class="cart-link">
+            <a href="panier.php">Mon Panier</a>
+        </div>
+    </div>
+</nav>
+
 
     <main>
         <h1>Notre Catalogue de Mouches de Combat</h1>
@@ -29,7 +37,7 @@
                     <img src="img/mouche1.jpg" alt="Mouche de combat 1">
                     <h2>Mouche Gladiator</h2>
                     <p>Prix : 50 MoucheCoins</p>
-                    <a href="produit.php?id=1">Voir le produit</a>
+                    <a href="produit.php">Voir le produit</a>
                 </td>
                 <td>
                     <img src="img/mouche2.jpg" alt="Mouche de combat 2">

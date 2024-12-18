@@ -1,17 +1,12 @@
 <?php
 session_start();
 
-// Initialisation du panier si nécessaire
-if (!isset($_SESSION['panier'])) {
-    $_SESSION['panier'] = [];
-}
-
 // Suppression d'un produit du panier
 if (isset($_POST['delete_index'])) {
     $index = (int) $_POST['delete_index'];
     if (isset($_SESSION['panier'][$index])) {
         unset($_SESSION['panier'][$index]);
-        $_SESSION['panier'] = array_values($_SESSION['panier']); // Réindexation du tableau
+        $_SESSION['panier'] = array_values($_SESSION['panier']); // Réindexer le tableau après la suppression
     }
 }
 
@@ -63,34 +58,27 @@ foreach ($_SESSION['panier'] as $produit) {
                         <li class="cart-item">
                             <img src="../img/<?= htmlspecialchars($produit['image']) ?>" alt="<?= htmlspecialchars($produit['name']) ?>">
                             <div class="cart-item-info">
-                                <h2><?= htmlspecialchars($produit['name']) ?> - Taille: <?= htmlspecialchars($produit['size']) ?></h2>
-                                <p>Prix : <?= number_format($produit['price'], 2) ?> MoucheCoins</p>
-                                <form method="post" action="panier.php">
-                                    <input type="hidden" name="delete_index" value="<?= $index ?>">
-                                    <button type="submit" class="delete-button">Supprimer</button>
-                                </form>
+                                <h2><?= htmlspecialchars($produit['name']) ?></h2>
+                                <p>Taille : <?= htmlspecialchars($produit['size']) ?></p>
+                                <p>Prix : <?= htmlspecialchars($produit['price']) ?> MoucheCoins</p>
                             </div>
+                            <!-- Formulaire de suppression -->
+                            <form method="post" action="panier.php" style="display:inline;">
+                                <input type="hidden" name="delete_index" value="<?= $index ?>">
+                                <button type="submit" class="delete-button">Supprimer</button>
+                            </form>
                         </li>
                     <?php endforeach; ?>
                 </ul>
                 <div class="cart-total">
-                    <h3>Total : <?= number_format($total, 2) ?> MoucheCoins</h3>
+                    <p>Total : <?= $total ?> MoucheCoins</p>
                 </div>
-                <form action="paiement.php" method="post">
-                    <button type="submit" class="pay-button">Payer la commande</button>
-                </form>
             <?php endif; ?>
         </div>
     </main>
 
     <footer>
         <p>&copy; 2024 Mouches de Combat</p>
-        <nav>
-            <ul>
-                <li><a href="../contact.php">Contact</a></li>
-                <li><a href="../mentions-legales.php">Mentions légales</a></li>
-            </ul>
-        </nav>
     </footer>
 </body>
 

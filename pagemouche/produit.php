@@ -27,48 +27,75 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
     <title>Détails du produit - Mouches de Combat</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/produit.css">
+    <script>
+        function updateProductDetails() {
+            var size = document.getElementById("size").value;
+            var priceElement = document.getElementById("price");
+            var imageElement = document.getElementById("product-image");
+
+            // Modifier le prix et l'image selon la taille sélectionnée
+            if (size === "small") {
+                priceElement.innerText = "Prix : 50 MoucheCoins";
+                imageElement.src = "../img/mouche_gladiator_small.svg";  // Remplacez par l'image pour petite taille
+                document.getElementById("product_price").value = "50";
+                document.getElementById("product_image").value = "mouche_gladiator_small.svg";
+            } else if (size === "medium") {
+                priceElement.innerText = "Prix : 70 MoucheCoins";
+                imageElement.src = "../img/mouche_gladiator_medium.svg";  // Remplacez par l'image pour taille moyenne
+                document.getElementById("product_price").value = "70";
+                document.getElementById("product_image").value = "mouche_gladiator_medium.svg";
+            } else if (size === "large") {
+                priceElement.innerText = "Prix : 90 MoucheCoins";
+                imageElement.src = "../img/mouche_gladiator_large.svg";  // Remplacez par l'image pour grande taille
+                document.getElementById("product_price").value = "90";
+                document.getElementById("product_image").value = "mouche_gladiator_large.svg";
+            }
+        }
+    </script>
 </head>
 
 <body>
-    <nav>
+<nav>
         <div class="nav-container">
-            <div class="logo">
-                <a href="index.php">
-                    <img src="img/logo.png" alt="Logo Mouches de Combat">
+                <a href="index.php" class="logo">
+                    <img src="img/logo.svg" alt="Logo Mouches de Combat">
                 </a>
-            </div>
             <ul class="nav-links">
-                <li><a href="index.php">Accueil</a></li>
-                <li><a href="catalogue.php">Catalogue</a></li>
-                <li><a href="contact.php">Contact</a></li>
+                <li><a href="../catalogue.php">Catalogue</a></li>
+                <li><a href="#arene">Arène</a></li>
+                <li><a href="#">Vendre</a></li>
+                <li><a href="#">Notre laboratoire</a></li>
+                <li><a href="../contact.php">Contact</a></li>
             </ul>
             <div class="cart-link">
-                <a href="../panier.php">Mon Panier</a>
+                <a href="panier.php"><span class="material-symbols-outlined">
+        shopping_cart
+        </span>mon panier</a>
             </div>
         </div>
     </nav>
 
     <main>
         <h1>Détails du produit</h1>
-        
-        <!-- Exemple de deux produits différents -->
+
         <div class="product-details">
-            <!-- Image du produit 1 -->
+            <!-- Image du produit -->
             <div class="product-image">
-                <img src="img/mouche_gladiator.jpg" alt="Mouche Gladiator">
+                <img id="product-image" src="../img/mouche_gladiator.svg" alt="Mouche Gladiator">
             </div>
             <!-- Détails et formulaire -->
             <div class="product-info">
                 <h2>Mouche Gladiator</h2>
                 <p>Cette mouche est un véritable combattant ! Robuste et rapide, elle est prête à dominer l’arène.</p>
-                <p><strong>Prix :</strong> 50 MoucheCoins</p>
+                <p><strong id="price">Prix : 50 MoucheCoins</strong></p>
+
                 <form action="produit.php" method="post">
                     <input type="hidden" name="product_name" value="Mouche Gladiator">
-                    <input type="hidden" name="product_price" value="50">
-                    <input type="hidden" name="product_image" value="mouche_gladiator.jpg">
+                    <input type="hidden" name="product_price" id="product_price" value="50">
+                    <input type="hidden" name="product_image" id="product_image" value="mouche_gladiator.svg">
 
                     <label for="size">Taille :</label>
-                    <select name="size" id="size" required>
+                    <select name="size" id="size" required onchange="updateProductDetails()">
                         <option value="" disabled selected>Choisissez une taille</option>
                         <option value="small">Petite</option>
                         <option value="medium">Moyenne</option>

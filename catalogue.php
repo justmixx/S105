@@ -34,7 +34,7 @@
         <table class="catalogue">
             <tr>
                 <td>
-                    <img src="img/mouche1.jpg" alt="Mouche de combat 1">
+                    <img src="img/mouchegladiator.svg" alt="Mouche de combat 1">
                     <h2>Mouche Gladiator</h2>
                     <p>Prix : 50 MoucheCoins</p>
                     <a href="pagemouche/produit.php">Voir le produit</a>

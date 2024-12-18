@@ -40,7 +40,7 @@ $titre='TITRE';
     <section>
          <h2>Il n’a jamais été meilleur temps pour dresser une mouche. </h2>
           <p>Pour les fêtes, offrer la mouche qui fera bourdonnées le coeur de votre famille.</p>
-          <a id="bouton" href="catalogue.php"> <p>Explorer notre catalogue </a>
+          <a id="bouton" href="catalogue.php">Explorer notre catalogue </a>
     </section>
 
     <div class="bloc2">

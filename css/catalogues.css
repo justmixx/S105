@@ -18,32 +18,41 @@ h1 {
     border-spacing: 15px;
 }
 
+/* Style pour chaque produit */
 .catalogue td {
-    text-align: center;
+    text-align: left;
     background-color: #fff;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex; /* Utilisation de flexbox */
+    align-items: center;
+    gap: 15px; /* Espacement entre l'image et les détails */
 }
 
+/* Style pour les images des produits */
 .catalogue img {
-    width: 100%;
+    width: auto; /* Ajuste la largeur automatiquement */
     max-width: 150px;
+    height: auto;
     border-radius: 5px;
 }
 
+/* Titre du produit */
 .catalogue h2 {
     font-size: 1.2rem;
     margin: 10px 0;
     color: #333;
 }
 
+/* Description du produit */
 .catalogue p {
     font-size: 1rem;
     margin: 10px 0;
     color: #666;
 }
 
+/* Bouton pour chaque produit */
 .catalogue a {
     display: inline-block;
     padding: 8px 12px;
@@ -52,6 +61,7 @@ h1 {
     text-decoration: none;
     border-radius: 5px;
     font-size: 0.9rem;
+    margin-top: 10px; /* Ajoute un espacement avec le texte */
 }
 
 .catalogue a:hover {

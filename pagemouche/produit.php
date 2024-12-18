@@ -24,9 +24,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Détails du produit - Mouches de Combat</title>
+    <title>mouches gladiator</title>
+    <link rel="website icon" type="svg" href="../img/mouche_gladiator.svg">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/produit.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=shopping_cart" />
     <script>
         function updateProductDetails() {
             var size = document.getElementById("size").value;
@@ -35,19 +37,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
 
             // Modifier le prix et l'image selon la taille sélectionnée
             if (size === "small") {
-                priceElement.innerText = "Prix : 50 MoucheCoins";
-                imageElement.src = "../img/mouche_gladiator_small.svg";  // Remplacez par l'image pour petite taille
+                priceElement.innerText = "Prix : 50 flies";
+                imageElement.src = "../img/png/mouchegladiator/small.png";  // Remplacez par l'image pour petite taille
                 document.getElementById("product_price").value = "50";
                 document.getElementById("product_image").value = "mouche_gladiator_small.svg";
             } else if (size === "medium") {
-                priceElement.innerText = "Prix : 70 MoucheCoins";
-                imageElement.src = "../img/mouche_gladiator_medium.svg";  // Remplacez par l'image pour taille moyenne
-                document.getElementById("product_price").value = "70";
+                priceElement.innerText = "Prix : 100 flies";
+                imageElement.src = "../img/png/mouchegladiator/medium.png";  // Remplacez par l'image pour taille moyenne
+                document.getElementById("product_price").value = "100";
                 document.getElementById("product_image").value = "mouche_gladiator_medium.svg";
             } else if (size === "large") {
-                priceElement.innerText = "Prix : 90 MoucheCoins";
-                imageElement.src = "../img/mouche_gladiator_large.svg";  // Remplacez par l'image pour grande taille
-                document.getElementById("product_price").value = "90";
+                priceElement.innerText = "Prix : 150 flies";
+                imageElement.src = "../img/png/mouchegladiator/big.png";  // Remplacez par l'image pour grande taille
+                document.getElementById("product_price").value = "150";
                 document.getElementById("product_image").value = "mouche_gladiator_large.svg";
             }
         }
@@ -57,8 +59,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
 <body>
 <nav>
         <div class="nav-container">
-                <a href="index.php" class="logo">
-                    <img src="img/logo.svg" alt="Logo Mouches de Combat">
+                <a href="../index.php" class="logo">
+                    <img src="../img/logo.svg" alt="Logo Mouches de Combat">
                 </a>
             <ul class="nav-links">
                 <li><a href="../catalogue.php">Catalogue</a></li>
@@ -68,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
                 <li><a href="../contact.php">Contact</a></li>
             </ul>
             <div class="cart-link">
-                <a href="panier.php"><span class="material-symbols-outlined">
+                <a href="../panier.php"><span class="material-symbols-outlined">
         shopping_cart
         </span>mon panier</a>
             </div>
@@ -87,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
             <div class="product-info">
                 <h2>Mouche Gladiator</h2>
                 <p>Cette mouche est un véritable combattant ! Robuste et rapide, elle est prête à dominer l’arène.</p>
-                <p><strong id="price">Prix : 50 MoucheCoins</strong></p>
+                <p><strong id="price">Prix : 150 flies</strong></p>
 
                 <form action="produit.php" method="post">
                     <input type="hidden" name="product_name" value="Mouche Gladiator">
@@ -107,7 +109,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
             </div>
         </div>
     </main>
-
     <footer>
         <p>&copy; 2024 Mouches de Combat</p>
         <nav>

@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
             <div class="product-info">
                 <h2>Mouche Gladiator</h2>
                 <p>Cette mouche est un véritable combattant ! Robuste et rapide, elle est prête à dominer l’arène.</p>
-                <p><strong>Prix :</strong> 70 MoucheCoins</p>
+                <p><strong>Prix :</strong> 70 flies</p>
                 <form action="produit.php" method="post">
                     <input type="hidden" name="product_name" value="Mouche DEUX">
                     <input type="hidden" name="product_price" value="70">

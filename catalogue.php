@@ -34,7 +34,7 @@
         <table class="catalogue">
             <tr>
                 <td>
-                    <img src="img/mouchegladiator.svg" alt="Mouche de combat 1">
+                    <img src="img/mouche_gladiator_small.svg" alt="Mouche de combat 1">
                     <h2>Mouche Gladiator</h2>
                     <p>Prix : 50 MoucheCoins</p>
                     <a href="pagemouche/produit.php">Voir le produit</a>
@@ -43,7 +43,7 @@
                     <img src="img/mouche2.jpg" alt="Mouche de combat 2">
                     <h2>Mouche Tornado</h2>
                     <p>Prix : 70 MoucheCoins</p>
-                    <a href="pagemouche/produitdeux.php">Voir le produit</a>
+                    <a href="produit.php?id=2">Voir le produit</a>
                 </td>
                 <td>
                     <img src="img/mouche3.jpg" alt="Mouche de combat 3">

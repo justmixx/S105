@@ -15,7 +15,7 @@ $titre='TITRE';
 <body>
     <header>
         <div class="logo">
-            <img src="svg/logo.svg" alt="Logo Mouches de Combat">
+            <img src="img/logo.svg" alt="Logo Mouches de Combat">
         </div>
         <h1>Bienvenue sur Mouches de Combat</h1>
         <div class="cart-link">

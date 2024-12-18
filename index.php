@@ -15,7 +15,7 @@ $titre='TITRE';
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=shopping_cart" />
 </head>
 
-<body>
+<header>
     <nav>
         <div class="nav-container">
                 <a href="index.php" class="logo">
@@ -35,28 +35,21 @@ $titre='TITRE';
             </div>
         </div>
     </nav>
+</header>
+<body>
+    <section>
+         <h2>Il n’a jamais été meilleur temps pour dresser une mouche. </h2>
+          <p>Pour les fêtes, offrer la mouche qui fera bourdonnées le coeur de votre famille.</p>
+          <a id="bouton" href="catalogue.php"> <p>Explorer notre catalogue </a>
+    </section>
 
-    <main>
-        <section>
-            <h2>Découvrez les mouches de combat</h2>
-            <p>Les mouches de combat, élevées avec soin, sont prêtes à démontrer leur puissance dans les compétitions les plus intenses.</p>
-            <p>Nous sélectionnons les meilleures espèces pour garantir des performances exceptionnelles.</p>
-        </section>
-
-        <section>
-            <h2>Pourquoi choisir nos mouches ?</h2>
-            <p>Notre plateforme offre une variété de mouches soigneusement élevées, adaptées aux besoins des amateurs comme des professionnels.</p>
-            <p>Regardez cette vidéo pour découvrir une démonstration captivante de mouches de combat en action.</p>
-            <figure>
-                <video controls>
-                    <source src="img/mouches-combat-demo.mp4" type="video/mp4">
-                    Votre navigateur ne supporte pas la lecture de vidéos.
-                </video>
-                <figcaption>Une démonstration de mouches de combat en pleine action.</figcaption>
-            </figure>
-        </section>
-    </main>
-
+    <div class="bloc2">
+            <h2>Entrez dans l’arène !</h2>
+            <img class="mouche" src="logo.svg">
+            <img class="dessin" src="img/Arêne.jpg">
+        
+</div>
+    
     <footer>
         <p>&copy; 2024 Mouches de Combat</p>
         <nav>

@@ -130,3 +130,10 @@ footer nav ul li a {
 footer nav ul li a:hover {
     text-decoration: underline;
 }
+
+
+/* logo*/
+
+.logo {
+    height: 50px;
+}

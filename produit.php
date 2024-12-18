@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Détails du produit - Mouches de Combat</title>
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="produit.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/produit.css">
 </head>
 
 <body>
@@ -33,7 +33,7 @@
         <div class="product-details">
             <!-- Image du produit -->
             <div class="product-image">
-                <img src="../img/logo.svg" alt="Mouche Gladiator">
+                <img src="img/logo.svg" alt="Mouche Gladiator">
             </div>
             <!-- Détails et formulaire -->
             <div class="product-info">

@@ -55,7 +55,7 @@
                     <img src="img/mouche2.jpg" alt="Mouche de combat 2">
                     <h2>Mouche Tornado</h2>
                     <p>Prix : 70 MoucheCoins</p>
-                    <a href="produit.php?id=2">Voir le produit</a>
+                    <a href="pagemouche/produittest.php">Voir le produit</a>
                 </td>
                 <td>
                     <img src="img/mouche3.jpg" alt="Mouche de combat 3">

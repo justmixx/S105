@@ -61,7 +61,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
 </header>
 
 <main>
-    <h1>Détails du produit</h1>
 
     <div class="product-details">
         <!-- Image du produit -->
@@ -80,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
                 <input type="hidden" name="product_image" id="product_image" value="mouche_gladiator_small.svg">
                 <input type="hidden" name="size" id="size" value="" required>
 
-                <label><strong>Taille :</strong></label>
+                <p><strong>Taille :</strong></p>
                 <div class="size-options">
                     <button type="button" class="size-button" data-size="small" onclick="selectSize('small')">Petite</button>
                     <button type="button" class="size-button" data-size="medium" onclick="selectSize('medium')">Moyenne</button>
@@ -92,6 +91,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
         </div>
     </div>
 </main>
+
+<section class="black-section">
+    <div class="stats">
+        <h2>Information</h2>
+        <h3>résistance</h3>
+        <p class="etoiles">&#9733; &#9733; &#9733; &#9733; &#9734;</p>
+    </div>
+    </section>
+
 <footer>
     <p>&copy; 2024 Mouches de Combat</p>
     <nav>
@@ -140,7 +148,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
         document.querySelector(`.size-button[data-size="${size}"]`).classList.add("selected");
     }
 </script>
-
 </body>
 
 </html>

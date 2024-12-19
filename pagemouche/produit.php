@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
                 document.getElementById("product_image").value = "mouche_gladiator_medium.svg";
             } else if (size === "large") {
                 priceElement.innerText = "Prix : 150 flies";
-                imageElement.src = "../img/png/mouchegladiator/big.png";  // Remplacez par l'image pour grande taille
+                imageElement.src = "../img/png/mouchegladiator/large.png";  // Remplacez par l'image pour grande taille
                 document.getElementById("product_price").value = "150";
                 document.getElementById("product_image").value = "mouche_gladiator_large.svg";
             }
@@ -57,25 +57,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
 </head>
 
 <body>
-<nav>
-        <div class="nav-container">
+<header>
+        <nav>
+            <div class="nav-container">
                 <a href="../index.php" class="logo">
                     <img src="../img/logo.svg" alt="Logo Mouches de Combat">
                 </a>
-            <ul class="nav-links">
-                <li><a href="../catalogue.php">Catalogue</a></li>
-                <li><a href="#arene">Arène</a></li>
-                <li><a href="#">Vendre</a></li>
-                <li><a href="#">Notre laboratoire</a></li>
-                <li><a href="../contact.php">Contact</a></li>
-            </ul>
-            <div class="cart-link">
-                <a href="../panier.php"><span class="material-symbols-outlined">
-        shopping_cart
-        </span>mon panier</a>
+                <div class="burger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="../catalogue.php">Catalogue</a></li>
+                    <li><a href="../arene.php">Arène</a></li>
+                    <li><a href="../vendre.php">Vendre</a></li>
+                    <li><a href="../laboratoire.php">Notre laboratoire</a></li>
+                    <li><a href="../contact.php">Contact</a></li>
+                </ul>
+                <div class="cart-link">
+                    <a href="../panier.php">
+                        <span class="material-symbols-outlined">shopping_cart</span>
+                        mon panier
+                    </a>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
     <main>
         <h1>Détails du produit</h1>
@@ -83,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
         <div class="product-details">
             <!-- Image du produit -->
             <div class="product-image">
-                <img id="product-image" src="../img/png/mouchegladiator/big.png" alt="Mouche Gladiator">
+                <img id="product-image" src="../img/png/mouchegladiator/large.png" alt="Mouche Gladiator">
             </div>
             <!-- Détails et formulaire -->
             <div class="product-info">
@@ -118,7 +126,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
             </ul>
         </nav>
     </footer>
-    
+
                 <!-- responsive nav -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {

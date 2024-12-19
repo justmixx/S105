@@ -54,16 +54,21 @@ h1 {
 
 /* Bouton pour chaque produit */
 .catalogue a {
-    display: inline-block;
-    padding: 8px 12px;
-    background-color: #4CAF50;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    margin-top: 10px; /* Ajoute un espacement avec le texte */
+    color:#fff;
+    text-align: center;
+    text-decoration:none;
+    background-color: #4D59D6;
+    width: 300px;
+    margin: 50px;
+    padding: 20px;
+    border-radius: 100px;
+    padding-top: 20px;
+    height: auto;
+    font-size: larger;
 }
 
 .catalogue a:hover {
-    background-color: #45a049;
+    text-decoration: none;
+    background-color:#C2C7FA;
+    color:#4D59D6;
 }

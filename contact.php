@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Mouches de Combat</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=call" />
+
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/contact.css">
 </head>
@@ -45,7 +48,9 @@
             <!-- Informations de contact -->
             <div class="contact-info">
                 <h2>Informations de contact</h2>
-                <p><strong>Téléphone :</strong> +33 1 23 45 67 89</p>
+                <p><span class="material-symbols-outlined">
+                call
+                </span> +33 1 23 45 67 89</p>
                 <p><strong>Email :</strong> contact@mouchesdecombat.fr</p>
                 <h3>Suivez-nous :</h3>
                 <div class="social-icons">
@@ -72,6 +77,17 @@
             </ul>
         </nav>
     </footer>
+            <!-- responsive nav -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const burger = document.querySelector('.burger');
+            const navLinks = document.querySelector('.nav-links');
+
+            burger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -92,7 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
                 <p><strong id="price">Prix : 150 flies</strong></p>
 
                 <form action="produit.php" method="post">
-                    <input type="hidden" name="product_name" value="Mouche Gladiator">
+                    <input type="hidden" name="product_name" value="mouchegladiator">
                     <input type="hidden" name="product_price" id="product_price" value="50">
                     <input type="hidden" name="product_image" id="product_image" value="mouche_gladiator.svg">
 
@@ -118,6 +118,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
             </ul>
         </nav>
     </footer>
+    
+                <!-- responsive nav -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const burger = document.querySelector('.burger');
+            const navLinks = document.querySelector('.nav-links');
+
+            burger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 
 </html>

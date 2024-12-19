@@ -26,26 +26,32 @@ foreach ($_SESSION['panier'] as $produit) {
     <title>Mon Panier - Mouches de Combat</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/panier.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=shopping_cart" />
 </head>
 
 <body>
+<header>
     <nav>
         <div class="nav-container">
-            <a href="index.php" class="logo">
-                <img src="img/logo.svg" alt="Logo Mouches de Combat">
-            </a>
+                <a href="index.php" class="logo">
+                    <img src="img/logo.svg" alt="Logo Mouches de Combat">
+                </a>
             <ul class="nav-links">
                 <li><a href="catalogue.php">Catalogue</a></li>
-                <li><a href="catalogue.php">Arène</a></li>
-                <li><a href="#">Vendre</a></li>
-                <li><a href="#">Notre laboratoire</a></li>
+                <li><a href="arene.php">Arène</a></li>
+                <li><a href="vendre.php">Vendre</a></li>
+                <li><a href="laboratoire.php">Notre laboratoire</a></li>
                 <li><a href="contact.php">Contact</a></li>
             </ul>
             <div class="cart-link">
-                <a href="panier.php">Mon Panier</a>
+                <a href="panier.php"><span class="material-symbols-outlined">
+        shopping_cart
+        </span>mon panier</a>
             </div>
         </div>
     </nav>
+</header>
 
     <main>
         <h1>Votre Panier</h1>
@@ -56,7 +62,7 @@ foreach ($_SESSION['panier'] as $produit) {
                 <ul class="cart-list">
                     <?php foreach ($_SESSION['panier'] as $index => $produit) : ?>
                         <li class="cart-item">
-                            <img src="../img/<?= htmlspecialchars($produit['image']) ?>" alt="<?= htmlspecialchars($produit['name']) ?>">
+                            <img src="../img/png/<?= htmlspecialchars($produit['image']) ?>" alt="<?= htmlspecialchars($produit['name']) ?>">
                             <div class="cart-item-info">
                                 <h2><?= htmlspecialchars($produit['name']) ?></h2>
                                 <p>Taille : <?= htmlspecialchars($produit['size']) ?></p>
@@ -71,7 +77,7 @@ foreach ($_SESSION['panier'] as $produit) {
                     <?php endforeach; ?>
                 </ul>
                 <div class="cart-total">
-                    <p>Total : <?= $total ?> MoucheCoins</p>
+                    <p>Total : <?= $total ?> flies</p>
                 </div>
             <?php endif; ?>
         </div>
@@ -80,6 +86,17 @@ foreach ($_SESSION['panier'] as $produit) {
     <footer>
         <p>&copy; 2024 Mouches de Combat</p>
     </footer>
+                <!-- responsive nav -->
+                <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const burger = document.querySelector('.burger');
+            const navLinks = document.querySelector('.nav-links');
+
+            burger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 
 </html>

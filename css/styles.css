@@ -103,7 +103,52 @@ nav {
     background-color: #C2C7FA;
 }
 
+/* Menu burger */
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
 
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
+/* Cacher le menu par défaut sur mobile */
+.nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #4D59D6;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+}
+
+.nav-links.active {
+    display: flex;
+}
+
+.nav-links li {
+    margin: 15px 0;
+}
+
+/* Afficher le menu burger sur les petits écrans */
+@media (max-width: 768px) {
+    .burger {
+        display: flex;
+    }
+
+    .nav-container {
+        flex-wrap: wrap;
+    }
+}
 
 /* Pied de page */
 footer {
@@ -136,9 +181,7 @@ footer nav ul li a:hover {
     text-decoration: underline;
 }
 
-
-/* logo*/
-
+/* logo */
 .logo {
     height: 50px;
 }

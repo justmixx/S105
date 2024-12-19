@@ -97,6 +97,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
         <h2>Information</h2>
         <h3>résistance</h3>
         <p class="etoiles">&#9733; &#9733; &#9733; &#9733; &#9734;</p>
+        <p class="description">La mouche <strong>gladiator</strong> a 4 étoiles de résistance quand elle possède un casque en or, sinon cela peut descendre à 3,5 étoiles.</p>
+        <h3>endurance</h3>
+        <p class="etoiles">&#9733; &#9733; &#9734; &#9734; &#9734;</p>
+        <p class="description">La mouche <strong>gladiator</strong> a 2 étoiles d'endurance car son casque va venir l'alourdir et donc la mettre en difficulté.</p>
+        <h3>force</h3>
+        <p class="etoiles">&#9733; &#9733; &#9733; &#9733; &#9734;</p>
+        <p class="description">La mouche <strong>gladiator</strong> a 4 étoiles de force, grâce à cela elle peut facilement gagner des combats.</p>
     </div>
     </section>
 

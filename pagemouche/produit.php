@@ -108,9 +108,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
     </section>
 
 <footer>
-    <p>&copy; 2024 Mouches de Combat</p>
     <nav>
         <ul>
+            <p>&copy; 2024 Mouches de Combat</p>
             <li><a href="contact.php">Contact</a></li>
             <li><a href="mentions-legales.php">Mentions légales</a></li>
         </ul>

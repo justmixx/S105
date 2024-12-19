@@ -1,8 +1,13 @@
-/* Styles spécifiques pour la page produit */
+/* Styles généraux */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
 .product-details {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     gap: 40px;
     padding: 20px;
@@ -12,7 +17,7 @@
 }
 
 .product-image {
-    flex: 1; 
+    flex: 1;
 }
 
 .product-image img {
@@ -22,14 +27,14 @@
 }
 
 .product-info {
-    flex: 2; 
-    text-align: center; 
+    flex: 2;
+    text-align: center;
 }
 
 .product-info h2 {
-    font-size: 3rem; 
+    font-size: 3rem;
     margin-bottom: 50px;
-    color: #000; 
+    color: #000;
     font-family: 'Arial Black', sans-serif;
 }
 
@@ -95,22 +100,21 @@ form {
     cursor: not-allowed;
 }
 
-/*test*/
+/* Section info produit */
 .black-section {
     width: 100%;
-    height: 85%;
-    background-color: #bdbdbd; 
+    background-color: #bdbdbd;
 }
 
 .stats h2 {
-    font-size: 2rem; 
+    font-size: 2rem;
     color: #000;
     font-family: 'Arial Black', sans-serif;
     text-align: center;
 }
 
 .stats h3 {
-    font-size: 1.4rem; 
+    font-size: 1.4rem;
     color: #252525;
     font-family: 'Arial Black', sans-serif;
     text-align: center;
@@ -126,4 +130,86 @@ form {
 .description {
     text-align: center;
     font-size: 1rem;
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+    .product-details {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-info h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .product-info p {
+        font-size: 1.1rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .size-options {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .size-button {
+        margin-bottom: 10px;
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    .add-to-cart-button {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+
+    .black-section {
+        padding: 20px;
+    }
+
+    .stats h2 {
+        font-size: 1.6rem;
+    }
+
+    .stats h3 {
+        font-size: 1.2rem;
+    }
+
+    .etoiles {
+        font-size: 4rem;
+    }
+
+    .description {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-info p {
+        font-size: 1rem;
+    }
+
+    .add-to-cart-button {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+
+    .stats h2 {
+        font-size: 1.4rem;
+    }
+
+    .stats h3 {
+        font-size: 1rem;
+    }
+
+    .etoiles {
+        font-size: 3rem;
+    }
+
+    .description {
+        font-size: 0.8rem;
+    }
 }

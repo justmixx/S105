@@ -12,7 +12,7 @@
 </head>
 
 <body>
-<header>
+    <header>
         <nav>
             <div class="nav-container">
                 <a href="index.php" class="logo">

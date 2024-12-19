@@ -44,15 +44,25 @@ $titre='TITRE';
         </nav>
     </header>
 
-    <section>
-        <h2>Il n’a jamais été meilleur temps pour dresser une mouche.</h2>
-        <p>Pour les fêtes, offrez la mouche qui fera bourdonner le cœur de votre famille.</p>
-        <a id="bouton" href="catalogue.php">Explorer notre catalogue</a>
-    </section>
+    <div class="content-container">
+        <!-- Première section -->
+        <section>
+            <h2>Il n’a jamais été meilleur temps pour dresser une mouche.</h2>
+            <p>Pour les fêtes, offrez la mouche qui fera bourdonner le cœur de votre famille.</p>
+            <a id="bouton" href="catalogue.php">Explorer notre catalogue</a>
+        </section>
 
+        <!-- Deuxième section à droite de la première -->
+        <section>
+            <h2>Il n’a jamais été meilleur temps pour dresser une mouche.</h2>
+            <p>Pour les fêtes, offrez la mouche qui fera bourdonner le cœur de votre famille.</p>
+            <a id="bouton" href="catalogue.php">Explorer notre catalogue</a>
+        </section>
+    </div>
+
+    <!-- Bloc 2 sous les sections -->
     <div class="bloc2">
         <h2>Entrez dans l’arène !</h2>
-        <img class="mouche" src="logo.svg">
         <img class="dessin" src="img/Arêne.jpg">
     </div>
 

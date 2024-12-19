@@ -1,39 +1,49 @@
-/* Styles spécifiques pour la page d'accueil */
-
-
-section {
-    padding:100px;
+/* Conteneur principal pour les deux sections côte à côte */
+.content-container {
+    display: flex;
+    justify-content: space-between;  /* Espacement entre les deux sections */
     margin: 50px;
-    margin-bottom: 10px;
+    flex-wrap: wrap;  /* Permet à l'affichage de se réorganiser sur plusieurs lignes si l'écran est trop petit */
+}
+
+/* Styles pour la première et deuxième section */
+section {
+    padding: 100px;
     background-color: #fff;
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width:800px; 
-
+    width: 48%;  /* Réduit la largeur pour chaque section à 48% pour laisser un peu d'espace */
+    margin-bottom: 30px;  /* Ajout d'un espace entre les sections si elles se déplacent vers le bas */
 }
 
+/* Bloc 2 */
 .bloc2 {
-
+    width: 100%;  /* Bloc 2 prend toute la largeur disponible */
+    margin-top: 50px;  /* Un peu d'espace au-dessus du bloc */
 }
+
 .bloc2 h2 {
     font-weight: 900;
     text-align: center;
-    color :#4D59D6;
+    color: #4D59D6;
     font-size: 3em;
     margin: 10px;
     padding: 10px;
 }
-.dessin{ 
+
+.dessin {
     display: flex;
     margin: auto;
-    height:fit-content;
-    border-radius: 5px;
-
+    height: auto;
+    width: 100%;   /* L'image prend toute la largeur disponible du conteneur */
+    max-width: 100%;  /* L'image ne dépasse pas la largeur du conteneur */
+    height: auto;  /* Maintient les proportions de l'image */
+    border-radius: 5px;  /* Pour garder les coins arrondis */
 }
 
 .mouche {
-    display:flex;
+    display: flex;
     margin: auto;
     height: auto;
     position: absolute;
@@ -44,7 +54,6 @@ section h2 {
     margin-bottom: 15px;
     text-align: left;
     font-size: 2em;
-    
 }
 
 section p {
@@ -73,22 +82,53 @@ figcaption {
     margin-top: 8px;
 }
 
-#bouton  {
-    color:#fff;
+#bouton {
+    color: #fff;
     text-align: center;
-    text-decoration:none;
+    text-decoration: none;
     background-color: #4D59D6;
     width: 300px;
     margin: 50px;
     padding: 20px;
     border-radius: 100px;
-    padding-top: 20px;
-    height: auto;
     font-size: larger;
+    height: auto;
 }
 
 #bouton:hover {
     text-decoration: none;
-    background-color:#C2C7FA;
-    color:#4D59D6;
+    background-color: #C2C7FA;
+    color: #4D59D6;
+}
+
+/* Media Query pour les petits écrans (tablettes et téléphones) */
+@media screen and (max-width: 768px) {
+    /* .content-container se transforme en une colonne verticale */
+    .content-container {
+        flex-direction: column;  /* Empile les sections verticalement */
+        align-items: center;     /* Centre les sections */
+        margin: 20px;            /* Réduit la marge extérieure autour du conteneur */
+    }
+
+    /* Les sections prennent toute la largeur disponible */
+    section {
+        width: 90%;   /* Ajuste la largeur pour que les sections prennent presque toute la largeur sur les petits écrans */
+        margin-bottom: 20px;  /* Espacement entre les sections */
+        padding: 30px;   /* Réduit le padding pour les petits écrans (padding plus fin) */
+    }
+
+    /* Réduire la taille du bouton sur les petits écrans */
+    #bouton {
+        width: 80%;   /* Le bouton prend 80% de la largeur du conteneur */
+        font-size: 1.2em;  /* Taille de la police réduite */
+        padding: 15px;   /* Ajustement du padding pour éviter la déformation */
+        margin: 20px 0;   /* Moins de marge verticale */
+    }
+
+    /* Ajustement de l'image dans bloc2 pour les petits écrans */
+    .dessin {
+        width: 100%;   /* L'image prend toute la largeur du conteneur */
+        max-width: 100%;  /* L'image ne dépasse pas la largeur du conteneur */
+        height: auto;  /* L'image conserve ses proportions */
+    }
 }

@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mouches Gladiator</title>
+    <title>Mouches tornado</title>
     <link rel="website icon" type="svg" href="../img/mouche_gladiator.svg">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/produit.css">
@@ -70,13 +70,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
         </div>
         <!-- Détails et formulaire -->
         <div class="product-info">
-            <h2>Mouche Gladiator</h2>
+            <h2>Mouche Tornado</h2>
             <p>Cette mouche est un véritable combattant ! Robuste et rapide, elle est prête à dominer l’arène.</p>
             <p><strong id="price">Prix : 150 flies</strong></p>
 
             <form action="produit.php" method="post">
-                <input type="hidden" name="product_name" value="mouchegladiator">
-                <input type="hidden" name="product_price" id="product_price" value="50">
+                <input type="hidden" name="product_name" value="mouchetorndo">
+                <input type="hidden" name="product_price" id="product_price" value="100">
                 <input type="hidden" name="product_image" id="product_image" value="mouche_gladiator_small.svg">
                 <input type="hidden" name="size" id="size" value="" required>
 
@@ -114,19 +114,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
         var productImage = document.getElementById("product_image");
 
         if (size === "small") {
-            priceElement.innerText = "Prix : 50 flies";
+            priceElement.innerText = "Prix : 100 flies";
             imageElement.src = "../img/png/mouchegladiator/small.png";
-            productPrice.value = "50";
+            productPrice.value = "100";
             productImage.value = "mouche_gladiator_small.svg";
         } else if (size === "medium") {
-            priceElement.innerText = "Prix : 100 flies";
+            priceElement.innerText = "Prix : 200 flies";
             imageElement.src = "../img/png/mouchegladiator/medium.png";
-            productPrice.value = "100";
+            productPrice.value = "200";
             productImage.value = "mouche_gladiator_medium.svg";
         } else if (size === "large") {
-            priceElement.innerText = "Prix : 150 flies";
+            priceElement.innerText = "Prix : 300 flies";
             imageElement.src = "../img/png/mouchegladiator/large.png";
-            productPrice.value = "150";
+            productPrice.value = "300";
             productImage.value = "mouche_gladiator_large.svg";
         }
 

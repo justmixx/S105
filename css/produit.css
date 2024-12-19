@@ -2,98 +2,53 @@
 .product-details {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
     gap: 40px;
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
+    border: 1px solid #ddd; /* Optionnel pour visualiser l'espace */
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .product-details {
-        flex-direction: column; /* Les éléments s'empilent verticalement */
-        align-items: center; /* Centrer les éléments */
-        gap: 20px;
-    }
+.product-image {
+    flex: 1; /* Permet à l'image de prendre l'espace nécessaire */
 }
 
 .product-image img {
-    max-width: 300px;
+    max-width: 100%;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 100%; /* Prend toute la largeur de son conteneur */
 }
 
 .product-info {
-    max-width: 500px;
-    text-align: left;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .product-info {
-        text-align: center; /* Aligner le texte au centre pour les petits écrans */
-        max-width: 100%; /* Laisser occuper tout l'espace disponible */
-    }
+    flex: 2; /* Assure que le texte prend plus de place */
+    text-align: right; /* Aligne tout à droite */
 }
 
 .product-info h2 {
-    font-size: 1.8rem;
+    font-size: 2rem; /* Plus grand pour correspondre à l'image */
     margin-bottom: 10px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .product-info h2 {
-        font-size: 1.5rem;
-    }
+    color: #000; /* Noir pour un meilleur contraste */
+    font-family: 'Arial Black', sans-serif; /* Correspond à un style similaire */
 }
 
 .product-info p {
-    font-size: 1rem;
-    margin-bottom: 15px;
+    font-size: 1.2rem;
     color: #666;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .product-info p {
-        font-size: 0.9rem;
-    }
-}
-
-.product-info strong {
-    color: #333;
-}
-
 form {
-    margin-top: 15px;
-    text-align: center; /* Centrer le formulaire pour les petits écrans */
-}
-
-label {
-    font-weight: bold;
-    margin-right: 10px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    label {
-        margin-right: 5px;
-    }
-}
-
-select {
-    padding: 8px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    margin-bottom: 15px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Aligne le formulaire à droite */
 }
 
 .add-to-cart-button {
-    padding: 10px 20px;
+    margin-top: 20px;
+    padding: 10px 25px;
+    font-size: 1.1rem;
     background-color: #7883F3;
     color: white;
     border: none;
@@ -102,21 +57,9 @@ select {
     transition: background-color 0.3s ease;
 }
 
-/* Ajustement pour les petits écrans */
-@media (max-width: 768px) {
-    .add-to-cart-button {
-        padding: 10px 15px;
-        font-size: 0.9rem;
-    }
-}
-
 .add-to-cart-button:hover {
     background-color: #C2C7FA;
 }
-
-
-
-/* test */
 
 .size-options {
     display: flex;

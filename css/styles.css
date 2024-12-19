@@ -118,29 +118,28 @@ nav {
     transition: all 0.3s ease;
 }
 
-/* Cacher le menu par défaut sur mobile */
-.nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: #4D59D6;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 100%;
-    text-align: center;
-    z-index: 10;
-}
-
-.nav-links.active {
-    display: flex;
-}
-
-.nav-links li {
-    margin: 15px 0;
-}
-
-/* Afficher le menu burger sur les petits écrans */
+/* Cacher le menu sur mobile */
 @media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #4D59D6;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        z-index: 10;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
     .burger {
         display: flex;
     }
@@ -150,38 +149,9 @@ nav {
     }
 }
 
-/* Pied de page */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
-}
-
-footer nav ul {
-    display: flex;
-    justify-content: flex-end;
-    list-style: none;
-    padding: 10px;
-    margin: 0;
-}
-
-footer nav ul li {
-    margin-left: 15px;
-}
-
-footer nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 0.9rem;
-}
-
-footer nav ul li a:hover {
-    text-decoration: underline;
-}
-
-/* logo */
-.logo {
-    height: 50px;
+/* Par défaut (écrans larges) : Afficher la barre de navigation */
+@media (min-width: 769px) {
+    .nav-links {
+        display: flex !important;
+    }
 }

@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
         <!-- Détails et formulaire -->
         <div class="product-info">
             <h2>Mouche Gladiator</h2>
-            <p>Cette mouche est un véritable combattant ! Robuste et rapide, elle est prête à dominer l’arène.</p>
+            <p>Cette mouche est un combattant redoutable, alliant robustesse et rapidité. Sa construction soignée lui permet de dominer l’arène avec agilité et précision, résistant aux conditions extrêmes pour affronter ses adversaires avec une détermination inébranlable.</p>
             <p><strong id="price">Prix : 50 - 150 flies</strong></p>
 
             <form action="produit.php" method="post">
@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
                 <input type="hidden" name="product_image" id="product_image" value="mouche_gladiator_small.svg">
                 <input type="hidden" name="size" id="size" value="" required>
 
-                <label>Taille :</label>
+                <label><strong>Taille :</strong></label>
                 <div class="size-options">
                     <button type="button" class="size-button" data-size="small" onclick="selectSize('small')">Petite</button>
                     <button type="button" class="size-button" data-size="medium" onclick="selectSize('medium')">Moyenne</button>

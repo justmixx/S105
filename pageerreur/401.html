@@ -24,12 +24,13 @@
             padding: 20px;
         }
 
-        /* Style du titre */
+        /* Style du titre avec animation */
         .error-title {
-            font-size: 120px;
+            font-size: 180px; /* Taille augmentée */
             margin: 0;
             color: #7883F3; /* Violet */
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+            animation: bounce 2s infinite ease-in-out; /* Animation incluse */
         }
 
         /* Texte sous-titre */
@@ -53,6 +54,16 @@
 
         .back-button:hover {
             background-color: #7883F3; /* Violet moyen */
+        }
+
+        /* Animation Keyframes */
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0); /* Position initiale */
+            }
+            50% {
+                transform: translateY(-20px); /* Monter légèrement */
+            }
         }
     </style>
 </head>

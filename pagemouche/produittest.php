@@ -92,15 +92,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
         </div>
     </div>
 </main>
-<footer>
-    <p>&copy; 2024 Mouches de Combat</p>
-    <nav>
-        <ul>
-            <li><a href="contact.php">Contact</a></li>
-            <li><a href="mentions-legales.php">Mentions légales</a></li>
-        </ul>
-    </nav>
-</footer>
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="contact.php">Contact</a></li>
+                <li><p>&copy; 2024 Mouches de Combat</p></li>
+                <li><a href="mentions-legales.php">Mentions légales</a></li>
+            </ul>
+        </nav>
+    </footer>
 
 <script>
     function selectSize(size) {

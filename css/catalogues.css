@@ -1,74 +1,38 @@
-/* Styles spécifiques pour la page catalogue */
-main {
-    padding: 20px;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.titre {
+    color: #4D59D6;
     text-align: center;
+    padding: 10px;
 }
-
-h1 {
-    color: #4CAF50;
-    margin-bottom: 20px;
+.container {
+    display: flex;
+    padding: 20px;
 }
-
-/* Tableau des produits */
-.catalogue {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    border-collapse: separate;
-    border-spacing: 15px;
+.filter {
+    flex: 1;
+    padding: 10px;
+    background: #f4f4f4;
+    margin-right: 10px;
 }
-
-/* Style pour chaque produit */
-.catalogue td {
-    text-align: left;
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    display: flex; /* Utilisation de flexbox */
+.products {
+    flex: 3;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+}
+.product {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    background: #fff;
+}
+.price-range {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 15px; /* Espacement entre l'image et les détails */
-}
-
-/* Style pour les images des produits */
-.catalogue img {
-    width: auto; /* Ajuste la largeur automatiquement */
-    max-width: 150px;
-    height: auto;
-    border-radius: 5px;
-}
-
-/* Titre du produit */
-.catalogue h2 {
-    font-size: 1.2rem;
-    margin: 10px 0;
-    color: #333;
-}
-
-/* Description du produit */
-.catalogue p {
-    font-size: 1rem;
-    margin: 10px 0;
-    color: #666;
-}
-
-/* Bouton pour chaque produit */
-.catalogue a {
-    color:#fff;
-    text-align: center;
-    text-decoration:none;
-    background-color: #4D59D6;
-    width: 300px;
-    margin: 50px;
-    padding: 20px;
-    border-radius: 100px;
-    padding-top: 20px;
-    height: auto;
-    font-size: larger;
-}
-
-.catalogue a:hover {
-    text-decoration: none;
-    background-color:#C2C7FA;
-    color:#4D59D6;
+    margin-bottom: 20px;
 }

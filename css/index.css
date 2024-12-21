@@ -25,7 +25,7 @@ section {
 .bloc2 h2 {
     font-weight: 900;
     text-align: center;
-    color: #4D59D6;
+    color: #0013e0;
     font-size: 3em;
     margin: 10px;
     padding: 10px;
@@ -35,10 +35,11 @@ section {
     display: flex;
     margin: auto;
     height: auto;
-    width: 100%;  
-    max-width: 100%;  
+    width: 80%;  
+    max-width: 80%;  
     height: auto;  
-    border-radius: 5px; 
+    border-radius: 15px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .mouche {
@@ -81,7 +82,11 @@ figcaption {
     margin-top: 8px;
 }
 
-#bouton {
+.text {
+    margin-bottom: 50px;
+}
+
+.bouton {
     color: #fff;
     text-align: center;
     text-decoration: none;
@@ -94,13 +99,13 @@ figcaption {
     height: auto;
 }
 
-#bouton:hover {
+.bouton:hover {
     text-decoration: none;
     background-color: #C2C7FA;
     color: #4D59D6;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1140px) {
     .content-container {
         flex-direction: column; 
         align-items: center;    
@@ -113,7 +118,7 @@ figcaption {
         padding: 30px;   
     }
 
-    #bouton {
+    .bouton {
         width: 80%;  
         font-size: 1.2em;  
         padding: 15px;   

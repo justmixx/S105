@@ -48,15 +48,15 @@ $titre='TITRE';
         <!-- Première section -->
         <section>
             <h2>Il n’a jamais été meilleur temps pour dresser une mouche.</h2>
-            <p>Pour les fêtes, offrez la mouche qui fera bourdonner le cœur de votre famille.</p>
-            <a id="bouton" href="catalogue.php">Explorer notre catalogue</a>
+            <p class="text">Pour les fêtes, offrez la mouche qui fera bourdonner le cœur de votre famille.</p>
+            <a class="bouton" href="catalogue.php">Explorer notre catalogue</a>
         </section>
 
         <!-- Deuxième section à droite de la première -->
         <section>
-            <h2>Il n’a jamais été meilleur temps pour dresser une mouche.</h2>
-            <p>Pour les fêtes, offrez la mouche qui fera bourdonner le cœur de votre famille.</p>
-            <a id="bouton" href="catalogue.php">Explorer notre catalogue</a>
+            <h2>Les combats de mouches n'ont jamais été accessibles si facilement.</h2>
+            <p class="text">Avec notre système de combat, il n'a jamais été aussi simple de combattre.</p>
+            <a class="bouton" href="catalogue.php">Entrez dans l'arène</a>
         </section>
     </div>
 
@@ -67,10 +67,10 @@ $titre='TITRE';
     </div>
 
     <footer>
-        <p>&copy; 2024 Mouches de Combat</p>
         <nav>
             <ul>
                 <li><a href="contact.php">Contact</a></li>
+                <li><p>&copy; 2024 Mouches de Combat</p></li>
                 <li><a href="mentions-legales.php">Mentions légales</a></li>
             </ul>
         </nav>

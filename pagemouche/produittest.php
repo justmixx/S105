@@ -6,31 +6,29 @@ if (!isset($_SESSION['panier'])) {
     $_SESSION['panier'] = [];
 }
 
-// Ajout d'un produit au panier
+// Ajout du produit au panier
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POST['product_price'], $_POST['product_image'], $_POST['size'])) {
     $produit = [
         'name' => htmlspecialchars($_POST['product_name']),
         'price' => (float) $_POST['product_price'],
         'image' => htmlspecialchars($_POST['product_image']),
-        'size' => htmlspecialchars($_POST['size'])
+        'size' => htmlspecialchars($_POST['size']),
     ];
     $_SESSION['panier'][] = $produit;
+    header('Location: ../panier.php');
+    exit;
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mouches tornado</title>
-    <link rel="website icon" type="svg" href="../img/mouche_gladiator.svg">
+    <title>Mouche Tornado</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/produit.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=shopping_cart" />
 </head>
-
 <body>
 <header>
     <nav>
@@ -38,11 +36,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
             <a href="../index.php" class="logo">
                 <img src="../img/logo.svg" alt="Logo Mouches de Combat">
             </a>
-            <div class="burger">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
             <ul class="nav-links">
                 <li><a href="../catalogue.php">Catalogue</a></li>
                 <li><a href="../arene.php">Arène</a></li>
@@ -61,86 +54,61 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
 </header>
 
 <main>
-    <h1>Détails du produit</h1>
-
     <div class="product-details">
-        <!-- Image du produit -->
         <div class="product-image">
-            <img id="product-image" src="../img/png/mouchegladiator/large.png" alt="Mouche Gladiator">
+            <img id="product-image" src="../img/png/mouchegladiator/small.png" alt="Mouche Tornado">
         </div>
-        <!-- Détails et formulaire -->
         <div class="product-info">
             <h2>Mouche Tornado</h2>
-            <p>Cette mouche est un véritable combattant ! Robuste et rapide, elle est prête à dominer l’arène.</p>
-            <p><strong id="price">Prix : 150 flies</strong></p>
+            <p>Description : Cette mouche allie puissance et vitesse, parfaite pour les combats intenses.</p>
+            <p><strong id="price">Prix : 70 flies</strong></p>
 
-            <form action="produit.php" method="post">
-                <input type="hidden" name="product_name" value="mouchetorndo">
-                <input type="hidden" name="product_price" id="product_price" value="100">
-                <input type="hidden" name="product_image" id="product_image" value="mouche_gladiator_small.svg">
-                <input type="hidden" name="size" id="size" value="" required>
+            <form method="POST" action="produit_tornado.php">
+                <input type="hidden" name="product_name" value="Mouche Tornado">
+                <input type="hidden" name="product_price" id="product_price" value="70">
+                <input type="hidden" name="product_image" id="product_image" value="../img/png/mouchetornado/small.png">
+                <input type="hidden" name="size" id="size" value="small">
 
-                <label>Taille :</label>
+                <p><strong>Taille :</strong></p>
                 <div class="size-options">
                     <button type="button" class="size-button" data-size="small" onclick="selectSize('small')">Petite</button>
                     <button type="button" class="size-button" data-size="medium" onclick="selectSize('medium')">Moyenne</button>
                     <button type="button" class="size-button" data-size="large" onclick="selectSize('large')">Grande</button>
                 </div>
 
-                <button type="submit" class="add-to-cart-button" id="add-to-cart" disabled>Ajouter au Panier</button>
+                <button type="submit" class="add-to-cart-button" id="add-to-cart">Ajouter au Panier</button>
             </form>
         </div>
     </div>
 </main>
-    <footer>
-        <nav>
-            <ul>
-                <li><a href="contact.php">Contact</a></li>
-                <li><p>&copy; 2024 Mouches de Combat</p></li>
-                <li><a href="mentions-legales.php">Mentions légales</a></li>
-            </ul>
-        </nav>
-    </footer>
 
 <script>
     function selectSize(size) {
-        // Mettre à jour le champ caché pour la taille
-        document.getElementById("size").value = size;
-
-        // Mettre à jour le prix et l'image selon la taille sélectionnée
-        var priceElement = document.getElementById("price");
-        var imageElement = document.getElementById("product-image");
-        var productPrice = document.getElementById("product_price");
-        var productImage = document.getElementById("product_image");
+        const priceElement = document.getElementById("price");
+        const imageElement = document.getElementById("product-image");
+        const priceInput = document.getElementById("product_price");
+        const imageInput = document.getElementById("product_image");
+        const sizeInput = document.getElementById("size");
 
         if (size === "small") {
-            priceElement.innerText = "Prix : 100 flies";
+            priceElement.innerText = "Prix : 70 flies";
             imageElement.src = "../img/png/mouchegladiator/small.png";
-            productPrice.value = "100";
-            productImage.value = "mouche_gladiator_small.svg";
+            priceInput.value = "70";
+            imageInput.value = "../img/png/mouchegladiator/small.png";
         } else if (size === "medium") {
-            priceElement.innerText = "Prix : 200 flies";
+            priceElement.innerText = "Prix : 100 flies";
             imageElement.src = "../img/png/mouchegladiator/medium.png";
-            productPrice.value = "200";
-            productImage.value = "mouche_gladiator_medium.svg";
+            priceInput.value = "100";
+            imageInput.value = "../img/png/mouchegladiator/medium.png";
         } else if (size === "large") {
-            priceElement.innerText = "Prix : 300 flies";
+            priceElement.innerText = "Prix : 150 flies";
             imageElement.src = "../img/png/mouchegladiator/large.png";
-            productPrice.value = "300";
-            productImage.value = "mouche_gladiator_large.svg";
+            priceInput.value = "150";
+            imageInput.value = "../img/png/mouchegladiator/large.png";
         }
 
-        // Activer le bouton "Ajouter au Panier"
-        document.getElementById("add-to-cart").disabled = false;
-
-        // Mettre en surbrillance le bouton sélectionné
-        document.querySelectorAll(".size-button").forEach(button => {
-            button.classList.remove("selected");
-        });
-        document.querySelector(`.size-button[data-size="${size}"]`).classList.add("selected");
+        sizeInput.value = size;
     }
 </script>
-
 </body>
-
 </html>

@@ -14,8 +14,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
         'image' => htmlspecialchars($_POST['product_image']),
         'size' => htmlspecialchars($_POST['size'])
     ];
+
+    // Ajouter le produit au panier
     $_SESSION['panier'][] = $produit;
 }
+
+// Debug : Vérification du panier (optionnel)
+// echo '<pre>' . print_r($_SESSION['panier'], true) . '</pre>';
 ?>
 
 <!DOCTYPE html>
@@ -61,7 +66,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
 </header>
 
 <main>
-
     <div class="product-details">
         <!-- Image du produit -->
         <div class="product-image">
@@ -74,10 +78,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
             <p><strong id="price">Prix : 50 - 150 flies</strong></p>
 
             <form action="produit.php" method="post">
-                <input type="hidden" name="product_name" value="mouchetorndo">
+                <input type="hidden" name="product_name" value="mouche gladiator">
                 <input type="hidden" name="product_price" id="product_price" value="100">
-                <input type="hidden" name="product_image" id="product_image" value="mouche_gladiator_small.svg">
-                <input type="hidden" name="size" id="size" value="" required>
+                <input type="hidden" name="product_image" id="product_image" value="../img/png/mouchegladiator/medium.png">
+                <input type="hidden" name="size" id="size" value="medium">
 
                 <p><strong>Taille :</strong></p>
                 <div class="size-options">
@@ -95,54 +99,51 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
 <section class="black-section">
     <div class="stats">
         <h2>Information</h2>
-        <h3>résistance</h3>
+        <h3>Résistance</h3>
         <p class="etoiles">&#9733; &#9733; &#9733; &#9733; &#9734;</p>
-        <p class="description">La mouche <strong>gladiator</strong> a 4 étoiles de résistance quand elle possède un casque en or, sinon cela peut descendre à 3,5 étoiles.</p>
-        <h3>endurance</h3>
+        <p class="description">La mouche <strong>Gladiator</strong> a 4 étoiles de résistance quand elle possède un casque en or, sinon cela peut descendre à 3,5 étoiles.</p>
+        <h3>Endurance</h3>
         <p class="etoiles">&#9733; &#9733; &#9734; &#9734; &#9734;</p>
-        <p class="description">La mouche <strong>gladiator</strong> a 2 étoiles d'endurance car son casque va venir l'alourdir et donc la mettre en difficulté.</p>
-        <h3>force</h3>
+        <p class="description">La mouche <strong>Gladiator</strong> a 2 étoiles d'endurance car son casque va venir l'alourdir et donc la mettre en difficulté.</p>
+        <h3>Force</h3>
         <p class="etoiles">&#9733; &#9733; &#9733; &#9733; &#9734;</p>
-        <p class="description">La mouche <strong>gladiator</strong> a 4 étoiles de force, grâce à cela elle peut facilement gagner des combats.</p>
+        <p class="description">La mouche <strong>Gladiator</strong> a 4 étoiles de force, grâce à cela elle peut facilement gagner des combats.</p>
     </div>
-    </section>
+</section>
 
-    <footer>
-        <nav>
-            <ul>
-                <li><a href="contact.php">Contact</a></li>
-                <li><p>&copy; 2024 Mouches de Combat</p></li>
-                <li><a href="mentions-legales.php">Mentions légales</a></li>
-            </ul>
-        </nav>
-    </footer>
+<footer>
+    <nav>
+        <ul>
+            <li><a href="contact.php">Contact</a></li>
+            <li><p>&copy; 2024 Mouches de Combat</p></li>
+            <li><a href="mentions-legales.php">Mentions légales</a></li>
+        </ul>
+    </nav>
+</footer>
 
 <script>
     function selectSize(size) {
-        // Mettre à jour le champ caché pour la taille
-        document.getElementById("size").value = size;
-
-        // Mettre à jour le prix et l'image selon la taille sélectionnée
-        var priceElement = document.getElementById("price");
-        var imageElement = document.getElementById("product-image");
-        var productPrice = document.getElementById("product_price");
-        var productImage = document.getElementById("product_image");
+        // Mettre à jour les champs cachés pour la taille, le prix et l'image
+        const priceElement = document.getElementById("price");
+        const imageElement = document.getElementById("product-image");
+        const productPrice = document.getElementById("product_price");
+        const productImage = document.getElementById("product_image");
 
         if (size === "small") {
             priceElement.innerText = "Prix : 50 flies";
             imageElement.src = "../img/png/mouchegladiator/small.png";
             productPrice.value = "50";
-            productImage.value = "mouche_gladiator_small.svg";
+            productImage.value = "../img/png/mouchegladiator/small.png";
         } else if (size === "medium") {
             priceElement.innerText = "Prix : 100 flies";
             imageElement.src = "../img/png/mouchegladiator/medium.png";
             productPrice.value = "100";
-            productImage.value = "mouche_gladiator_medium.svg";
+            productImage.value = "../img/png/mouchegladiator/medium.png";
         } else if (size === "large") {
             priceElement.innerText = "Prix : 150 flies";
             imageElement.src = "../img/png/mouchegladiator/large.png";
             productPrice.value = "150";
-            productImage.value = "mouche_gladiator_large.svg";
+            productImage.value = "../img/png/mouchegladiator/large.png";
         }
 
         // Activer le bouton "Ajouter au Panier"
@@ -155,6 +156,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
         document.querySelector(`.size-button[data-size="${size}"]`).classList.add("selected");
     }
 </script>
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="contact.php">Contact</a></li>
+                <li><p>&copy; 2024 Mouches de Combat</p></li>
+                <li><a href="mentions-legales.php">Mentions légales</a></li>
+            </ul>
+        </nav>
+    </footer>
+
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const burger = document.querySelector('.burger');
@@ -166,5 +177,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
         });
     </script>
 </body>
-
 </html>

@@ -119,7 +119,7 @@ nav {
 }
 
 /* Cacher le menu sur mobile */
-@media (max-width: 768px) {
+@media (max-width: 1140px) {
     .nav-links {
         display: none;
         flex-direction: column;
@@ -163,7 +163,7 @@ nav {
 }
 
 /* Par défaut (écrans larges) : Afficher la barre de navigation */
-@media (min-width: 769px) {
+@media (min-width: 1141px) {
     .nav-links {
         display: flex !important;
     }

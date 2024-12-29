@@ -54,7 +54,7 @@ $titre='TITRE';
 
         <!-- Deuxième section à droite de la première -->
         <section>
-            <h2>Les combats de mouches n'ont jamais été accessibles si facilement.</h2>
+            <h2>Les combats de mouches accessibles facilement.</h2>
             <p class="text">Avec notre système de combat, il n'a jamais été aussi simple de combattre.</p>
             <a class="bouton" href="catalogue.php">Entrez dans l'arène</a>
         </section>

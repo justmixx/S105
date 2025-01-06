@@ -156,15 +156,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
         document.querySelector(`.size-button[data-size="${size}"]`).classList.add("selected");
     }
 </script>
-    <footer>
-        <nav>
-            <ul>
-                <li><a href="contact.php">Contact</a></li>
-                <li><p>&copy; 2024 Mouches de Combat</p></li>
-                <li><a href="mentions-legales.php">Mentions légales</a></li>
-            </ul>
-        </nav>
-    </footer>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {

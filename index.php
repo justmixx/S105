@@ -28,7 +28,7 @@ $titre='TITRE';
                     <div></div>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="catalogue.php">Catalogue</a></li>
+                    <li><a href="catalogue.html">Catalogue</a></li>
                     <li><a href="arene.php">Arène</a></li>
                     <li><a href="vendre.php">Vendre</a></li>
                     <li><a href="laboratoire.php">Notre laboratoire</a></li>

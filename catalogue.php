@@ -51,12 +51,16 @@
                     <p>Prix : 50 - 150 flies</p>
                     <a href="pagemouche/produit.php">Voir le produit</a>
                 </td>
+            </tr>
+            <tr>
                 <td>
                     <img src="img/mouche2.jpg" alt="Mouche de combat 2">
                     <h2>Mouche Tornado</h2>
                     <p>Prix : 70 MoucheCoins</p>
                     <a href="pagemouche/produittest.php">Voir le produit</a>
                 </td>
+            </tr>
+            <tr>
                 <td>
                     <img src="img/mouche3.jpg" alt="Mouche de combat 3">
                     <h2>Mouche Shadow</h2>
@@ -71,12 +75,16 @@
                     <p>Prix : 80 MoucheCoins</p>
                     <a href="produit.php?id=4">Voir le produit</a>
                 </td>
+            </tr>
+            <tr>
                 <td>
                     <img src="img/mouche5.jpg" alt="Mouche de combat 5">
                     <h2>Mouche Viper</h2>
                     <p>Prix : 90 MoucheCoins</p>
                     <a href="produit.php?id=5">Voir le produit</a>
                 </td>
+            </tr>
+            <tr>
                 <td>
                     <img src="img/mouche6.jpg" alt="Mouche de combat 6">
                     <h2>Mouche Phantom</h2>
@@ -91,12 +99,16 @@
                     <p>Prix : 60 MoucheCoins</p>
                     <a href="produit.php?id=7">Voir le produit</a>
                 </td>
+            </tr>
+            <tr>
                 <td>
                     <img src="img/mouche8.jpg" alt="Mouche de combat 8">
                     <h2>Mouche Crusher</h2>
                     <p>Prix : 85 MoucheCoins</p>
                     <a href="produit.php?id=8">Voir le produit</a>
                 </td>
+            </tr>
+            <tr>
                 <td>
                     <img src="img/mouche9.jpg" alt="Mouche de combat 9">
                     <h2>Mouche Inferno</h2>

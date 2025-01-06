@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
                 <div></div>
             </div>
             <ul class="nav-links">
-                <li><a href="../catalogue.php">Catalogue</a></li>
+                <li><a href="../catalogue.html">Catalogue</a></li>
                 <li><a href="../arene.php">Arène</a></li>
                 <li><a href="../vendre.php">Vendre</a></li>
                 <li><a href="../laboratoire.php">Notre laboratoire</a></li>
@@ -156,15 +156,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
         document.querySelector(`.size-button[data-size="${size}"]`).classList.add("selected");
     }
 </script>
-    <footer>
-        <nav>
-            <ul>
-                <li><a href="contact.php">Contact</a></li>
-                <li><p>&copy; 2024 Mouches de Combat</p></li>
-                <li><a href="mentions-legales.php">Mentions légales</a></li>
-            </ul>
-        </nav>
-    </footer>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {

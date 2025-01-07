@@ -29,7 +29,7 @@ $panierVide = empty($_SESSION['panier']);
                     <img src="img/logo.svg" alt="Logo Mouches de Combat">
                 </a>
                 <ul class="nav-links">
-                    <li><a href="catalogue.html">Catalogue</a></li>
+                    <li><a href="catalogue.php">Catalogue</a></li>
                     <li><a href="arene.php">Arène</a></li>
                     <li><a href="vendre.php">Vendre</a></li>
                     <li><a href="laboratoire.php">Notre laboratoire</a></li>

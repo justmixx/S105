@@ -13,6 +13,7 @@ body {
     background-color: #f9f9f9;
     margin: 0;
     padding: 0;
+    height: 100%;
 }
 
 .logo img {
@@ -146,6 +147,10 @@ nav {
 
     .nav-container {
         flex-wrap: wrap;
+    }
+
+    footer {
+        margin-top: 20%;
     }
 
     footer nav ul {

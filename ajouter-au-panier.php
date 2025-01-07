@@ -17,8 +17,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ];
     $_SESSION['panier'][] = $produit;
 }
-
-// Rediriger vers le panier
-header('Location: panier.php');
-exit;
 ?>

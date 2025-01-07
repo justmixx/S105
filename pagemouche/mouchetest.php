@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
     <div class="product-details">
         <!-- Image du produit -->
         <div class="product-image">
-            <img id="product-image" src="../img/png/mouchegladiator/large.png" alt="Mouche Gladiator">
+            <img id="product-image" src="../img/logo.svg" alt="Mouche Gladiator">
         </div>
         <!-- Détails et formulaire -->
         <div class="product-info">
@@ -77,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
             <p>Cette mouche est un combattant redoutable, alliant robustesse et rapidité. Sa construction soignée lui permet de dominer l’arène avec agilité et précision, résistant aux conditions extrêmes pour affronter ses adversaires avec une détermination inébranlable.</p>
             <p><strong id="price">Prix : 50 - 150 flies</strong></p>
 
-            <form action="mouchegladiator.php" method="post">
+            <form action="mouchetest.php" method="post">
                 <input type="hidden" name="product_name" value="mouche gladiator">
                 <input type="hidden" name="product_price" id="product_price" value="100">
                 <input type="hidden" name="product_image" id="product_image" value="../img/png/mouchegladiator/medium.png">

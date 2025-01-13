@@ -1,5 +1,66 @@
 /* Styles spécifiques pour la page catalogue */
 
-.box{
+img {
+ object-fit: cover;
+ max-height: 80%;
+
+
+    }
+
+.texte {
+    width: 100%;
+    text-align: left;
     display: flex;
+    flex-wrap: wrap;
+    padding-left: 20px;
+}
+
+.texte h2 {
+    font-size: 2em;
+    font-weight: 600;
+    color: white;   
+}
+
+.texte p {
+    font-size: 1em;
+    max-width: 80%;
+    color : white;
+
+}
+.catalogue{
+    text-align: center;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+    background-color: #a3abff;
+}
+.container {
+    width: 100%;
+    padding:20px;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:left;
+    object-fit: contain;
+}
+
+.article {
+    max-height: 300px;
+    max-width: 33%;
+    display:flex;
+    text-align:left;
+
+}
+
+
+.texte:hover {
+    text-decoration: underline;
+    background-color: #C2C7FA;
+    color: #4D59D6;
+}
+.texte:link{
+    text-decoration: none;
+
+}
+a:visited{
+text-decoration: none;
 }

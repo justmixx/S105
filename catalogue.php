@@ -41,18 +41,46 @@
     </header>
 
 
-<main>
+<main class="catalogue">
     <h1>Notre Catalogue de Mouches de Combat</h1>
-    <div class="box">
-        <div>
-            <img src="img/images.png" alt="mouche gladiator image">
+    <div class="container">
+        <a href="pagemouche/mouchegladiator.php" class="article">
+            <img src="img/mouche-gladiator-ai.jpeg" alt="mouche gladiator image">
+            <div class="texte">
+                <h2> Mouche gladiator </h2>
+                <p> Parfaite pour vos premier combat, toujours présente pour les derniers. </p>
+            </div>
+        </a>
+        <div class="article">
+            <img src="img/mouche-gladiator-ai.jpeg" alt="mouche gladiator image">
+            <div class="texte">
+                <h2> Mouche gladiator </h2>
+                <p> Parfaite pour vos premier combat, toujours présente pour les derniers. </p>
+            </div>
         </div>
-        <div>
-            <img src="img/images.png" alt="mouche gladiator image">
+        <div class="article">
+            <img src="img/mouche-gladiator-ai.jpeg" alt="mouche gladiator image">
+            <div class="texte">
+                <h2> Mouche gladiator </h2>
+                <p> Parfaite pour vos premier combat, toujours présente pour les derniers. </p>
+            </div>
         </div>
-        <div>
-            <img src="img/images.png" alt="mouche gladiator image">
+        <div class="article">
+            <img src="img/mouche-gladiator-ai.jpeg" alt="mouche gladiator image">
+            <div class="texte">
+                <h2> Mouche gladiator </h2>
+                <p> Parfaite pour vos premier combat, toujours présente pour les derniers. </p>
+            </div>
         </div>
+        <div class="article">
+            <img src="img/mouche-gladiator-ai.jpeg" alt="mouche gladiator image">
+            <div class="texte">
+                <h2> Mouche gladiator </h2>
+                <p> Parfaite pour vos premier combat, toujours présente pour les derniers. </p>
+            </div>
+        </div>
+
+        
     </div>
 </main>
 

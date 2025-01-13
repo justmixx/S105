@@ -1,0 +1,4 @@
+nom,taille,prix,image
+Mouche Gladiator,Small,10,img/png/mouchegladiator/small.png
+Mouche Titan,Medium,18,img/png/mouchetitan/medium.png
+Mouche Hunter,Large,25,img/png/mouchehunter/large.png

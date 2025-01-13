@@ -78,8 +78,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
             <p><strong id="price">Prix : 50 - 150 flies</strong></p>
 
             <form action="mouchegladiator.php" method="post">
-                <input type="hidden" name="product_name" value="mouche gladiator">
-                <input type="hidden" name="product_price" id="product_price" value="100">
+                <input type="hidden" name="product_name" value="mouche assassine">
+                <input type="hidden" name="product_price" id="product_price" value="200">
                 <input type="hidden" name="product_image" id="product_image" value="../img/png/mouchegladiator/medium.png">
                 <input type="hidden" name="size" id="size" value="medium">
 
@@ -130,17 +130,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
         const productImage = document.getElementById("product_image");
 
         if (size === "small") {
-            priceElement.innerText = "Prix : 50 flies";
+            priceElement.innerText = "Prix : 100 flies";
             imageElement.src = "../img/png/mouchegladiator/small.png";
             productPrice.value = "50";
             productImage.value = "../img/png/mouchegladiator/small.png";
         } else if (size === "medium") {
-            priceElement.innerText = "Prix : 100 flies";
+            priceElement.innerText = "Prix : 200 flies";
             imageElement.src = "../img/png/mouchegladiator/medium.png";
             productPrice.value = "100";
             productImage.value = "../img/png/mouchegladiator/medium.png";
         } else if (size === "large") {
-            priceElement.innerText = "Prix : 150 flies";
+            priceElement.innerText = "Prix : 300 flies";
             imageElement.src = "../img/png/mouchegladiator/large.png";
             productPrice.value = "150";
             productImage.value = "../img/png/mouchegladiator/large.png";

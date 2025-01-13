@@ -32,7 +32,7 @@
                     <li><a href="catalogue.php">Catalogue</a></li>
                     <li><a href="arene.php">Arène</a></li>
                     <li><a href="vendre.php">Vendre</a></li>
-                    <li><a href="laboratoire.php">Notre laboratoire</a></li>
+                    <li><a href="pagemouche/test.php">Notre laboratoire</a></li>
                     <li><a href="contact.php">Contact</a></li>
                 </ul>
                 <div class="cart-link">

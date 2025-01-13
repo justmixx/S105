@@ -1,95 +1,127 @@
 <?php
-session_start();
-
-// Vider le panier si le bouton "Vider le panier" est cliqué
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['clear_cart'])) {
-    $_SESSION['panier'] = []; // Réinitialisation du panier
+// Fonction pour lire les articles du panier depuis le fichier CSV
+function lirePanier() {
+    $panier = [];
+    if (($handle = fopen('pagemouche/panier.csv', 'r')) !== false) {
+        while (($data = fgetcsv($handle, 1000, ',')) !== false) {
+            // Vérifie que la ligne contient 7 éléments (nom, prix 3 tailles, 3 images)
+            if (count($data) === 7) {
+                $panier[] = [
+                    'nom' => $data[0],
+                    'prix' => [
+                        'small' => (float)$data[1],
+                        'medium' => (float)$data[2],
+                        'large' => (float)$data[3]
+                    ],
+                    'images' => [
+                        'small' => $data[4],
+                        'medium' => $data[5],
+                        'large' => $data[6]
+                    ]
+                ];
+            }
+        }
+        fclose($handle);
+    }
+    return $panier;
 }
 
-// Vérifiez si le panier est vide
-$panierVide = empty($_SESSION['panier']);
-?>
+// Fonction pour ajouter un article au panier
+function ajouterAuPanier($nom, $prix, $image, $taille, $description) {
+    $panier = lirePanier();
+    $panier[] = compact('nom', 'prix', 'image', 'taille', 'description');
+    $handle = fopen('pagemouche/panier.csv', 'w');
+    foreach ($panier as $article) {
+        fputcsv($handle, $article);
+    }
+    fclose($handle);
+}
 
+// Fonction pour retirer un article du panier
+function retirerDuPanier($index) {
+    $panier = lirePanier();
+    if (isset($panier[$index])) {
+        unset($panier[$index]);
+        $panier = array_values($panier); // Réindexer
+        $handle = fopen('pagemouche/panier.csv', 'w');
+        foreach ($panier as $article) {
+            fputcsv($handle, $article);
+        }
+        fclose($handle);
+    }
+}
+
+// Fonction pour vider le panier
+function viderPanier() {
+    file_put_contents('pagemouche/panier.csv', ''); // Vide le fichier CSV
+}
+
+// Traiter l'ajout d'un article
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POST['product_price'], $_POST['product_image'], $_POST['size'], $_POST['product_description'])) {
+    ajouterAuPanier($_POST['product_name'], $_POST['product_price'], $_POST['product_image'], $_POST['size'], $_POST['product_description']);
+    header('Location: panier.php');
+    exit;
+}
+
+// Traiter la suppression d'un article
+if (isset($_GET['action']) && $_GET['action'] === 'retirer' && isset($_GET['index'])) {
+    $index = (int)$_GET['index'];
+    retirerDuPanier($index);
+    header('Location: panier.php');
+    exit;
+}
+
+// Vider le panier
+if (isset($_GET['action']) && $_GET['action'] === 'vider') {
+    viderPanier();
+    header('Location: panier.php');
+    exit;
+}
+
+// Contenu du panier
+$panier = lirePanier();
+?>
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Panier</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/panier.css">
+    <title>Panier</title>
+    <style>
+        /* Styles CSS ici */
+    </style>
 </head>
-
 <body>
-    <header>
-        <nav>
-            <div class="nav-container">
-                <a href="index.php" class="logo">
-                    <img src="img/logo.svg" alt="Logo Mouches de Combat">
-                </a>
-                <ul class="nav-links">
-                    <li><a href="catalogue.php">Catalogue</a></li>
-                    <li><a href="arene.php">Arène</a></li>
-                    <li><a href="vendre.php">Vendre</a></li>
-                    <li><a href="laboratoire.php">Notre laboratoire</a></li>
-                    <li><a href="contact.php">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
-    <main>
-        <h1>Votre Panier</h1>
-        <?php if ($panierVide): ?>
+    <div class="panier-container">
+        <h1>Mon Panier</h1>
+        <?php if (empty($panier)): ?>
             <p>Votre panier est vide.</p>
         <?php else: ?>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Produit</th>
-                        <th>Taille</th>
-                        <th>Prix</th>
-                        <th>Image</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($_SESSION['panier'] as $produit): ?>
-                        <tr>
-                            <td><img src="<?php echo htmlspecialchars($produit['image']); ?>" alt="Image de produit" width="100"></td>
-                            <td><?php echo htmlspecialchars($produit['name']); ?></td>
-                            <td><?php echo htmlspecialchars($produit['size']); ?></td>
-                            <td><?php echo htmlspecialchars($produit['price']); ?> flies</td>
-                        </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-            <form method="post" action="panier.php">
-                <button type="submit" name="clear_cart">Vider le panier</button>
-            </form>
+            <?php foreach ($panier as $index => $article): ?>
+                <div class="panier-item">
+                    <img src="<?= $article['image'] ?>" alt="<?= $article['nom'] ?>">
+                    <div class="panier-item-details">
+                        <strong><?= $article['nom'] ?> (<?= $article['taille'] ?>)</strong>
+                        <p><?= $article['description'] ?></p>
+                    </div>
+                    <div class="panier-item-price">
+                        <?= $article['prix'] ?> €
+                    </div>
+                    <div class="panier-item-action">
+                        <a href="?action=retirer&index=<?= $index ?>">Retirer</a>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+            <div class="panier-total">
+                <strong>Total :</strong> <?= array_sum(array_column($panier, 'prix')) ?> €
+            </div>
+            <div class="actions">
+                <a href="?action=vider">Vider le panier</a>
+            </div>
         <?php endif; ?>
-    </main>
-
-    <footer>
-        <nav>
-            <ul>
-                <li><a href="contact.php">Contact</a></li>
-                <li><p>&copy; 2024 Mouches de Combat</p></li>
-                <li><a href="mentions-legales.php">Mentions légales</a></li>
-            </ul>
-        </nav>
-    </footer>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const burger = document.querySelector('.burger');
-            const navLinks = document.querySelector('.nav-links');
-
-            burger.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-            });
-        });
-    </script>
+        <div class="actions">
+            <a href="index.php">Retour au catalogue</a>
+        </div>
+    </div>
 </body>
-
 </html>

@@ -43,6 +43,8 @@
 
 <main class="catalogue">
     <h1>Notre Catalogue de Mouches de Combat</h1>
+    <p>Pour combat rapproché, à distance, puissance ou même juste pour de l'affection, nous possédons la mouche dont vous avez besoin.
+</p>
     <div class="container">
         <a href="pagemouche/mouchegladiator.php" class="article">
             <img src="img/mouche-gladiator-ai.jpeg" alt="mouche gladiator image">

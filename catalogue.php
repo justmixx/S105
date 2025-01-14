@@ -36,23 +36,23 @@
     <h2 id="1"> Nos dernières espèces </h2>
     <div class="container">
     <a class="article" href="pagemouche/mouchegladiator.php">  
-        <img src="img/mouche-gladiator-ai.jpeg" alt="mouche gladiator image">
+        <img src="img/mouche-viper.jpeg" alt="Mouche Viper image">
         <div class="texte">
-            <h3> Mouche gladiator </h3>
+            <h3> Mouche Viper </h3>
             <p> Parfaite pour vos premier combat, toujours présente pour les derniers. </p>
         </div>
     </a>
         <div class="article">
-            <img src="img/mouche-gladiator-ai.jpeg" alt="mouche gladiator image">
+            <img src="img/mouche-spider.jpeg" alt="Mouche Spider image">
             <div class="texte">
-                <h3> Mouche gladiator </h3>
+                <h3> Mouche Spider </h3>
                 <p> Parfaite pour vos premier combat, toujours présente pour les derniers. </p>
             </div>
         </div>
         <div class="article">
-            <img src="img/mouche-gladiator-ai.jpeg" alt="mouche gladiator image">
+            <img src="img/mouche-electrizer.jpeg" alt="Mouche Electrizer image">
             <div class="texte">
-                <h3> Mouche gladiator </h3>
+                <h3> Mouche Electrizer </h3>
                 <p> Parfaite pour vos premier combat, toujours présente pour les derniers. </p>
             </div>
         </div>

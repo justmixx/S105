@@ -44,15 +44,20 @@
 <main class="catalogue">
     <h1>Notre Catalogue de Mouches de Combat</h1>
     <p>Pour combat rapproché, à distance, puissance ou même juste pour de l'affection, nous possédons la mouche dont vous avez besoin.
-</p>
+    </p>
+    <div class="premier">
+        <img src="img/mouche-gladiator-ai.jpeg" alt="mouche gladiator image">
+             <h2> Mouche gladiator </h2>
+             <p> Parfaite pour vos premier combat, toujours présente pour les derniers. </p>
+    </div>
     <div class="container">
-        <a href="pagemouche/mouchegladiator.php" class="article">
-            <img src="img/mouche-gladiator-ai.jpeg" alt="mouche gladiator image">
-            <div class="texte">
-                <h2> Mouche gladiator </h2>
-                <p> Parfaite pour vos premier combat, toujours présente pour les derniers. </p>
-            </div>
-        </a>
+    <a class="article" href="pagemouche/mouchegladiator.php">  
+        <img src="img/mouche-gladiator-ai.jpeg" alt="mouche gladiator image">
+        <div class="texte">
+            <h2> Mouche gladiator </h2>
+            <p> Parfaite pour vos premier combat, toujours présente pour les derniers. </p>
+        </div>
+    </a>
         <div class="article">
             <img src="img/mouche-gladiator-ai.jpeg" alt="mouche gladiator image">
             <div class="texte">

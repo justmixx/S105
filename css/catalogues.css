@@ -6,16 +6,25 @@
     display: flex;
     flex-wrap: wrap;
     padding-left: 10px;
-    color: black;
+    color: #252525;
 }
 
 h1 {
+    padding-top:50px;
+    width: 80%;
     font-size: 4em;
-    color:white;
+    color:#ffffff;
     font-weight: 900;
-    width: 90%;
     text-align: center;
     margin: auto;
+}
+
+.catalogue p {
+    color:#252525;
+    font-size: 1.5rem;
+    width: 90%;
+    text-align: left;
+    padding-left: 10%;
 }
 .texte h2 { 
     font-size: 2em;
@@ -27,16 +36,41 @@ h1 {
     max-width: 80%;
 
 }
-.catalogue{
-    text-align: center;
-    align-items: center;
-    margin: 20px;
-    padding: 20px;
-    background-color: #a3abff;
+
+.catalogue {
+    justify-content: center;
+    background-color: #252525;
+   
 }
+.premier {
+    background-color: #4D59D6;
+    border-radius: 5px;
+    columns: 2;
+    width: 70%;
+}
+
+.premier img{
+    object-fit: cover;
+    max-width: 50%;
+    margin: 5%;
+}
+
+.premier h2 {
+    color:#ffffff;
+    font-size: 3rem;
+    font-size: 800;
+    margin: 30px;
+    vertical-align: center;
+}
+
+.premier p {
+    padding-left: 0px;
+} 
+
 .container {
+    padding-top: 50px;
     width: 100%;
-    margin:10px;
+    margin:auto;
     display:flex;
     flex-wrap: wrap;
     justify-content:left;
@@ -46,7 +80,7 @@ h1 {
 }
 
 .article {
-    background-color: white;
+    background-color: #ffffff;
     border-radius: 2%;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -61,8 +95,6 @@ h1 {
     object-fit: cover;
     max-height: 80%;
     margin: 5%;
-   
-   
 }
 
 

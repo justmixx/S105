@@ -3,11 +3,26 @@
 html{
     scroll-behavior: smooth;
 }
+
+body {
+    background-color: #252525;
+}
+h1 {
+    padding-top:50px;
+    width: 90%;
+    font-size: 4em;
+    color:#ffffff;
+    font-weight: 900;
+    text-align: center;
+    margin: auto;
+}
+
 .nav-catalogue {
     width: 90%;
     display: flex;
   align-items: center;
   justify-content: center;
+  margin:30px;
 
 }
 .nav-catalogue ul {
@@ -19,13 +34,13 @@ html{
 }
 .nav-catalogue li {
     color: white;
-    border: 5px #4D59D6;
+    border-color: aliceblue;
+    border: 2px solid;
 padding: 8px;
 margin-bottom: 10px; 
     border-radius: 5px;
     width: auto;
     font-size: 1.5em;
-    color:#ffffff;
     font-weight: 400;
     text-align: center;
     text-justify: center;
@@ -45,16 +60,6 @@ margin-bottom: 10px;
     flex-wrap: wrap;
     padding-left: 10px;
     color: #ffffff;
-}
-
-h1 {
-    padding-top:50px;
-    width: 90%;
-    font-size: 4em;
-    color:#ffffff;
-    font-weight: 900;
-    text-align: center;
-    margin: auto;
 }
 
 
@@ -97,6 +102,8 @@ h1 {
     columns: 2;
     width: 100%;
     padding : 40px;
+    justify-items: center;
+    text-align: center;
 }
 
 .premier img{
@@ -119,10 +126,24 @@ h1 {
     padding-left: 0px;
     color:white;
     justify-content: center;
+    margin-bottom: 40px;
 } 
+.buy-button {
+    padding : 10px 40px;
+    font-size: 1.5rem;
+    background-color: #7883F3;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.buy-button:hover {
+    background-color: #C2C7FA;
+}
+
 
 .container {
     padding-top: 50px;
+    padding-bottom: 50px;
     width: 100%;
     margin:auto;
     display:flex;

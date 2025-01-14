@@ -54,7 +54,8 @@
         <img src="img/mouche-gladiator-ai.jpeg" alt="mouche gladiator image">
                 <h2> L'indétronable Gladiator </h2>
                 <p> Sa robustesse adapté àl'apprentissage, la Gladiator est parfaite pour les débutants, elle saura aussi satisfaire les experts comme tank en combat 2v2. </p>
-  
+             <a href="pagemouche/mouchegladiator.php" class="buy-button">Acheter</a>
+
     </div>
     <h2 id="1"> Nos dernières espèces </h2>
     <div class="container">

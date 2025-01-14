@@ -40,10 +40,10 @@
                 <h3>Suivez-nous :</h3>
                 <div class="social-icons">
                     <a href="https://facebook.com" target="_blank">
-                        <img src="../img/facebook-icon.svg" alt="Facebook">
+                        <img src="/Applications/MAMP/htdocs/S105/img/logo/facebook.png" alt="Facebook">
                     </a>
                     <a href="https://instagram.com" target="_blank">
-                        <img src="../img/instagram-icon.svg" alt="Instagram">
+                        <img src="/Applications/MAMP/htdocs/S105/img/logo/instagram.ico" alt="Instagram">
                     </a>
                     <a href="https://twitter.com" target="_blank">
                         <img src="../img/twitter-icon.svg" alt="Twitter">

@@ -94,9 +94,10 @@ figcaption {
     width: 300px;
     margin: 50px;
     padding: 20px;
-    border-radius: 100px;
+    border-radius: 5px;
     font-size: larger;
     height: auto;
+    transition: background-color 0.3s ease;
 }
 
 .bouton:hover {

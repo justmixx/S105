@@ -9,7 +9,15 @@
     color: black;
 }
 
-.texte h2 {
+h1 {
+    font-size: 4em;
+    color:white;
+    font-weight: 900;
+    width: 90%;
+    text-align: center;
+    margin: auto;
+}
+.texte h2 { 
     font-size: 2em;
     font-weight: 600;   
 }
@@ -58,12 +66,12 @@
 }
 
 
-.texte:hover {
+a:hover {
     text-decoration: underline;
     background-color: #C2C7FA;
     color: #4D59D6;
 }
-.texte:link{
+a:link{
     text-decoration: none;
 
 }

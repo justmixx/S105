@@ -7,35 +7,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'name' => $_POST['product_name'],
         'price' => $_POST['product_price'],
         'image' => $_POST['product_image'],
-        'size' => $_POST['size'],
-        'quantity' => 1, // Définition initiale de la quantité à 1
+        'size' => $_POST['size']
     ];
 
-    if (!isset($_SESSION['panier'])) {
-        $_SESSION['panier'] = [];
-    }
+    $file = 'panier.csv';
+    $handle = fopen($file, 'a'); // Mode "a" pour ajouter à la fin du fichier
+    fputcsv($handle, $product);
+    fclose($handle);
 
-    $found = false;
-    foreach ($_SESSION['panier'] as &$item) {
-        if ($item['name'] === $product['name'] && $item['size'] === $product['size']) {
-            $item['quantity']++; // Augmente la quantité si le produit est déjà présent
-            $found = true;
-            break;
-        }
-    }
-
-    if (!$found) {
-        $_SESSION['panier'][] = $product; // Ajoute le produit avec une quantité de 1
-    }
-
-    header('Location: panier.php');
+    header('Location: ../panier.php');
     exit;
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,7 +29,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/produit.css">
 </head>
-
 <body>
     <header>
         <nav>
@@ -119,5 +104,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     </script>
 </body>
-
 </html>

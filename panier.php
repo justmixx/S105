@@ -1,33 +1,19 @@
 <?php
-session_start();
+$file = 'panier.csv';
+$panier = [];
 
-if (!isset($_SESSION['panier'])) {
-    $_SESSION['panier'] = [];
-}
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['action']) && $_POST['action'] === 'increment') {
-        foreach ($_SESSION['panier'] as &$item) {
-            if ($item['name'] === $_POST['product_name'] && $item['size'] === $_POST['size']) {
-                $item['quantity']++;
-            }
-        }
-    } elseif (isset($_POST['action']) && $_POST['action'] === 'decrement') {
-        foreach ($_SESSION['panier'] as &$item) {
-            if ($item['name'] === $_POST['product_name'] && $item['size'] === $_POST['size']) {
-                $item['quantity'] = max(1, $item['quantity'] - 1);
-            }
-        }
-    } elseif (isset($_POST['action']) && $_POST['action'] === 'remove') {
-        $_SESSION['panier'] = array_filter($_SESSION['panier'], function ($item) {
-            return !($item['name'] === $_POST['product_name'] && $item['size'] === $_POST['size']);
-        });
-    } elseif (isset($_POST['action']) && $_POST['action'] === 'clear') {
-        $_SESSION['panier'] = [];
+// Lecture des données du fichier CSV
+if (file_exists($file)) {
+    $handle = fopen($file, 'r');
+    while (($data = fgetcsv($handle)) !== false) {
+        $panier[] = [
+            'name' => $data[0],
+            'price' => $data[1],
+            'image' => $data[2],
+            'size' => $data[3]
+        ];
     }
-
-    header('Location: panier.php');
-    exit;
+    fclose($handle);
 }
 ?>
 
@@ -37,51 +23,64 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panier</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <h1><a href="index.php">panier</a></h1>
+    <header>
+        <nav>
+            <a href="index.php" class="logo">
+                <img src="img/logo.svg" alt="Logo Mouches de Combat">
+            </a>
+        </nav>
+    </header>
 
-    <?php if (empty($_SESSION['panier'])): ?>
-        <p>Votre panier est vide.</p>
-    <?php else: ?>
-        <table>
-            <thead>
-                <tr>
-                    <th>Image</th>
-                    <th>Nom</th>
-                    <th>Taille</th>
-                    <th>Prix</th>
-                    <th>Quantité</th>
-                    <th>Total</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($_SESSION['panier'] as $item): ?>
+    <main>
+        <h1>Votre Panier</h1>
+
+        <?php if (empty($panier)): ?>
+            <p>Votre panier est vide.</p>
+        <?php else: ?>
+            <table>
+                <thead>
                     <tr>
-                        <td><img src="<?= htmlspecialchars($item['image']) ?>" alt="Produit" width="100"></td>
-                        <td><?= htmlspecialchars($item['name']) ?></td>
-                        <td><?= htmlspecialchars($item['size']) ?></td>
-                        <td><?= htmlspecialchars($item['price']) ?> flies</td>
-                        <td><?= htmlspecialchars($item['quantity']) ?></td>
-                        <td><?= $item['price'] * $item['quantity'] ?> flies</td>
-                        <td>
-                            <form action="panier.php" method="post">
-                                <input type="hidden" name="product_name" value="<?= htmlspecialchars($item['name']) ?>">
-                                <input type="hidden" name="size" value="<?= htmlspecialchars($item['size']) ?>">
-                                <button type="submit" name="action" value="increment">+</button>
-                                <button type="submit" name="action" value="decrement">-</button>
-                                <button type="submit" name="action" value="remove">Supprimer</button>
-                            </form>
-                        </td>
+                        <th>Produit</th>
+                        <th>Taille</th>
+                        <th>Prix</th>
+                        <th>Image</th>
+                        <th>Action</th>
                     </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    <?php foreach ($panier as $index => $item): ?>
+                        <tr>
+                            <td><?= htmlspecialchars($item['name']) ?></td>
+                            <td><?= htmlspecialchars($item['size']) ?></td>
+                            <td><?= htmlspecialchars($item['price']) ?> flies</td>
+                            <td>
+                                <img src="<?= htmlspecialchars($item['image']) ?>" alt="<?= htmlspecialchars($item['name']) ?>" style="width: 50px; height: auto;">
+                            </td>
+                            <td>
+                                <form action="remove_item.php" method="post">
+                                    <input type="hidden" name="index" value="<?= $index ?>">
+                                    <button type="submit">Supprimer</button>
+                                </form>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
 
-        <form action="panier.php" method="post">
-            <button type="submit" name="action" value="clear">Vider le panier</button>
-        </form>
-    <?php endif; ?>
+            <p><strong>Total : 
+                <?php
+                $total = array_sum(array_column($panier, 'price'));
+                echo $total;
+                ?> flies
+            </strong></p>
+
+            <form action="clear_cart.php" method="post">
+                <button type="submit">Vider le panier</button>
+            </form>
+        <?php endif; ?>
+    </main>
 </body>
 </html>

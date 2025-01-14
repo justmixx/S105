@@ -1,17 +1,55 @@
 /* Styles spécifiques pour la page catalogue */
 
+html{
+    scroll-behavior: smooth;
+}
+.nav-catalogue {
+    width: 90%;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.nav-catalogue ul {
+    width: 60%;
+    columns:2;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+.nav-catalogue li {
+    color: white;
+    border: 5px #4D59D6;
+padding: 8px;
+margin-bottom: 10px; 
+    border-radius: 5px;
+    width: auto;
+    font-size: 1.5em;
+    color:#ffffff;
+    font-weight: 400;
+    text-align: center;
+    text-justify: center;
+    list-style: none;
+    
+}
+.nav-catalogue li :visited {
+    color: white;
+}
+.nav-catalogue li :hover {
+    font-weight: 900;
+}
 .texte {
     width: 100%;
     text-align: left;
     display: flex;
     flex-wrap: wrap;
     padding-left: 10px;
-    color: #252525;
+    color: #ffffff;
 }
 
 h1 {
     padding-top:50px;
-    width: 80%;
+    width: 90%;
     font-size: 4em;
     color:#ffffff;
     font-weight: 900;
@@ -19,52 +57,68 @@ h1 {
     margin: auto;
 }
 
+
+.catalogue h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: white;
+    text-justify: left;
+    margin-top: 40px;
+    margin-inline-start: 60px;
+}
 .catalogue p {
-    color:#252525;
+    color:#ffffff;
     font-size: 1.5rem;
     width: 90%;
     text-align: left;
     padding-left: 10%;
 }
-.texte h2 { 
+.texte h3 { 
     font-size: 2em;
-    font-weight: 600;   
+    font-weight: 600; 
+    color:#252525;  
 }
 
 .texte p {
     font-size: 1em;
     max-width: 80%;
+    color: #252525;
 
 }
 
 .catalogue {
-    justify-content: center;
+    justify-items: center;
+
     background-color: #252525;
-   
 }
 .premier {
     background-color: #4D59D6;
     border-radius: 5px;
     columns: 2;
-    width: 70%;
+    width: 100%;
+    padding : 40px;
 }
 
 .premier img{
     object-fit: cover;
     max-width: 50%;
     margin: 5%;
+    margin-left: 130px;
 }
 
 .premier h2 {
     color:#ffffff;
     font-size: 3rem;
     font-size: 800;
-    margin: 30px;
-    vertical-align: center;
+    padding-top: 50px;
+    margin: 20px;
+    align-content: center;
 }
 
 .premier p {
     padding-left: 0px;
+    color:white;
+    justify-content: center;
 } 
 
 .container {
@@ -73,7 +127,7 @@ h1 {
     margin:auto;
     display:flex;
     flex-wrap: wrap;
-    justify-content:left;
+    justify-content:center;
     object-fit: contain;
     gap: 10px;
 
@@ -100,7 +154,6 @@ h1 {
 
 a:hover {
     text-decoration: underline;
-    background-color: #C2C7FA;
     color: #4D59D6;
 }
 a:link{

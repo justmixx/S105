@@ -42,52 +42,69 @@
 
 
 <main class="catalogue">
-    <h1>Notre Catalogue de Mouches de Combat</h1>
-    <p>Pour combat rapproché, à distance, puissance ou même juste pour de l'affection, nous possédons la mouche dont vous avez besoin.
-    </p>
+
+    <h1>Découvrez nos mouches</h1> 
+    <div class="nav-catalogue">
+        <ul>
+            <li><a href="#1">Dernières espèces</a></li>
+            <li><a href="#2">Nos incontournables</a></li>
+        </ul>
+    </div>
     <div class="premier">
         <img src="img/mouche-gladiator-ai.jpeg" alt="mouche gladiator image">
-             <h2> Mouche gladiator </h2>
-             <p> Parfaite pour vos premier combat, toujours présente pour les derniers. </p>
+                <h2> L'indétronable Gladiator </h2>
+                <p> Sa robustesse adapté àl'apprentissage, la Gladiator est parfaite pour les débutants, elle saura aussi satisfaire les experts comme tank en combat 2v2. </p>
+  
     </div>
+    <h2 id="1"> Nos dernières espèces </h2>
     <div class="container">
     <a class="article" href="pagemouche/mouchegladiator.php">  
         <img src="img/mouche-gladiator-ai.jpeg" alt="mouche gladiator image">
         <div class="texte">
-            <h2> Mouche gladiator </h2>
+            <h3> Mouche gladiator </h3>
             <p> Parfaite pour vos premier combat, toujours présente pour les derniers. </p>
         </div>
     </a>
         <div class="article">
             <img src="img/mouche-gladiator-ai.jpeg" alt="mouche gladiator image">
             <div class="texte">
-                <h2> Mouche gladiator </h2>
+                <h3> Mouche gladiator </h3>
                 <p> Parfaite pour vos premier combat, toujours présente pour les derniers. </p>
             </div>
         </div>
         <div class="article">
             <img src="img/mouche-gladiator-ai.jpeg" alt="mouche gladiator image">
             <div class="texte">
-                <h2> Mouche gladiator </h2>
+                <h3> Mouche gladiator </h3>
+                <p> Parfaite pour vos premier combat, toujours présente pour les derniers. </p>
+            </div>
+        </div>
+    </div>
+    <h2 id="2"> Nos incontournables </h2>
+    <div class="container">
+    <a class="article" href="pagemouche/mouchegladiator.php">  
+        <img src="img/mouche-gladiator-ai.jpeg" alt="mouche gladiator image">
+        <div class="texte">
+            <h3> Mouche gladiator </h3>
+            <p> Parfaite pour vos premier combat, toujours présente pour les derniers. </p>
+        </div>
+    </a>
+        <div class="article">
+            <img src="img/mouche-gladiator-ai.jpeg" alt="mouche gladiator image">
+            <div class="texte">
+                <h3> Mouche gladiator </h3>
                 <p> Parfaite pour vos premier combat, toujours présente pour les derniers. </p>
             </div>
         </div>
         <div class="article">
             <img src="img/mouche-gladiator-ai.jpeg" alt="mouche gladiator image">
             <div class="texte">
-                <h2> Mouche gladiator </h2>
+                <h3> Mouche gladiator </h3>
                 <p> Parfaite pour vos premier combat, toujours présente pour les derniers. </p>
             </div>
         </div>
-        <div class="article">
-            <img src="img/mouche-gladiator-ai.jpeg" alt="mouche gladiator image">
-            <div class="texte">
-                <h2> Mouche gladiator </h2>
-                <p> Parfaite pour vos premier combat, toujours présente pour les derniers. </p>
-            </div>
-        </div>
-
-        
+    </div>
+       
     </div>
 </main>
 

@@ -1,24 +1,33 @@
 <?php
 session_start();
 
-// Initialisation du panier si nécessaire
-if (!isset($_SESSION['panier'])) {
-    $_SESSION['panier'] = [];
-}
-
-// Ajout d'un produit au panier
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POST['product_price'], $_POST['product_image'], $_POST['size'])) {
-    $produit = [
-        'nom' => htmlspecialchars($_POST['product_name']),
-        'prix' => (float) $_POST['product_price'],
-        'image' => htmlspecialchars($_POST['product_image']),
-        'taille' => htmlspecialchars($_POST['size'])
+// Ajout au panier
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $product = [
+        'name' => $_POST['product_name'],
+        'price' => $_POST['product_price'],
+        'image' => $_POST['product_image'],
+        'size' => $_POST['size'],
+        'quantity' => 1, // Définition initiale de la quantité à 1
     ];
 
-    // Ajouter le produit au panier
-    $_SESSION['panier'][] = $produit;
+    if (!isset($_SESSION['panier'])) {
+        $_SESSION['panier'] = [];
+    }
 
-    // Rediriger vers le panier
+    $found = false;
+    foreach ($_SESSION['panier'] as &$item) {
+        if ($item['name'] === $product['name'] && $item['size'] === $product['size']) {
+            $item['quantity']++; // Augmente la quantité si le produit est déjà présent
+            $found = true;
+            break;
+        }
+    }
+
+    if (!$found) {
+        $_SESSION['panier'][] = $product; // Ajoute le produit avec une quantité de 1
+    }
+
     header('Location: panier.php');
     exit;
 }
@@ -56,9 +65,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
 
                 <form action="mouchegladiator.php" method="post">
                     <input type="hidden" name="product_name" value="Mouche Gladiator">
-                    <input type="hidden" name="product_price" id="product_price" value="200">
-                    <input type="hidden" name="product_image" id="product_image" value="../img/png/mouchegladiator/large.png">
-                    <input type="hidden" name="size" id="size" value="large">
+                    <input type="hidden" name="product_price" id="product_price" value="50">
+                    <input type="hidden" name="product_image" id="product_image" value="../img/png/mouchegladiator/small.png">
+                    <input type="hidden" name="size" id="size" value="small">
 
                     <p><strong>Taille :</strong></p>
                     <div class="size-options">
@@ -79,25 +88,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
             const imageElement = document.getElementById("product-image");
             const productPrice = document.getElementById("product_price");
             const productImage = document.getElementById("product_image");
+            const sizeField = document.getElementById("size");
 
             if (size === "small") {
-                priceElement.innerText = "Prix : 100 flies";
+                priceElement.innerText = "Prix : 50 flies";
                 imageElement.src = "../img/png/mouchegladiator/small.png";
                 productPrice.value = "50";
                 productImage.value = "../img/png/mouchegladiator/small.png";
+                sizeField.value = "small";
             } else if (size === "medium") {
-                priceElement.innerText = "Prix : 200 flies";
+                priceElement.innerText = "Prix : 100 flies";
                 imageElement.src = "../img/png/mouchegladiator/medium.png";
                 productPrice.value = "100";
                 productImage.value = "../img/png/mouchegladiator/medium.png";
+                sizeField.value = "medium";
             } else if (size === "large") {
-                priceElement.innerText = "Prix : 300 flies";
+                priceElement.innerText = "Prix : 150 flies";
                 imageElement.src = "../img/png/mouchegladiator/large.png";
                 productPrice.value = "150";
                 productImage.value = "../img/png/mouchegladiator/large.png";
+                sizeField.value = "large";
             }
 
             document.getElementById("add-to-cart").disabled = false;
+
             document.querySelectorAll(".size-button").forEach(button => {
                 button.classList.remove("selected");
             });

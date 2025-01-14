@@ -35,8 +35,8 @@
             <!-- Informations de contact -->
             <div class="contact-info">
                 <h2>Informations de contact</h2>
-                <p><strong>Téléphone :</strong> +33 1 23 45 67 89</p>
-                <p><strong>Email :</strong> contact@mouchesdecombat.fr</p>
+                <p><strong>Téléphone :</strong> +33 6 13 67 52 17</p>
+                <p><strong>Email :</strong> justin.gonnet@gmail.com</p>
                 <h3>Suivez-nous :</h3>
                 <div class="social-icons">
                     <a href="https://facebook.com" target="_blank">

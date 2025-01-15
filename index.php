@@ -26,19 +26,19 @@ $titre='TITRE';
                 <div class="overlay">
                     <h2>Vente de Mouches</h2>
                 </div>
-                <img src="img/mouche-viper.jpeg" alt="Image 1">
+                <img src="img/slider/slider1.jpeg" alt="Image 1">
             </div>
             <div class="slide">
                 <div class="overlay">
-                    <h2>Vente de Mouches</h2>
+                    <h2>Des mouches à technologie de pointe</h2>
                 </div>
-                <img src="img/mouche-spider.jpeg" alt="Image 2">
+                <img src="img/slider/slider2.jpeg" alt="Image 2">
             </div>
             <div class="slide">
                 <div class="overlay">
-                    <h2>Vente de Mouches</h2>
+                    <h2>Les mouches les moin cher du marchés</h2>
                 </div>
-                <img src="img/mouche-gladiator.jpeg" alt="Image 3">
+                <img src="img/slider/slider3.jpeg" alt="Image 3">
             </div>
         </div>
         <button class="prev" onclick="changeSlide(-1)">&#10094;</button>

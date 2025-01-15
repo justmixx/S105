@@ -13,13 +13,23 @@ if (isset($_GET['name'])) {
 
                 // Description du produit
                 $description = $data[7];
+                $etoile1 = $data[8];
+                $description1 = $data[9];
+                $etoile2 = $data[10];
+                $description2 = $data[11];
+                $etoile3 = $data[12];
+                $description3 = $data[13];
                 ?>
                 <!DOCTYPE html>
                 <html lang="en">
                 <head>
                     <meta charset="UTF-8">
                     <title><?= $data[0]; ?></title>
-                    <link rel="stylesheet" href="style.css">
+                    <link rel="stylesheet" href="css/styles.css">
+                    <link rel="stylesheet" href="css/produit.css">
+                    <header>
+                    <?php include('include/header.php');?>
+                    </header>
                     <script>
                         // Fonction pour changer l'image et le prix en fonction de la taille
                         function updateProductDetails(size) {
@@ -36,7 +46,7 @@ if (isset($_GET['name'])) {
                     </script>
                 </head>
                 <body>
-                    <h1><?= $data[0]; ?></h1>
+                    <h1 class="title"><?= $data[0]; ?></h1>
                     <img id="product-image" src="<?= $sizes['small']['image']; ?>" alt="<?= $data[0]; ?>" width="300">
                     <p>Prix : <span id="product-price"><?= $sizes['small']['price']; ?> €</span></p>
                     <p>Description : <?= $description; ?></p>
@@ -52,7 +62,26 @@ if (isset($_GET['name'])) {
                         </select>
                         <button type="submit">Ajouter au panier</button>
                     </form>
-                    <a href="index.php">Retour à la boutique</a>
+                        <section class="black-section">
+                        <h2>Information</h2>
+                        <div class="stats">
+                            <div class="info">
+                                <h3>Résistance</h3>
+                                <p class="etoiles"><?= $etoile1; ?></p>
+                                <p class="description"><?= $description1; ?></p>
+                            </div>
+                            <div class="info">
+                                <h3>Endurance</h3>
+                                <p class="etoiles"><?= $etoile2; ?></p>
+                                <p class="description"><?= $description2; ?></p>
+                            </div>
+                            <div class="info">
+                                <h3>Force</h3>
+                                <p class="etoiles"><?= $etoile3; ?></p>
+                                <p class="description"><?= $description3; ?></p>
+                            </div>
+                        </div>
+                    </section>
                 </body>
                 </html>
                 <?php

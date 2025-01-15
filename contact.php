@@ -54,7 +54,7 @@
     </main>
 
     <footer>
-    <?php include('include/footer.php');?>
+        <?php include('include/footer.php');?>
     </footer>
             <!-- responsive nav -->
     <script>

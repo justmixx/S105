@@ -22,8 +22,8 @@
     <h1>Découvrez nos mouches</h1> 
     <div class="nav-catalogue">
         <ul>
-            <li><a href="#1">Dernières espèces</a></li>
-            <li><a href="#2">Nos incontournables</a></li>
+            <li><a class="button" href="#un">Dernières espèces</a></li>
+            <li><a class="button" href="#deux">Nos incontournables</a></li>
         </ul>
     </div>
      <?php
@@ -33,14 +33,14 @@ if (($handle = fopen("products.csv", "r")) !== FALSE) {
     if (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
         echo "
         <div class='premier'>
-            <div class='box-img'>
-            <img src='{$data[4]}' alt='{$data[0]}'>
-            </div>
+             <a href='product.php?name={$data[0]}' class='box-img'>
+           <img src='{$data[4]}' alt='{$data[0]}'>
+            </a>
             <div class='box-texte'>
                 <h2>NOUVEAU</h2>
                 <h3>{$data[0]}</h3>
                 <p>{$data[7]}</p>
-            <a href='product.php?name={$data[0]}' class='buy-button'>{$data[1]}€</a>
+            <a href='product.php?name={$data[0]}' class='button'>{$data[1]}€</a>
             </div>
         </div>";
         }
@@ -48,7 +48,7 @@ if (($handle = fopen("products.csv", "r")) !== FALSE) {
     }
     ?>
     </div>
-    <h2 id="1"> Nos dernières espèces </h2>
+    <h2 id="un"> Nos dernières espèces </h2>
     <div class="container">
     <?php
         // Charger les produits depuis le CSV
@@ -64,7 +64,7 @@ if (($handle = fopen("products.csv", "r")) !== FALSE) {
                     </div>
                     <div class='box-texte'>
                         <h3>{$data[0]}</h3>
-                        <p>{$data[7]} €</p>
+                        <p><Résistence {$data[8]}</p>
                     </div>
                 </a>";
             }
@@ -73,7 +73,7 @@ if (($handle = fopen("products.csv", "r")) !== FALSE) {
         ?>
 
     </div>
-    <h2 id="2"> Nos incontournables </h2>
+    <h2 id="deux"> Nos incontournables </h2>
     <div class="container">
     <a class="article" href="pagemouche/mouchegladiator.php">  
         <img src="img/mouche-gladiator.jpeg" alt="mouche gladiator image">

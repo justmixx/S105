@@ -51,14 +51,14 @@ $titre='TITRE';
         <section>
             <h2>Il n’a jamais été meilleur temps pour dresser une mouche.</h2>
             <p class="text">Pour les fêtes, offrez la mouche qui fera bourdonner le cœur de votre famille.</p>
-            <a class="bouton" href="catalogue.php">Explorer notre catalogue</a>
+            <a class="button bouton" href="catalogue.php">Explorer notre catalogue</a>
         </section>
 
         <!-- Deuxième section à droite de la première -->
         <section>
             <h2>Les combats de mouches accessibles facilement.</h2>
             <p class="text">Avec notre système de combat, il n'a jamais été aussi simple de combattre.</p>
-            <a class="bouton" href="arene.php">Entrez dans l'arène</a>
+            <a class="bouton button" href="arene.php">Entrez dans l'arène</a>
         </section>
     </div>
 

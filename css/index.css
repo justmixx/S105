@@ -188,18 +188,35 @@ button {
 }
 .prev img {
     width: 40px;
+    height: 40px;
+    transition: transform 1s;
+}
+
+.prev img:hover{
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.5);
 }
 
 .next {
     right: 5%;
     border-radius: 100%;
 }
+
 .next img {
 width: 40px;
+height: 40px;
+  transition: transform 1s;
+}
+.next img:hover{
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.5);
 }
 
 button:hover {
     background-color: rgba(0, 0, 0, 0.8);
+    
 }
 
 @media (max-width: 768px) {

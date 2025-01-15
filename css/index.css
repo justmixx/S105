@@ -126,10 +126,102 @@ figcaption {
         margin: 20px 0;   
     }
 
-
     .dessin {
         width: 100%;   
         max-width: 100%;  
         height: auto;  
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Empêche les barres de défilement horizontales */
+}
+
+.slider-container {
+    position: relative;
+    width: 100vw; /* La largeur prend toute la vue */
+    height: 100vh; /* La hauteur prend toute la vue */
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    transition: transform 1s ease-in-out;  /* Transition plus lente (1 seconde) */
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: relative;
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Assure que l'image couvre toute la largeur et la hauteur */
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 1;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    /* text-shadow retiré */
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 1.5rem;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2rem; /* Réduit la taille du texte sur mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.5rem; /* Encore plus petit sur les très petits écrans */
     }
 }

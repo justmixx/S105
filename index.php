@@ -20,6 +20,32 @@ $titre='TITRE';
     <?php include('include/header.php');?>
     </header>
 
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide">
+                <div class="overlay">
+                    <h2>Vente de Mouches</h2>
+                </div>
+                <img src="img/mouche-viper.jpeg" alt="Image 1">
+            </div>
+            <div class="slide">
+                <div class="overlay">
+                    <h2>Vente de Mouches</h2>
+                </div>
+                <img src="img/mouche-spider.jpeg" alt="Image 2">
+            </div>
+            <div class="slide">
+                <div class="overlay">
+                    <h2>Vente de Mouches</h2>
+                </div>
+                <img src="img/mouche-gladiator.jpeg" alt="Image 3">
+            </div>
+        </div>
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+
+    <script src="script.js"></script>
     <div class="content-container">
         <!-- Première section -->
         <section>

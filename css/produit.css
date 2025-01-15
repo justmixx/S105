@@ -198,6 +198,10 @@ padding: 10px;
     .description {
         font-size: 0.9rem;
     }
+
+    .black-section {
+        height: 100%;
+    }
 }
 
 @media (max-width: 480px) {

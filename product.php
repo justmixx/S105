@@ -6,9 +6,9 @@ if (isset($_GET['name'])) {
             if ($data[0] == $product_name) {
                 // Définir les données spécifiques pour chaque taille
                 $sizes = [
-                    "small" => ["price" => $data[1], "image" => "images/small.jpg"],
-                    "medium" => ["price" => $data[1] + 5, "image" => "images/medium.jpg"],
-                    "large" => ["price" => $data[1] + 10, "image" => "images/large.jpg"],
+                    "small" => ["price" => $data[1], "image" => $data[4]],
+                    "medium" => ["price" => $data[2], "image" => $data[5]],
+                    "large" => ["price" => $data[3], "image" => $data[6]],
                 ];
                 ?>
                 <!DOCTYPE html>
@@ -26,7 +26,7 @@ if (isset($_GET['name'])) {
                             priceElement.textContent = sizes[size].price + " €";
                             imageElement.src = sizes[size].image;
 
-                            // Mise à jour des champs cachés dans le formulaire pour soumettre les bonnes données
+                            // Mise à jour des champs cachés dans le formulaire
                             document.getElementById('hidden-price').value = sizes[size].price;
                             document.getElementById('hidden-image').value = sizes[size].image;
                         }

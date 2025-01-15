@@ -1,22 +1,17 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $product = $_POST['product'];
-    $price = $_POST['price'];
     $size = $_POST['size'];
-    
-    // Associer une image spécifique en fonction de la taille
-    $images = [
-        'small' => 'images/small.jpg',
-        'medium' => 'images/medium.jpg',
-        'large' => 'images/large.jpg',
-    ];
-    $image = $images[$size];
+    $price = $_POST['price'];
+    $image = $_POST['image'];
 
-    // Ajouter au fichier CSV
-    $cart_file = fopen("cart.csv", "a");
-    fputcsv($cart_file, [$product, $price, $size, $image]);
-    fclose($cart_file);
+    $cart_file = 'cart.csv';
 
-    echo "Produit ajouté au panier avec succès ! <a href='index.php'>Retour à la boutique</a>";
+    // Ajouter les détails du produit au fichier CSV
+    $handle = fopen($cart_file, 'a');
+    fputcsv($handle, [$product, $size, $price, $image]);
+    fclose($handle);
+
+    echo "Produit ajouté au panier avec succès ! <a href='panier.php'>Voir le panier</a>";
 }
 ?>

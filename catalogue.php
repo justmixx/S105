@@ -36,7 +36,7 @@ if (($handle = fopen("products.csv", "r")) !== FALSE) {
             <img src='{$data[4]}' alt='{$data[0]}'>
                 <h2>{$data[0]}</h2>
                 <p>{$data[7]} €</p>
-            <a href='pagemouche/fiche-produit.php?product_name=" . urlencode($data['name']) . "'' class='buy-button'>Acheter</a>
+            <a href='pagemouche/mouchegladiator.php' class='buy-button'>Acheter</a>
             </div>
         </div>";
         }
@@ -65,6 +65,7 @@ if (($handle = fopen("products.csv", "r")) !== FALSE) {
             fclose($handle);
         }
         ?>
+
     </div>
     <h2 id="2"> Nos incontournables </h2>
     <div class="container">

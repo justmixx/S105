@@ -33,10 +33,14 @@ if (($handle = fopen("products.csv", "r")) !== FALSE) {
     if (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
         echo "
         <div class='premier'>
+            <div class='box-img'>
             <img src='{$data[4]}' alt='{$data[0]}'>
+            </div>
+            <div class='box-texte'>
                 <h2>{$data[0]}</h2>
                 <p>{$data[7]} €</p>
-            <a href='pagemouche/mouchegladiator.php' class='buy-button'>Acheter</a>
+            <a href='product.php?name={$data[0]}' class='buy-button'>Acheter</a>
+            </div>
             </div>
         </div>";
         }
@@ -55,8 +59,10 @@ if (($handle = fopen("products.csv", "r")) !== FALSE) {
             while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
                 echo "
                 <a class='article' href='product.php?name={$data[0]}'>
+                    <div class='box-img'>
                     <img src='{$data[4]}' alt='{$data[0]}'>
-                    <div class='texte'>
+                    </div>
+                    <div class='box-texte'>
                         <h3>{$data[0]}</h3>
                         <p>{$data[7]} €</p>
                     </div>

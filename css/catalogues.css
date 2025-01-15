@@ -69,14 +69,12 @@ margin-bottom: 10px;
     font-weight: 800;
     color: white;
     text-justify: left;
-    margin-top: 40px;
-    margin-inline-start: 60px;
 }
 .catalogue p {
     color:#ffffff;
     font-size: 1.5rem;
     width: 90%;
-    text-align: left;
+    text-align: center;
     padding-left: 10%;
 }
 .texte h3 { 
@@ -94,41 +92,67 @@ margin-bottom: 10px;
 
 .catalogue {
     justify-items: center;
-
     background-color: #252525;
 }
+
+.box-img {
+    padding: 2%;
+    height: 100%;
+    max-width: 50%;
+    align-content: center;
+}
+
+.box-texte {
+    max-width: 50%;
+    height: 100%;
+    text-align: center;
+    text-justify: center;
+}
+.box-texte p {
+    font-size: 1em;
+    max-width: 80%;
+    color: #252525;
+}
+
+.box-texte h3{
+    font-size: 2em;
+    font-weight: 600; 
+    color:#252525;  
+    text-align: center;
+    text-justify: center;
+
+}
+
 .premier {
     background-color: #4D59D6;
-    border-radius: 5px;
-    columns: 2;
+    padding: 2%;
     width: 100%;
-    padding : 40px;
-    justify-items: center;
-    text-align: center;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
+    gap: 10px;
+
 }
 
 .premier img{
     object-fit: cover;
-    max-width: 80%;
-    margin: 5%;
-    margin-left: 130px;
+    width: 100%;  /* L'image occupe toute la largeur du parent */
+    height: auto; /* L'image conserve ses proportions */
+    max-height: 100%;  /* Empêche l'image de dépasser la hauteur de son parent */
+    border-radius: 5px;
 }
 
 .premier h2 {
     color:#ffffff;
     font-size: 3rem;
     font-size: 800;
-    padding-top: 100px;
-    margin: 20px;
-    align-content: center;
 }
 
-.premier p {
-    padding-left: 40px;
+.premier .box-texte p {
     color:white;
-    justify-content: center;
-    margin-bottom: 40px;
+    margin-bottom: 10%;
 } 
 .buy-button {
     padding : 10px 40px;
@@ -164,23 +188,15 @@ margin-bottom: 10px;
     justify-content: center;
     flex: 1 1 calc(33.33% - 10px);
     min-width: calc(33.33% - 10px); /* Empêche un rétrécissement trop grand */
+    max-width: 33.33%;
 }
 
-/* Cette règle assure que même si il n'y a que 1 ou 2 éléments sur la dernière ligne, ils prennent chacun un tiers de la largeur */
-.container > .article:nth-child(3n+1) {
-    margin-left: 0; /* Ajoute un espacement gauche si nécessaire */
-}
 .article img {
     object-fit: cover;
     width: 100%;  /* L'image occupe toute la largeur du parent */
     height: auto; /* L'image conserve ses proportions */
     max-height: 100%;  /* Empêche l'image de dépasser la hauteur de son parent */
-    margin: 2%;
     border-radius: 5px;
-}
-
-.bg-blur{
-    object-fit:fill;
 }
 
 a:hover {
@@ -198,12 +214,14 @@ text-decoration: none;
 
 @media (max-width: 960px) {
     .article {
-        flex: 1 1 calc(100% - 10px); /* 2 articles par ligne sur les écrans moyens */
+        flex: 1 1 calc(50% - 10px); /* 2 articles par ligne sur les écrans moyens */
+        max-width: 50%;
     }
 }
 
 @media (max-width: 480px) {
     .article {
         flex: 1 1 calc(100% - 10px); /* 1 article par ligne sur les petits écrans */
+        max-width: 100%;
     }
 }

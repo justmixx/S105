@@ -50,10 +50,10 @@
           // Lire les données et générer le HTML
           while (($ligne = fgetcsv($handle)) !== false) {
               $produit = array_combine($entetes, $ligne);
-              echo '<a class="article" href="' . htmlspecialchars($produit[4]) . '">';
-              echo '<img src="' . htmlspecialchars($produit[3]) . '" alt="' . htmlspecialchars($produit[5]) . '">';
+              echo '<a class="article" href="' . htmlspecialchars($produit[]) . '">';
+              echo '<img src="' . htmlspecialchars($produit['SmallImage']) . '" alt="' . htmlspecialchars($produit['Nom']) . '">';
               echo '<div class="texte">';
-              echo '<h3>' . htmlspecialchars($produit[5]) . '</h3>';
+              echo '<h3>' . htmlspecialchars($produit['Nom']) . '</h3>';
               echo '</div>';
               echo '</a>';
           }

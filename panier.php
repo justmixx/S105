@@ -41,8 +41,8 @@ if (isset($_POST['clear_cart'])) {
             while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
                 echo "<tr>
                         <td>{$data[0]}</td>
-                        <td>{$data[2]}</td>
-                        <td>{$data[1]} €</td>
+                        <td>{$data[1]}</td>
+                        <td>{$data[2]} €</td>
                         <td><img src='{$data[3]}' alt='{$data[0]}' width='50'></td>
                     </tr>";
             }

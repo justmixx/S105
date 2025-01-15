@@ -4,8 +4,9 @@ html{
     scroll-behavior: smooth;
 }
 
-body {
-    background-color: #252525;
+
+main {
+    background-image: url("img/slider/slider1.jpeg");
 }
 h1 {
     padding-top:50px;
@@ -165,6 +166,10 @@ margin-bottom: 10px;
     color: #4D59D6;
     border-radius: 5px;
 }
+
+.buy-button:link{
+    color:#4D59D6;
+}
 .buy-button:hover {
     font-weight: 800;
     color: #4d59d6;
@@ -209,6 +214,7 @@ a:hover {
 }
 a:link{
     text-decoration: none;
+    color: #ffffff;
 
 
 }
@@ -222,11 +228,19 @@ text-decoration: none;
         flex: 1 1 calc(50% - 10px); /* 2 articles par ligne sur les écrans moyens */
         max-width: 50%;
     }
+    .box-img {
+        max-width: 80%;
+    }
+    .box-texte {
+        max-width: 80%;
+    }
 }
+
 
 @media (max-width: 480px) {
     .article {
         flex: 1 1 calc(100% - 10px); /* 1 article par ligne sur les petits écrans */
         max-width: 100%;
     }
+
 }

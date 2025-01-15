@@ -36,34 +36,22 @@
     <h2 id="1"> Nos dernières espèces </h2>
     <div class="container">
     <?php
-      // Chemin vers le fichier CSV
-      $fichier_csv = 'products.csv';
+        // Charger les produits depuis le CSV
+        if (($handle = fopen("products.csv", "r")) !== FALSE) {
+            while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+                echo "
+                <a class='article' href='product.php?name={$data[0]}'>
+                    <img src='{$data[4]}' alt='{$data[0]}'>
+                    <div class='texte'>
+                        <h3>{$data[0]}</h3>
+                        <p>Prix : {$data[1]} €</p>
+                    </div>
+                </a>";
+            }
+            fclose($handle);
+        }
+        ?>
 
-      // Vérifier si le fichier existe
-      if (file_exists($fichier_csv)) {
-          // Ouvrir le fichier CSV
-          $handle = fopen($fichier_csv, 'r');
-
-          // Lire les en-têtes
-          $entetes = fgetcsv($handle);
-
-          // Lire les données et générer le HTML
-          while (($ligne = fgetcsv($handle)) !== false) {
-              $produit = array_combine($entetes, $ligne);
-              echo '<a class="article" href="' . htmlspecialchars($produit[]) . '">';
-              echo '<img src="' . htmlspecialchars($produit['SmallImage']) . '" alt="' . htmlspecialchars($produit['Nom']) . '">';
-              echo '<div class="texte">';
-              echo '<h3>' . htmlspecialchars($produit['Nom']) . '</h3>';
-              echo '</div>';
-              echo '</a>';
-          }
-
-          // Fermer le fichier
-          fclose($handle);
-      } else {
-          echo '<p>Le fichier CSV n\'a pas été trouvé.</p>';
-      }
-    ?>
         <div class="article">
             <img src="img/mouche-spider.jpeg" alt="Mouche Spider image">
             <div class="texte">

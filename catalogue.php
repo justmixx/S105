@@ -65,21 +65,6 @@ if (($handle = fopen("products.csv", "r")) !== FALSE) {
             fclose($handle);
         }
         ?>
-
-        <div class="article">
-            <img src="img/mouche-spider.jpeg" alt="Mouche Spider image">
-            <div class="texte">
-                <h3> Mouche Spider </h3>
-                <p> Parfaite pour vos premier combat, toujours présente pour les derniers. </p>
-            </div>
-        </div>
-        <div class="article">
-            <img src="img/mouche-electrizer.jpeg" alt="Mouche Electrizer image">
-            <div class="texte">
-                <h3> Mouche Electrizer </h3>
-                <p> Parfaite pour vos premier combat, toujours présente pour les derniers. </p>
-            </div>
-        </div>
     </div>
     <h2 id="2"> Nos incontournables </h2>
     <div class="container">

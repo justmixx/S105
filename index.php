@@ -17,7 +17,7 @@ $titre='TITRE';
 
 <body>
     <header>
-    <?php include('/Applications/MAMP/htdocs/S105/include/header.php');?>
+    <?php include('include/header.php');?>
     </header>
 
     <div class="content-container">
@@ -43,7 +43,7 @@ $titre='TITRE';
     </div>
 
     <footer>
-    <?php include('/Applications/MAMP/htdocs/S105/include/footer.php');?>
+    <?php include('include/footer.php');?>
     </footer>
 
     <script>

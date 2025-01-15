@@ -13,7 +13,7 @@
 
 <body>
 <header>
-<?php include('/Applications/MAMP/htdocs/S105/include/header.php');?>
+<?php include('include/header.php');?>
     </header>
 
     <main>
@@ -54,7 +54,7 @@
     </main>
 
     <footer>
-    <?php include('/Applications/MAMP/htdocs/S105/include/footer.php');?>
+    <?php include('include/footer.php');?>
     </footer>
             <!-- responsive nav -->
     <script>

@@ -43,7 +43,7 @@ $titre='TITRE';
     </div>
 
     <footer>
-    <?php include('include/footer.php');?>
+        <?php include('include/footer.php');?>
     </footer>
 
     <script>

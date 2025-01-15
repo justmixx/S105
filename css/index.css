@@ -32,13 +32,12 @@ section {
 }
 
 .dessin {
+    position: absolute;
     display: flex;
     margin: auto;
     height: auto;
-    width: 80%;  
-    max-width: 80%;  
+    width: 100%;   
     height: auto;  
-    border-radius: 15px; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -125,17 +124,6 @@ figcaption {
     }
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    overflow-x: hidden; /* Empêche les barres de défilement horizontales */
-}
-
 .slider-container {
     position: relative;
     width: 100vw; /* La largeur prend toute la vue */
@@ -195,11 +183,19 @@ button {
 }
 
 .prev {
-    left: 10px;
+    left: 5%;
+    border-radius: 100%;
+}
+.prev img {
+    width: 40px;
 }
 
 .next {
-    right: 10px;
+    right: 5%;
+    border-radius: 100%;
+}
+.next img {
+width: 40px;
 }
 
 button:hover {

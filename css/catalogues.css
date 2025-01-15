@@ -149,7 +149,11 @@ margin-bottom: 10px;
     font-size: 3rem;
     font-size: 800;
 }
-
+.premier h3 {
+    color:#ffffff;
+    font-size: 2rem;
+    font-size: 800;
+}
 .premier .box-texte p {
     color:white;
     margin-bottom: 10%;
@@ -205,6 +209,7 @@ a:hover {
 }
 a:link{
     text-decoration: none;
+
 
 }
 a:visited{

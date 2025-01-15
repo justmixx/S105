@@ -14,4 +14,4 @@ function changeSlide(direction) {
     document.querySelector('.slider').style.transform = `translateX(-${currentSlide * 100}%)`;
 }
 
-setInterval(() => changeSlide(1), 3000); // Changement automatique toutes les 3 secondes
+setInterval(() => changeSlide(1), 6000); // Changement automatique toutes les 3 secondes

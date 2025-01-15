@@ -37,9 +37,10 @@ if (($handle = fopen("products.csv", "r")) !== FALSE) {
             <img src='{$data[4]}' alt='{$data[0]}'>
             </div>
             <div class='box-texte'>
-                <h2>{$data[0]}</h2>
-                <p>{$data[7]} €</p>
-            <a href='product.php?name={$data[0]}' class='buy-button'>Acheter</a>
+                <h2>NOUVEAU</h2>
+                <h3>{$data[0]}</h3>
+                <p>{$data[7]}</p>
+            <a href='product.php?name={$data[0]}' class='buy-button'>{$data[1]}€</a>
             </div>
         </div>";
         }

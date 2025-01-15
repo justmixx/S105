@@ -41,8 +41,8 @@ $titre='TITRE';
                 <img src="img/slider/slider3.jpeg" alt="Image 3">
             </div>
         </div>
-        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
-        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        <button class="prev" onclick="changeSlide(-1)"><img src="img/fleches/gauche.png" alt="avant"></button>
+        <button class="next" onclick="changeSlide(1)"><img src="img/fleches/droite.png" alt="arrière"></button>
     </div>
 
     <script src="script.js"></script>

@@ -46,31 +46,30 @@ if (isset($_GET['name'])) {
                     </script>
                 </head>
                 <body>
-                <main>
                     <div class="product-details">
                         <!-- Image du produit -->
-                        <img id="product-image" src="<?= $sizes['small']['image']; ?>" alt="<?= $data[0]; ?>" width="300">
-                        <!-- Détails et formulaire -->
-                        <div class="product-info">
-                            <h1 class="title"><?= $data[0]; ?></h1>
-                            <p>Description : <?= $description; ?></p>
-
-                            <form action="add_to_cart.php" method="post">
-                                <input type="hidden" name="product" value="<?= $data[0]; ?>">
-                                <input type="hidden" name="price" id="hidden-price" value="<?= $sizes['small']['price']; ?>">
-                                <input type="hidden" name="image" id="hidden-image" value="<?= $sizes['small']['image']; ?>">
-
-                                <label for="size">Choisissez une taille :</label>
-                                <select name="size" id="size" onchange="updateProductDetails(this.value)">
-                                    <option value="small">Small</option>
-                                    <option value="medium">Medium</option>
-                                    <option value="large">Large</option>
-                                </select>
-                                <button type="submit" class="add-to-cart-button" id="add-to-cart" disabled>Ajouter au Panier</button>
-                            </form>
+                        <div class="product-image">
+                            <img id="product-image" src="<?= $sizes['small']['image']; ?>" alt="<?= $data[0]; ?>">
                         </div>
-                    </div>
-                </main> 
+                            <div class="product-info">
+                                <h2 class="title"><?= $data[0]; ?></h2>
+                                <p>Description : <?= $description; ?></p>
+                                <p>Prix : <span id="product-price"><?= $sizes['small']['price']; ?> €</span></p>
+                                <form action="add_to_cart.php" method="post">
+                                    <input type="hidden" name="product" value="<?= $data[0]; ?>">
+                                    <input type="hidden" name="price" id="hidden-price" value="<?= $sizes['small']['price']; ?>">
+                                    <input type="hidden" name="image" id="hidden-image" value="<?= $sizes['small']['image']; ?>">
+                                    <label for="size">Choisissez une taille :</label>
+                                    <select name="size" id="size" onchange="updateProductDetails(this.value)">
+                                        <option value="small">Small</option>
+                                        <option value="medium">Medium</option>
+                                        <option value="large">Large</option>
+                                    </select>
+                                    <button type="submit" class="add-to-cart-button" id="add-to-cart">Ajouter au panier</button>
+                                </form>
+                            </div>
+                        </div>
+                        
                         <section class="black-section">
                         <h2>Information</h2>
                         <div class="stats">
@@ -94,6 +93,7 @@ if (isset($_GET['name'])) {
                     <footer>
                         <?php include('include/footer.php');?>
                     </footer>
+
                 </body>
                 </html>
                 <?php

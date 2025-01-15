@@ -226,3 +226,25 @@ padding: 10px;
         font-size: 0.8rem;
     }
 }
+
+
+/* Style du sélecteur */
+select {
+    background-color: #7883F3; /* violet clair */
+    color: white; /* texte en blanc */
+    border: 2px solid #7883F3; /* bordure violet foncé */
+    border-radius: 5px; /* coins arrondis */
+    padding: 10px; /* espacement interne */
+    font-size: 16px; /* taille de police */
+    outline: none; /* retire le contour par défaut */
+  }
+  
+  /* Style du menu déroulant */
+  select:hover {
+    background-color: #C2C7FA; /* violet plus clair au survol */
+  }
+  
+  select:focus {
+    border-color: #7883F3; /* violet clair au focus */
+  }
+  

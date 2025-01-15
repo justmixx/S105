@@ -36,7 +36,7 @@ if (($handle = fopen("products.csv", "r")) !== FALSE) {
             <img src='{$data[4]}' alt='{$data[0]}'>
                 <h2>{$data[0]}</h2>
                 <p>{$data[7]} €</p>
-            <a href='pagemouche/mouchegladiator.php' class='buy-button'>Acheter</a>
+            <a href='product.php?name={$data[0]}' class='buy-button'>Acheter</a>
             </div>
         </div>";
         }

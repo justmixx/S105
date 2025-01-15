@@ -35,13 +35,35 @@
     </div>
     <h2 id="1"> Nos dernières espèces </h2>
     <div class="container">
-    <a class="article" href="pagemouche/mouchegladiator.php">  
-        <img src="img/mouche-viper.jpeg" alt="Mouche Viper image">
-        <div class="texte">
-            <h3> Mouche Viper </h3>
-            <p> Parfaite pour vos premier combat, toujours présente pour les derniers. </p>
-        </div>
-    </a>
+    <?php
+      // Chemin vers le fichier CSV
+      $fichier_csv = 'products.csv';
+
+      // Vérifier si le fichier existe
+      if (file_exists($fichier_csv)) {
+          // Ouvrir le fichier CSV
+          $handle = fopen($fichier_csv, 'r');
+
+          // Lire les en-têtes
+          $entetes = fgetcsv($handle);
+
+          // Lire les données et générer le HTML
+          while (($ligne = fgetcsv($handle)) !== false) {
+              $produit = array_combine($entetes, $ligne);
+              echo '<a class="article" href="' . htmlspecialchars($produit[4]) . '">';
+              echo '<img src="' . htmlspecialchars($produit[3]) . '" alt="' . htmlspecialchars($produit[5]) . '">';
+              echo '<div class="texte">';
+              echo '<h3>' . htmlspecialchars($produit[5]) . '</h3>';
+              echo '</div>';
+              echo '</a>';
+          }
+
+          // Fermer le fichier
+          fclose($handle);
+      } else {
+          echo '<p>Le fichier CSV n\'a pas été trouvé.</p>';
+      }
+    ?>
         <div class="article">
             <img src="img/mouche-spider.jpeg" alt="Mouche Spider image">
             <div class="texte">

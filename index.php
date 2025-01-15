@@ -39,7 +39,7 @@ $titre='TITRE';
     <!-- Bloc 2 sous les sections -->
     <div class="bloc2">
         <h2>Entrez dans l’arène !</h2>
-        <img class="dessin" src="img/Arêne.jpg">
+        <img class="dessin" src="img/arene.jpg">
     </div>
 
     <footer>

@@ -10,6 +10,9 @@ if (isset($_GET['name'])) {
                     "medium" => ["price" => $data[2], "image" => $data[5]],
                     "large" => ["price" => $data[3], "image" => $data[6]],
                 ];
+
+                // Description du produit
+                $description = $data[7];
                 ?>
                 <!DOCTYPE html>
                 <html lang="en">
@@ -36,6 +39,7 @@ if (isset($_GET['name'])) {
                     <h1><?= $data[0]; ?></h1>
                     <img id="product-image" src="<?= $sizes['small']['image']; ?>" alt="<?= $data[0]; ?>" width="300">
                     <p>Prix : <span id="product-price"><?= $sizes['small']['price']; ?> €</span></p>
+                    <p>Description : <?= $description; ?></p>
                     <form action="add_to_cart.php" method="post">
                         <input type="hidden" name="product" value="<?= $data[0]; ?>">
                         <input type="hidden" name="price" id="hidden-price" value="<?= $sizes['small']['price']; ?>">
@@ -52,7 +56,7 @@ if (isset($_GET['name'])) {
                 </body>
                 </html>
                 <?php
-                exit; // Arrêtez l'exécution après avoir trouvé le produit
+                exit; // Arrêter l'exécution après avoir trouvé le produit
             }
         }
         fclose($handle);

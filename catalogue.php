@@ -44,7 +44,7 @@
                     <img src='{$data[4]}' alt='{$data[0]}'>
                     <div class='texte'>
                         <h3>{$data[0]}</h3>
-                        <p>Prix : {$data[1]} €</p>
+                        <p>{$data[7]} €</p>
                     </div>
                 </a>";
             }

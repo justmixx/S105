@@ -1,121 +1,70 @@
 <?php
-$cart_file = 'cart.csv';
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Gestion des actions sur le panier
-    $action = $_POST['action'];
-    $product_name = $_POST['product'];
-    $size = $_POST['size'];
-
-    // Lire le panier
-    $cart = [];
-    if (($handle = fopen($cart_file, "r")) !== FALSE) {
-        while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
-            $cart[] = $data;
-        }
-        fclose($handle);
-    }
-
-    // Modifier le panier
-    foreach ($cart as &$item) {
-        if ($item[0] == $product_name && $item[1] == $size) {
-            if ($action === 'add') {
-                $item[4] += 1; // Augmenter la quantité
-            } elseif ($action === 'remove' && $item[4] > 1) {
-                $item[4] -= 1; // Diminuer la quantité
-            } elseif ($action === 'delete') {
-                $item = null; // Supprimer le produit
-            }
-            break;
-        }
-    }
-
-    // Supprimer les entrées nulles
-    $cart = array_filter($cart);
-
-    // Réécrire le fichier CSV
-    $handle = fopen($cart_file, "w");
-    foreach ($cart as $item) {
-        fputcsv($handle, $item);
-    }
+// Fonction pour vider le panier
+if (isset($_POST['clear_cart'])) {
+    $cart_file = 'cart.csv';
+    // Ouvrir le fichier en mode écriture pour le vider
+    $handle = fopen($cart_file, 'w');
     fclose($handle);
-}
-
-// Lire le panier pour affichage
-$cart = [];
-if (($handle = fopen($cart_file, "r")) !== FALSE) {
-    while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
-        $cart[] = $data;
-    }
-    fclose($handle);
+    $message = "Le panier a été vidé avec succès.";
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Panier</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votre Panier</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Votre panier</h1>
-    <?php if (empty($cart)): ?>
-        <p>Votre panier est vide.</p>
-    <?php else: ?>
-        <table>
-            <thead>
-                <tr>
-                    <th>Produit</th>
-                    <th>Taille</th>
-                    <th>Prix</th>
-                    <th>Quantité</th>
-                    <th>Total</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($cart as $item): ?>
+    <h1>Votre Panier</h1>
+
+    <?php
+    $cart_file = 'cart.csv';
+
+    // Vérifier si le fichier panier existe et n'est pas vide
+    if (file_exists($cart_file) && filesize($cart_file) > 0) {
+        echo "<table>
+                <thead>
                     <tr>
-                        <td><?= $item[0]; ?></td>
-                        <td><?= $item[1]; ?></td>
-                        <td><?= $item[2]; ?> €</td>
-                        <td><?= isset($item[4]) ? $item[4] : 1; ?></td>
-                        <td><?= isset($item[2], $item[4]) ? number_format($item[2] * $item[4], 2) : '0.00'; ?> €</td>
-                        <td>
-                            <form action="panier.php" method="post" style="display:inline;">
-                                <input type="hidden" name="product" value="<?= $item[0]; ?>">
-                                <input type="hidden" name="size" value="<?= $item[1]; ?>">
-                                <input type="hidden" name="action" value="add">
-                                <button type="submit">+</button>
-                            </form>
-                            <form action="panier.php" method="post" style="display:inline;">
-                                <input type="hidden" name="product" value="<?= $item[0]; ?>">
-                                <input type="hidden" name="size" value="<?= $item[1]; ?>">
-                                <input type="hidden" name="action" value="remove">
-                                <button type="submit">-</button>
-                            </form>
-                            <form action="panier.php" method="post" style="display:inline;">
-                                <input type="hidden" name="product" value="<?= $item[0]; ?>">
-                                <input type="hidden" name="size" value="<?= $item[1]; ?>">
-                                <input type="hidden" name="action" value="delete">
-                                <button type="submit">Supprimer</button>
-                            </form>
-                        </td>
+                        <th>Produit</th>
+                        <th>Taille</th>
+                        <th>Prix</th>
+                        <th>Image</th>
                     </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-        <p>
-            <strong>Total global : 
-                <?php
-                $total = array_reduce($cart, function ($sum, $item) {
-                    return $sum + ($item[2] * $item[4]);
-                }, 0);
-                echo number_format($total, 2);
-                ?> €
-            </strong>
-        </p>
-    <?php endif; ?>
-    <a href="index.php">Continuer vos achats</a>
+                </thead>
+                <tbody>";
+
+        // Lire le fichier CSV
+        if (($handle = fopen($cart_file, 'r')) !== FALSE) {
+            while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+                echo "<tr>
+                        <td>{$data[0]}</td>
+                        <td>{$data[1]}</td>
+                        <td>{$data[2]} €</td>
+                        <td><img src='{$data[3]}' alt='{$data[0]}' width='50'></td>
+                    </tr>";
+            }
+            fclose($handle);
+        }
+
+        echo "</tbody>
+            </table>";
+
+        // Bouton pour vider le panier
+        echo "<form method='post'>
+                <button type='submit' name='clear_cart'>Vider le panier</button>
+              </form>";
+    } else {
+        echo "<p>Votre panier est vide.</p>";
+    }
+
+    // Afficher un message de confirmation après avoir vidé le panier
+    if (isset($message)) {
+        echo "<p style='color: green;'>$message</p>";
+    }
+    ?>
+    <a href="index.php">Retour à la boutique</a>
 </body>
 </html>

@@ -26,18 +26,32 @@
             <li><a href="#2">Nos incontournables</a></li>
         </ul>
     </div>
-    <div class="premier">
-        <img src="img/mouche-gladiator.jpeg" alt="mouche gladiator image">
-                <h2> L'indétronable Gladiator </h2>
-                <p> Sa robustesse adapté àl'apprentissage, la Gladiator est parfaite pour les débutants, elle saura aussi satisfaire les experts comme tank en combat 2v2. </p>
-             <a href="pagemouche/mouchegladiator.php" class="buy-button">Acheter</a>
-
+     <?php
+// Charger les produits depuis le CSV
+if (($handle = fopen("products.csv", "r")) !== FALSE) {
+    // Lire uniquement la première ligne
+    if (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+        echo "
+        <div class='premier'>
+            <img src='{$data[4]}' alt='{$data[0]}'>
+                <h2>{$data[0]}</h2>
+                <p>{$data[7]} €</p>
+            <a href='pagemouche/fiche-produit.php?product_name=" . urlencode($data['name']) . "'' class='buy-button'>Acheter</a>
+            </div>
+        </div>";
+        }
+        fclose($handle);
+    }
+    ?>
     </div>
     <h2 id="1"> Nos dernières espèces </h2>
     <div class="container">
     <?php
         // Charger les produits depuis le CSV
         if (($handle = fopen("products.csv", "r")) !== FALSE) {
+             // Lire et ignorer la première ligne (en-têtes)
+    fgetcsv($handle);
+
             while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
                 echo "
                 <a class='article' href='product.php?name={$data[0]}'>
@@ -51,21 +65,6 @@
             fclose($handle);
         }
         ?>
-
-        <div class="article">
-            <img src="img/mouche-spider.jpeg" alt="Mouche Spider image">
-            <div class="texte">
-                <h3> Mouche Spider </h3>
-                <p> Parfaite pour vos premier combat, toujours présente pour les derniers. </p>
-            </div>
-        </div>
-        <div class="article">
-            <img src="img/mouche-electrizer.jpeg" alt="Mouche Electrizer image">
-            <div class="texte">
-                <h3> Mouche Electrizer </h3>
-                <p> Parfaite pour vos premier combat, toujours présente pour les derniers. </p>
-            </div>
-        </div>
     </div>
     <h2 id="2"> Nos incontournables </h2>
     <div class="container">

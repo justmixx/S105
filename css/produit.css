@@ -23,7 +23,7 @@ body {
 .product-image img {
     max-width: 100%;
     border-radius: 8px;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 5px #252525;
 }
 
 .product-info {
@@ -34,7 +34,7 @@ body {
 .product-info h2 {
     font-size: 3rem;
     margin-bottom: 50px;
-    color: #000;
+    color: #252525;
     font-family: 'Arial Black', sans-serif;
 }
 
@@ -42,7 +42,7 @@ body {
     font-size: 1.3rem;
     margin-left: 2rem;
     margin-right: 2rem;
-    color: #3a3a3a;
+    color: #252525;
 }
 
 form {
@@ -54,8 +54,8 @@ form {
 
 .add-to-cart-button {
     margin-top: 20px;
-    padding: 10px 25px;
-    font-size: 1.1rem;
+    padding: 15px 40px;
+    font-size: 2rem;
     background-color: #7883F3;
     color: white;
     border: none;
@@ -72,51 +72,64 @@ form {
     display: flex;
     gap: 10px;
     margin-bottom: 15px;
+    box-shadow:#ffffff;
 }
 
 .size-button {
     padding: 10px 15px;
-    background-color: #e8e9f8;
-    border: 6px solid #ccc;
-    border-radius: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
     font-size: medium;
-    cursor: pointer;
+    cursor:pointer;
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .size-button:hover {
     background-color: #C2C7FA;
-    border-color: #e6a904;
 }
 
 .size-button.selected {
     background-color: #7883F3;
     color: white;
-    border-color: #e6a904;
 }
 
 #add-to-cart:disabled {
-    background-color: #ccc;
+    background-color: white;
     cursor: not-allowed;
+    color:#7883F3;
 }
 
 /* Section info produit */
 .black-section {
     width: 100%;
-    background-color: #bdbdbd;
+    background-color: #252525;
+    height: 350px;
 }
 
-.stats h2 {
-    font-size: 2rem;
-    color: #000;
-    font-family: 'Arial Black', sans-serif;
+.black-section h2 {
     text-align: center;
+    font-weight: 800;
+    font-size: 3rem;
+    color:#ffffff;
+    padding: 20px;
+}
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    gap: 20px;
+    
+}
+.info {
+width: 400px;
+background-color: white;
+border-radius: 5px;
+padding: 10px;
 }
 
 .stats h3 {
-    font-size: 1.4rem;
+    font-size: 2rem;
     color: #252525;
-    font-family: 'Arial Black', sans-serif;
     text-align: center;
     margin-top: 10px;
 }
@@ -124,7 +137,7 @@ form {
 .etoiles {
     text-align: center;
     color: #7883F3;
-    font-size: 5rem;
+    font-size: 2rem;
 }
 
 .description {

@@ -17,31 +17,7 @@ $titre='TITRE';
 
 <body>
     <header>
-        <nav>
-            <div class="nav-container">
-                <a href="index.php" class="logo">
-                    <img src="img/logo.svg" alt="Logo Mouches de Combat">
-                </a>
-                <div class="burger">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="catalogue.php">Catalogue</a></li>
-                    <li><a href="arene.php">Arène</a></li>
-                    <li><a href="vendre.php">Vendre</a></li>
-                    <li><a href="laboratoire.php">Notre laboratoire</a></li>
-                    <li><a href="contact.php">Contact</a></li>
-                </ul>
-                <div class="cart-link">
-                    <a href="panier.php">
-                        <span class="material-symbols-outlined">shopping_cart</span>
-                        mon panier
-                    </a>
-                </div>
-            </div>
-        </nav>
+    <?php include('/Applications/MAMP/htdocs/S105/include/header.php');?>
     </header>
 
     <div class="content-container">
@@ -56,7 +32,7 @@ $titre='TITRE';
         <section>
             <h2>Les combats de mouches accessibles facilement.</h2>
             <p class="text">Avec notre système de combat, il n'a jamais été aussi simple de combattre.</p>
-            <a class="bouton" href="catalogue.php">Entrez dans l'arène</a>
+            <a class="bouton" href="arene.php">Entrez dans l'arène</a>
         </section>
     </div>
 
@@ -67,13 +43,7 @@ $titre='TITRE';
     </div>
 
     <footer>
-        <nav>
-            <ul>
-                <li><a href="contact.php">Contact</a></li>
-                <li><p>&copy; 2024 Mouches de Combat</p></li>
-                <li><a href="mentions-legales.php">Mentions légales</a></li>
-            </ul>
-        </nav>
+    <?php include('/Applications/MAMP/htdocs/S105/include/footer.php');?>
     </footer>
 
     <script>

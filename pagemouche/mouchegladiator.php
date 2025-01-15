@@ -97,17 +97,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_name'], $_POS
 </main>
 
 <section class="black-section">
+    <h2>Information</h2>
     <div class="stats">
-        <h2>Information</h2>
-        <h3>Résistance</h3>
-        <p class="etoiles">&#9733; &#9733; &#9733; &#9733; &#9734;</p>
-        <p class="description">La mouche <strong>Gladiator</strong> a 4 étoiles de résistance quand elle possède un casque en or, sinon cela peut descendre à 3,5 étoiles.</p>
-        <h3>Endurance</h3>
-        <p class="etoiles">&#9733; &#9733; &#9734; &#9734; &#9734;</p>
-        <p class="description">La mouche <strong>Gladiator</strong> a 2 étoiles d'endurance car son casque va venir l'alourdir et donc la mettre en difficulté.</p>
-        <h3>Force</h3>
-        <p class="etoiles">&#9733; &#9733; &#9733; &#9733; &#9734;</p>
-        <p class="description">La mouche <strong>Gladiator</strong> a 4 étoiles de force, grâce à cela elle peut facilement gagner des combats.</p>
+        <div class="info">
+             <h3>Résistance</h3>
+             <p class="etoiles">&#9733; &#9733; &#9733; &#9733; &#9734;</p>
+             <p class="description">La mouche <strong>Gladiator</strong> a 4 étoiles de résistance quand elle possède un casque en or, sinon cela peut descendre à 3,5 étoiles.</p>
+        </div>
+        <div class="info">
+             <h3>Endurance</h3>
+            <p class="etoiles">&#9733; &#9733; &#9734; &#9734; &#9734;</p>
+            <p class="description">La mouche <strong>Gladiator</strong> a 2 étoiles d'endurance car son casque va venir l'alourdir et donc la mettre en difficulté.</p>
+        </div>
+        <div class="info">
+            <h3>Force</h3>
+            <p class="etoiles">&#9733; &#9733; &#9733; &#9733; &#9734;</p>
+             <p class="description">La mouche <strong>Gladiator</strong> a 4 étoiles de force, grâce à cela elle peut facilement gagner des combats.</p>
+        </div>
     </div>
 </section>
 

@@ -13,87 +13,80 @@
 
 <body>
     <header>
-        <nav>
-            <div class="nav-container">
-                <a href="index.php" class="logo">
-                    <img src="img/logo.svg" alt="Logo Mouches de Combat">
-                </a>
-                <div class="burger">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="catalogue.php">Catalogue</a></li>
-                    <li><a href="arene.php">Arène</a></li>
-                    <li><a href="vendre.php">Vendre</a></li>
-                    <li><a href="laboratoire.php">Notre laboratoire</a></li>
-                    <li><a href="contact.php">Contact</a></li>
-                </ul>
-                <div class="cart-link">
-                    <a href="panier.php">
-                        <span class="material-symbols-outlined">shopping_cart</span>
-                        mon panier
-                    </a>
-                </div>
-            </div>
-        </nav>
+    <?php include('/Applications/MAMP/htdocs/S105/include/header.php');?>
     </header>
 
 
 <main class="catalogue">
-    <h1>Notre Catalogue de Mouches de Combat</h1>
-    <p>Pour combat rapproché, à distance, puissance ou même juste pour de l'affection, nous possédons la mouche dont vous avez besoin.
-</p>
-    <div class="container">
-        <a href="pagemouche/mouchegladiator.php" class="article">
-            <img src="img/mouche-gladiator-ai.jpeg" alt="mouche gladiator image">
-            <div class="texte">
-                <h2> Mouche gladiator </h2>
-                <p> Parfaite pour vos premier combat, toujours présente pour les derniers. </p>
-            </div>
-        </a>
-        <div class="article">
-            <img src="img/mouche-gladiator-ai.jpeg" alt="mouche gladiator image">
-            <div class="texte">
-                <h2> Mouche gladiator </h2>
-                <p> Parfaite pour vos premier combat, toujours présente pour les derniers. </p>
-            </div>
-        </div>
-        <div class="article">
-            <img src="img/mouche-gladiator-ai.jpeg" alt="mouche gladiator image">
-            <div class="texte">
-                <h2> Mouche gladiator </h2>
-                <p> Parfaite pour vos premier combat, toujours présente pour les derniers. </p>
-            </div>
-        </div>
-        <div class="article">
-            <img src="img/mouche-gladiator-ai.jpeg" alt="mouche gladiator image">
-            <div class="texte">
-                <h2> Mouche gladiator </h2>
-                <p> Parfaite pour vos premier combat, toujours présente pour les derniers. </p>
-            </div>
-        </div>
-        <div class="article">
-            <img src="img/mouche-gladiator-ai.jpeg" alt="mouche gladiator image">
-            <div class="texte">
-                <h2> Mouche gladiator </h2>
-                <p> Parfaite pour vos premier combat, toujours présente pour les derniers. </p>
-            </div>
-        </div>
 
-        
+    <h1>Découvrez nos mouches</h1> 
+    <div class="nav-catalogue">
+        <ul>
+            <li><a href="#1">Dernières espèces</a></li>
+            <li><a href="#2">Nos incontournables</a></li>
+        </ul>
+    </div>
+    <div class="premier">
+        <img src="img/mouche-gladiator-ai.jpeg" alt="mouche gladiator image">
+                <h2> L'indétronable Gladiator </h2>
+                <p> Sa robustesse adapté àl'apprentissage, la Gladiator est parfaite pour les débutants, elle saura aussi satisfaire les experts comme tank en combat 2v2. </p>
+             <a href="pagemouche/mouchegladiator.php" class="buy-button">Acheter</a>
+
+    </div>
+    <h2 id="1"> Nos dernières espèces </h2>
+    <div class="container">
+    <a class="article" href="pagemouche/mouchegladiator.php">  
+        <img src="img/mouche-viper.jpeg" alt="Mouche Viper image">
+        <div class="texte">
+            <h3> Mouche Viper </h3>
+            <p> Parfaite pour vos premier combat, toujours présente pour les derniers. </p>
+        </div>
+    </a>
+        <div class="article">
+            <img src="img/mouche-spider.jpeg" alt="Mouche Spider image">
+            <div class="texte">
+                <h3> Mouche Spider </h3>
+                <p> Parfaite pour vos premier combat, toujours présente pour les derniers. </p>
+            </div>
+        </div>
+        <div class="article">
+            <img src="img/mouche-electrizer.jpeg" alt="Mouche Electrizer image">
+            <div class="texte">
+                <h3> Mouche Electrizer </h3>
+                <p> Parfaite pour vos premier combat, toujours présente pour les derniers. </p>
+            </div>
+        </div>
+    </div>
+    <h2 id="2"> Nos incontournables </h2>
+    <div class="container">
+    <a class="article" href="pagemouche/mouchegladiator.php">  
+        <img src="img/mouche-gladiator-ai.jpeg" alt="mouche gladiator image">
+        <div class="texte">
+            <h3> Mouche gladiator </h3>
+            <p> Parfaite pour vos premier combat, toujours présente pour les derniers. </p>
+        </div>
+    </a>
+        <div class="article">
+            <img src="img/mouche-gladiator-ai.jpeg" alt="mouche gladiator image">
+            <div class="texte">
+                <h3> Mouche gladiator </h3>
+                <p> Parfaite pour vos premier combat, toujours présente pour les derniers. </p>
+            </div>
+        </div>
+        <div class="article">
+            <img src="img/mouche-gladiator-ai.jpeg" alt="mouche gladiator image">
+            <div class="texte">
+                <h3> Mouche gladiator </h3>
+                <p> Parfaite pour vos premier combat, toujours présente pour les derniers. </p>
+            </div>
+        </div>
+    </div>
+       
     </div>
 </main>
 
     <footer>
-        <nav>
-            <ul>
-                <li><a href="contact.php">Contact</a></li>
-                <li><p>&copy; 2024 Mouches de Combat</p></li>
-                <li><a href="mentions-legales.php">Mentions légales</a></li>
-            </ul>
-        </nav>
+    <?php include('/Applications/MAMP/htdocs/S105/include/footer.php');?>
     </footer>
                 <!-- responsive nav -->
     <script>

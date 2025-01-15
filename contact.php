@@ -13,31 +13,7 @@
 
 <body>
 <header>
-        <nav>
-            <div class="nav-container">
-                <a href="index.php" class="logo">
-                    <img src="img/logo.svg" alt="Logo Mouches de Combat">
-                </a>
-                <div class="burger">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="catalogue.html">Catalogue</a></li>
-                    <li><a href="arene.php">Arène</a></li>
-                    <li><a href="vendre.php">Vendre</a></li>
-                    <li><a href="laboratoire.php">Notre laboratoire</a></li>
-                    <li><a href="contact.php">Contact</a></li>
-                </ul>
-                <div class="cart-link">
-                    <a href="panier.php">
-                        <span class="material-symbols-outlined">shopping_cart</span>
-                        mon panier
-                    </a>
-                </div>
-            </div>
-        </nav>
+<?php include('/Applications/MAMP/htdocs/S105/include/header.php');?>
     </header>
 
     <main>
@@ -59,15 +35,15 @@
             <!-- Informations de contact -->
             <div class="contact-info">
                 <h2>Informations de contact</h2>
-                <p><strong>Téléphone :</strong> +33 1 23 45 67 89</p>
-                <p><strong>Email :</strong> contact@mouchesdecombat.fr</p>
+                <p><strong>Téléphone :</strong> +33 6 13 67 52 17</p>
+                <p><strong>Email :</strong> justin.gonnet@gmail.com</p>
                 <h3>Suivez-nous :</h3>
                 <div class="social-icons">
                     <a href="https://facebook.com" target="_blank">
-                        <img src="../img/facebook-icon.svg" alt="Facebook">
+                        <img src="/Applications/MAMP/htdocs/S105/img/logo/facebook.png" alt="Facebook">
                     </a>
                     <a href="https://instagram.com" target="_blank">
-                        <img src="../img/instagram-icon.svg" alt="Instagram">
+                        <img src="/Applications/MAMP/htdocs/S105/img/logo/instagram.ico" alt="Instagram">
                     </a>
                     <a href="https://twitter.com" target="_blank">
                         <img src="../img/twitter-icon.svg" alt="Twitter">
@@ -78,13 +54,7 @@
     </main>
 
     <footer>
-        <nav>
-            <ul>
-                <li><a href="contact.php">Contact</a></li>
-                <li><p>&copy; 2024 Mouches de Combat</p></li>
-                <li><a href="mentions-legales.php">Mentions légales</a></li>
-            </ul>
-        </nav>
+    <?php include('/Applications/MAMP/htdocs/S105/include/footer.php');?>
     </footer>
             <!-- responsive nav -->
     <script>

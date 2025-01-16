@@ -16,7 +16,7 @@
                     <li><a href="contact.php">Contact</a></li>
                 </ul>
                 <div class="cart-link">
-                    <a href="panier.php">
+                    <a class="button" href="panier.php">
                         <span class="material-symbols-outlined">shopping_cart</span>
                         mon panier
                     </a>

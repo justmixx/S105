@@ -32,6 +32,35 @@ if (isset($_POST['remove_item'])) {
     fclose($handle);
     $message = "Le produit a été supprimé avec succès.";
 }
+
+// Fonction pour mettre à jour la quantité d'un produit
+if (isset($_POST['update_quantity'])) {
+    $item_index = $_POST['item_index'];
+    $quantity_change = (int)$_POST['quantity_change'];
+    $cart_file = 'cart.csv';
+    $updated_cart = [];
+
+    if (($handle = fopen($cart_file, 'r')) !== FALSE) {
+        $current_index = 0;
+        while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+            if ($current_index == $item_index) {
+                // Mettre à jour la quantité (au moins 1)
+                $data[4] = max(1, $data[4] + $quantity_change);
+            }
+            $updated_cart[] = $data;
+            $current_index++;
+        }
+        fclose($handle);
+    }
+
+    // Réécrire le fichier CSV avec les nouvelles quantités
+    $handle = fopen($cart_file, 'w');
+    foreach ($updated_cart as $item) {
+        fputcsv($handle, $item);
+    }
+    fclose($handle);
+    $message = "La quantité a été mise à jour avec succès.";
+}
 ?>
 
 <!DOCTYPE html>
@@ -61,9 +90,11 @@ if (isset($_POST['remove_item'])) {
                     <tr>
                         <th>Produit</th>
                         <th>Taille</th>
-                        <th>Prix</th>
+                        <th>Prix Unitaire</th>
+                        <th>Quantité</th>
+                        <th>Sous-total</th>
                         <th>Image</th>
-                        <th>Action</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>";
@@ -72,15 +103,29 @@ if (isset($_POST['remove_item'])) {
         if (($handle = fopen($cart_file, 'r')) !== FALSE) {
             $index = 0;
             while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
-                $price = (float) $data[2]; // Convertir le prix en nombre
-                $total_price += $price; // Ajouter le prix au total
+                $price = (float) $data[2];
+                $quantity = (int) $data[4];
+                $subtotal = $price * $quantity; // Calculer le sous-total
+                $total_price += $subtotal; // Ajouter au total
 
                 echo "<tr>
                         <td>{$data[0]}</td>
                         <td>{$data[1]}</td>
                         <td>{$price} €</td>
+                        <td>{$quantity}</td>
+                        <td>{$subtotal} €</td>
                         <td><img src='{$data[3]}' alt='{$data[0]}' width='50'></td>
                         <td>
+                            <form method='post' style='display: inline;'>
+                                <input type='hidden' name='item_index' value='{$index}'>
+                                <input type='hidden' name='quantity_change' value='1'>
+                                <button type='submit' name='update_quantity'>+</button>
+                            </form>
+                            <form method='post' style='display: inline;'>
+                                <input type='hidden' name='item_index' value='{$index}'>
+                                <input type='hidden' name='quantity_change' value='-1'>
+                                <button type='submit' name='update_quantity'>-</button>
+                            </form>
                             <form method='post' style='display: inline;'>
                                 <input type='hidden' name='item_index' value='{$index}'>
                                 <button type='submit' name='remove_item'>Supprimer</button>
@@ -96,19 +141,19 @@ if (isset($_POST['remove_item'])) {
             </table>";
 
         // Afficher le total du panier
-        echo "<div style='text-align: center; margin-top: 10px;'>
+        echo "<div style='text-align: right; margin-top: 10px;'>
                 <strong>Total : {$total_price} €</strong>
               </div>";
 
         // Bouton pour vider le panier
-        echo "<form method='post' style='text-align: center; margin-top: 10px;'>
+        echo "<form method='post' style='text-align: right; margin-top: 10px;'>
                 <button type='submit' name='clear_cart'>Vider le panier</button>
               </form>";
     } else {
         echo "<p>Votre panier est vide.</p>";
     }
 
-    // Afficher un message de confirmation après avoir vidé le panier ou supprimé un produit
+    // Afficher un message de confirmation après une action
     if (isset($message)) {
         echo "<p style='color: green;'>$message</p>";
     }

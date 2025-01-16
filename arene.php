@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=shopping_cart" />
     <link rel="stylesheet" href="css/styles.css">
     <title>Combat de mouches</title>
     <style>
@@ -17,33 +16,9 @@
     </style>
 </head>
 <body>
-<header>
-        <nav>
-            <div class="nav-container">
-                <a href="index.php" class="logo">
-                    <img src="img/logo.svg" alt="Logo Mouches de Combat">
-                </a>
-                <div class="burger">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="catalogue.php">Catalogue</a></li>
-                    <li><a href="arene.php">Arène</a></li>
-                    <li><a href="vendre.php">Vendre</a></li>
-                    <li><a href="test.php">Notre laboratoire</a></li>
-                    <li><a href="contact.php">Contact</a></li>
-                </ul>
-                <div class="cart-link">
-                    <a href="panier.php">
-                        <span class="material-symbols-outlined">shopping_cart</span>
-                        mon panier
-                    </a>
-                </div>
-            </div>
-        </nav>
-</header>
+    <header>
+        <?php include('include/header.php');?>
+    </header>
 
 <!-- Encadré pour les points de vie -->
 <div id="fly-info-container" style="background-color: #f8f9fa; border: 1px solid #ccc; padding: 10px; text-align: center; margin-bottom: 20px;">

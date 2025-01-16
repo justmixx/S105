@@ -99,11 +99,21 @@ nav {
     background-color: #7883F3;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* optionnel, pour retirer le soulignement */
 }
 
 .cart-link a:hover {
     background-color: #C2C7FA;
 }
+
+.cart-link img {
+    margin-right: 8px; /* espace entre l'image et le texte */
+    height: 20px; /* ajuster la taille si nécessaire */
+    width: auto;
+}
+
 
 /* Menu burger */
 .burger {

@@ -17,7 +17,7 @@
                 </ul>
                 <div class="cart-link">
                     <a class="button" href="panier.php">
-                        <span class="material-symbols-outlined">shopping_cart</span>
+                        <img src="img/fleches/panier.png" alt="icon panier">
                         mon panier
                     </a>
                 </div>

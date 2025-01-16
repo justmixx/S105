@@ -15,9 +15,13 @@ if (isset($_POST['clear_cart'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Votre Panier</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/panier.css">
 </head>
 <body>
+    <header>
+        <?php include('include/header.php');?>
+    </header>
     <h1>Votre Panier</h1>
 
     <?php
@@ -25,7 +29,8 @@ if (isset($_POST['clear_cart'])) {
 
     // Vérifier si le fichier panier existe et n'est pas vide
     if (file_exists($cart_file) && filesize($cart_file) > 0) {
-        echo "<table>
+        echo "
+                <table>
                 <thead>
                     <tr>
                         <th>Produit</th>

@@ -11,8 +11,6 @@ $titre='TITRE';
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="website icon" type="svg" href="img/logo.svg">
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=shopping_cart" />
 </head>
 
 <body>
@@ -71,7 +69,6 @@ $titre='TITRE';
     <footer>
         <?php include('include/footer.php');?>
     </footer>
-
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const burger = document.querySelector('.burger');

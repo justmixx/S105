@@ -95,6 +95,16 @@ if (isset($_GET['name'])) {
                     </footer>
 
                 </body>
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function() {
+                            const burger = document.querySelector('.burger');
+                            const navLinks = document.querySelector('.nav-links');
+
+                            burger.addEventListener('click', () => {
+                                navLinks.classList.toggle('active');
+                            });
+                        });
+                    </script>
                 </html>
                 <?php
                 exit; // Arrêter l'exécution après avoir trouvé le produit

@@ -119,16 +119,16 @@ if (isset($_POST['update_quantity'])) {
                             <form method='post' style='display: inline;'>
                                 <input type='hidden' name='item_index' value='{$index}'>
                                 <input type='hidden' name='quantity_change' value='1'>
-                                <button type='submit' name='update_quantity'>+</button>
+                                <button type='submit' name='update_quantity' class='plus'>+</button>
                             </form>
                             <form method='post' style='display: inline;'>
                                 <input type='hidden' name='item_index' value='{$index}'>
                                 <input type='hidden' name='quantity_change' value='-1'>
-                                <button type='submit' name='update_quantity'>-</button>
+                                <button type='submit' name='update_quantity' class='moin'>-</button>
                             </form>
                             <form method='post' style='display: inline;'>
                                 <input type='hidden' name='item_index' value='{$index}'>
-                                <button type='submit' name='remove_item'>Supprimer</button>
+                                <button type='submit' name='remove_item' class='supprimer'>Supprimer</button>
                             </form>
                         </td>
                     </tr>";
@@ -141,12 +141,12 @@ if (isset($_POST['update_quantity'])) {
             </table>";
 
         // Afficher le total du panier
-        echo "<div style='text-align: right; margin-top: 10px;'>
+        echo "<div style='text-align: center; margin-top: 10px;'>
                 <strong>Total : {$total_price} €</strong>
               </div>";
 
         // Bouton pour vider le panier
-        echo "<form method='post' style='text-align: right; margin-top: 10px;'>
+        echo "<form method='post' style='text-align: center; margin-top: 10px;'>
                 <button type='submit' name='clear_cart'>Vider le panier</button>
               </form>";
     } else {

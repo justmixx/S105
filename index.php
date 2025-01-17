@@ -22,19 +22,19 @@ $titre='TITRE';
         <div class="slider">
             <div class="slide">
                 <div class="overlay">
-                    <h2>Vente de Mouches</h2>
+                <a class="button" href="catalogue.php">Catalogue</a>
                 </div>
                 <img src="img/slider/slider1.jpeg" alt="Image 1">
             </div>
             <div class="slide">
                 <div class="overlay">
-                    <h2>Des mouches à technologie de pointe</h2>
+                <a class="button" href="catalogue.php">Mouche Spider</a>
                 </div>
                 <img src="img/slider/slider2.jpeg" alt="Image 2">
             </div>
             <div class="slide">
                 <div class="overlay">
-                <a class="button" href="catalogue.php">Gladiator</a>
+                <a class="button" href="catalogue.php">Nouveau : Gladiator</a>
                 </div>
                 <img src="img/slider/slider3.jpeg" alt="Image 3">
             </div>

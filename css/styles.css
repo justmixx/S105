@@ -54,7 +54,7 @@ nav {
 /* Style du nav après défilement */
 nav.shrink {
     padding: 10px 0; /* Réduire la taille du padding */
-    background-color: #222; /* Couleur plus foncée */;
+    background-color: #252525; /* Couleur plus foncée */;
     backdrop-filter: blur(80%);
 }
 nav.shrink .logo{
@@ -63,6 +63,10 @@ nav.shrink .logo{
 nav.shrink .logo img {
     width: 0px;
     position: relative;
+}
+
+nav.shrink .cart-link a {
+    background-color: #252525;
 }
 /* Optionnel : vous pouvez aussi ajuster d'autres éléments du nav, comme les liens */
 nav.shrink .nav-container a,
@@ -174,6 +178,8 @@ nav.shrink .nav-container .burger div .logo img {
     -moz-transition: ease-out 0.4s;
     transition: ease-out 0.4s;
     box-sizing: border-box;
+    min-height: 30px;
+    text-decoration: none;
 }
 
 .button:hover {

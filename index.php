@@ -34,7 +34,7 @@ $titre='TITRE';
             </div>
             <div class="slide">
                 <div class="overlay">
-                    <h2>Les mouches les moin cher du marchés</h2>
+                <a class="button" href="catalogue.php">Gladiator</a>
                 </div>
                 <img src="img/slider/slider3.jpeg" alt="Image 3">
             </div>

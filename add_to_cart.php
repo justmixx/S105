@@ -7,11 +7,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $cart_file = 'cart.csv';
 
-    // Ajouter les détails du produit au fichier CSV
     $handle = fopen($cart_file, 'a');
-    fputcsv($handle, [$product, $size, $price, $image]);
-    fclose($handle);
-
-    echo "Produit ajouté au panier avec succès ! <a href='panier.php'>Voir le panier</a>";
+    if ($handle !== FALSE) {
+        fputcsv($handle, [$product, $size, $price, $image, 1]); // La cinquième colonne est pour la quantité
+        fclose($handle);
+        echo "Produit ajouté au panier avec succès ! <a href='panier.php'>Voir le panier</a>";
+    } else {
+        echo "Erreur : Impossible d'ajouter le produit au panier.";
+    }
 }
 ?>

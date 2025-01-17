@@ -17,7 +17,8 @@ body {
 }
 
 .logo img {
-    height: 50px;
+    width: 50px;
+    transition: 0.3s ease ;
 }
 
 header h1 {
@@ -34,9 +35,39 @@ header .cart-link a {
 }
 
 /* Barre de navigation */
+header {
+    margin-bottom: 60px;
+}
+/* Style initial du nav */
 nav {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
     background-color: #4D59D6;
-    padding: 10px 0;
+    color: #4D59D6;
+    padding: 20px 0;
+    transition: padding 0.3s ease, background-color 0.3s ease;
+    z-index: 1000;
+}
+
+/* Style du nav après défilement */
+nav.shrink {
+    padding: 10px 0; /* Réduire la taille du padding */
+    background-color: #222; /* Couleur plus foncée */;
+    backdrop-filter: blur(80%);
+}
+nav.shrink .logo{
+    align-items: center;
+}
+nav.shrink .logo img {
+    width: 0px;
+    position: relative;
+}
+/* Optionnel : vous pouvez aussi ajuster d'autres éléments du nav, comme les liens */
+nav.shrink .nav-container a,
+nav.shrink .nav-container .burger div .logo img {
+    height: 10px; /* Ajuster la taille du burger si nécessaire */
 }
 
 .nav-container {
@@ -133,7 +164,6 @@ nav {
 
 .button {
     color: #FFF;
-    border: 2px solid #4D59D6;
     border-radius: 5px;
     padding: 18px 36px;
     display: inline-block;

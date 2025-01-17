@@ -237,15 +237,23 @@ button:hover {
     background-color: #3b47b2;
 }
 
+.anchor {
+    position: absolute;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #4D59D6;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    transform: translate(-50%, -50%);
+    display: none; /* Caché par défaut */
+    pointer-events: auto; /* L'ancre doit accepter les clics */
+    transition: left 0.1s ease, top 0.1s ease;
+
+} 
+
 .bloc2 {
     position: relative;
-    width: 80%;
-    margin: 50px auto;
-    padding: 50px;
-    text-align: center;
-    background-color: #f4f4f4;
-    border: 1px solid #ddd;
-    border-radius: 10px;
 }
 
 .bloc2 h2 {
@@ -255,8 +263,6 @@ button:hover {
 
 .bloc2 img {
     max-width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 768px) {

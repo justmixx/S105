@@ -64,7 +64,7 @@ $titre='TITRE';
     <div class="bloc2" id="trackingDiv">
         <h2>Entrez dans l’arène !</h2>
         <img class="dessin" src="img/arene.jpg" alt="Illustration de l'arène">
-        <a class="followbut button" id="followButton" href="arene.php">Suivez-moi</a>
+        <a class="followbut button anchor" id="followButton" href="arene.php">COMBAT !</a>
     </div>
     <script>
         const trackingDiv = document.getElementById('trackingDiv');
@@ -85,6 +85,8 @@ $titre='TITRE';
         trackingDiv.addEventListener('mouseleave', () => {
             followButton.style.display = 'none'; // Cache le bouton
         });
+
+        followAnchor.style.display = 'block';
     </script>
 
     <footer>

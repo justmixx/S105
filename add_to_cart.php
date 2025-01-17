@@ -12,9 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         fputcsv($handle, [$product, $size, $price, $image, 1]); // Quantité par défaut : 1
         fclose($handle);
 
-        // Redirection automatique vers la page panier
-        header("Location: panier.php");
-        exit;
+        echo "Produit ajouté au panier avec succès !";
     } else {
         echo "Erreur : Impossible d'ajouter le produit au panier.";
     }

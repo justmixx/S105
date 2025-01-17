@@ -61,10 +61,31 @@ $titre='TITRE';
     </div>
 
     <!-- Bloc 2 sous les sections -->
-    <div class="bloc2">
+    <div class="bloc2" id="trackingDiv">
         <h2>Entrez dans l’arène !</h2>
-        <img class="dessin" src="img/arene.jpg">
+        <img class="dessin" src="img/arene.jpg" alt="Illustration de l'arène">
+        <a class="followbut button" id="followButton" href="arene.php">Suivez-moi</a>
     </div>
+    <script>
+        const trackingDiv = document.getElementById('trackingDiv');
+        const followButton = document.getElementById('followButton');
+
+        // Active le suivi lorsque la souris est dans la div
+        trackingDiv.addEventListener('mousemove', (e) => {
+            const rect = trackingDiv.getBoundingClientRect(); // Dimensions de la div
+            const x = e.clientX - rect.left; // Position X relative
+            const y = e.clientY - rect.top;  // Position Y relative
+
+            followButton.style.left = `${x}px`;
+            followButton.style.top = `${y}px`;
+            followButton.style.display = 'block'; // Affiche le bouton
+        });
+
+        // Cache le bouton lorsque la souris quitte la div
+        trackingDiv.addEventListener('mouseleave', () => {
+            followButton.style.display = 'none'; // Cache le bouton
+        });
+    </script>
 
     <footer>
         <?php include('include/footer.php');?>

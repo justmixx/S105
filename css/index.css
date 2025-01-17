@@ -32,7 +32,7 @@ section {
 }
 
 .dessin {
-    position: absolute;
+    position: relative;
     display: flex;
     margin: auto;
     height: auto;
@@ -217,6 +217,46 @@ height: 40px;
 button:hover {
     background-color: rgba(0, 0, 0, 0.8);
     
+}
+
+
+.followbut {
+    position: absolute;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #4D59D6;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    transform: translate(-50%, -50%);
+    display: none; /* Caché par défaut */
+    pointer-events: none; /* Désactive les clics */
+}
+
+.followbut:hover {
+    background-color: #3b47b2;
+}
+
+.bloc2 {
+    position: relative;
+    width: 80%;
+    margin: 50px auto;
+    padding: 50px;
+    text-align: center;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.bloc2 h2 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.bloc2 img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 768px) {

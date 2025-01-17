@@ -90,12 +90,12 @@ h1 {
     max-width: 50%;
     height: 100%;
     text-align: center;
-    text-justify: center;
 }
 .box-texte p {
     font-size: 1em;
     max-width: 80%;
     color: #252525;
+    text-justify:left;
 }
 
 .box-texte h3{

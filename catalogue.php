@@ -49,10 +49,44 @@ if (($handle = fopen("products.csv", "r")) !== FALSE) {
     <h2 id="un"> Nos dernières espèces </h2>
     <div class="container">
     <?php
+// Charger les produits depuis le CSV
+if (($handle = fopen("products.csv", "r")) !== FALSE) {
+    // Lire et ignorer la première ligne (en-têtes)
+    fgetcsv($handle);
+
+    $counter = 0; // Initialiser un compteur
+
+    while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+        echo "
+        <a class='article' href='product.php?name={$data[0]}'>
+            <div class='box-img'>
+                <img src='{$data[4]}' alt='{$data[0]}'>
+            </div>
+            <div class='box-texte'>
+                <h3>{$data[0]}</h3>
+                <p>{$data[15]}</p>
+            </div>
+        </a>";
+        
+        $counter++; // Incrémenter le compteur
+        if ($counter >= 3) { // Arrêter après 3 articles
+            break;
+        }
+    }
+    fclose($handle);
+}
+?>
+
+    </div>
+    <h2 id="deux"> Nos incontournables </h2>
+    <div class="container">
+    <?php
         // Charger les produits depuis le CSV
         if (($handle = fopen("products.csv", "r")) !== FALSE) {
              // Lire et ignorer la première ligne (en-têtes)
-    fgetcsv($handle);
+             for ($i = 1; $i <= 4; $i++) {
+                (fgetcsv($handle));
+             }
 
             while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
                 echo "
@@ -62,39 +96,13 @@ if (($handle = fopen("products.csv", "r")) !== FALSE) {
                     </div>
                     <div class='box-texte'>
                         <h3>{$data[0]}</h3>
-                        <p><Résistence {$data[8]}</p>
+                        <p>{$data[15]}</p>
                     </div>
                 </a>";
             }
             fclose($handle);
         }
         ?>
-
-    </div>
-    <h2 id="deux"> Nos incontournables </h2>
-    <div class="container">
-    <a class="article" href="pagemouche/mouchegladiator.php">  
-        <img src="img/mouche-gladiator.jpeg" alt="mouche gladiator image">
-        <div class="texte">
-            <h3> Mouche gladiator </h3>
-            <p> Parfaite pour vos premier combat, toujours présente pour les derniers. </p>
-        </div>
-    </a>
-        <div class="article">
-            <img src="img/mouche-gladiator.jpeg" alt="mouche gladiator image">
-            <div class="texte">
-                <h3> Mouche gladiator </h3>
-                <p> Parfaite pour vos premier combat, toujours présente pour les derniers. </p>
-            </div>
-        </div>
-        <div class="article">
-            <img src="img/mouche-gladiator.jpeg" alt="mouche gladiator image">
-            <div class="texte">
-                <h3> Mouche gladiator </h3>
-                <p> Parfaite pour vos premier combat, toujours présente pour les derniers. </p>
-            </div>
-        </div>
-    </div>
        
     </div>
 </main>

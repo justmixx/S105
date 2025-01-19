@@ -5,22 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="website icon" type="svg" href="img/logo.svg">
+    <link rel="stylesheet" href="css/arene.css">
     <title>Arène - combat de mouche</title>
-    <style>
-        canvas {
-            background-color: #f0f8ff;
-            display: block;
-            margin: 0 auto;
-            width: 75%; /* Occupe toute la largeur de l'écran */
-            height: auto; /* Conserve les proportions */
-        }
-    </style>
 </head>
 <body>
     <header>
         <?php include('include/header.php');?>
     </header>
 
+    <h1 class="title">Arène de combat</h1>
 
 <!-- Encadré pour les points de vie -->
 <div id="fly-info-container" style="background-color: #f8f9fa; border: 1px solid #ccc; padding: 10px; text-align: center; margin-bottom: 20px;">
@@ -127,10 +120,10 @@
     }
 
     const flies = [
-        new Fly(200, 200, 'red', 'Mouche Rouge'),
-        new Fly(600, 400, 'blue', 'Mouche Bleue'),
-        new Fly(300, 100, 'green', 'Mouche Verte'),
-        new Fly(500, 500, 'purple', 'Mouche Violette'),
+        new Fly(200, 200, 'red', 'Mouche Rouge '),
+        new Fly(600, 400, 'blue', 'Mouche Bleue '),
+        new Fly(300, 100, 'green', 'Mouche Verte '),
+        new Fly(500, 500, 'purple', 'Mouche Violette '),
     ];
 
     function updateFlyInfo() {

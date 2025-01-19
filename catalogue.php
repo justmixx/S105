@@ -47,7 +47,7 @@ if (($handle = fopen("products.csv", "r")) !== FALSE) {
     }
     ?>
     </div>
-    <h2 id="un"> Nos dernières espèces </h2>
+    <h2 id="un" class="center"> Nos dernières espèces </h2>
     <div class="container">
     <?php
 // Charger les produits depuis le CSV
@@ -66,6 +66,7 @@ if (($handle = fopen("products.csv", "r")) !== FALSE) {
             <div class='box-texte'>
                 <h3>{$data[0]}</h3>
                 <p>{$data[15]}</p>
+                <p class='prix'>{$data[1]} / {$data[2]} / {$data[3]} €</p>
             </div>
         </a>";
         
@@ -79,7 +80,7 @@ if (($handle = fopen("products.csv", "r")) !== FALSE) {
 ?>
 
     </div>
-    <h2 id="deux"> Nos incontournables </h2>
+    <h2 id="deux" class="center"> Nos incontournables </h2>
     <div class="container">
     <?php
         // Charger les produits depuis le CSV
@@ -98,6 +99,7 @@ if (($handle = fopen("products.csv", "r")) !== FALSE) {
                     <div class='box-texte'>
                         <h3>{$data[0]}</h3>
                         <p>{$data[15]}</p>
+                        <p class='prix'>{$data[1]} / {$data[2]} / {$data[3]} €</p>
                     </div>
                 </a>";
             }

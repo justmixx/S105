@@ -260,3 +260,11 @@ text-decoration: none;
    
 }
 
+
+.center {
+    text-align: center;
+}
+
+.prix {
+    margin-top: 25px;
+}

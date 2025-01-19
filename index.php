@@ -15,7 +15,7 @@ $titre='TITRE';
 
 <body>
     <header>
-    <?php include('include/header.php');?>
+        <?php include('include/header.php');?>
     </header>
 
     <div class="slider-container">

@@ -20,6 +20,7 @@
         <?php include('include/header.php');?>
     </header>
 
+
 <!-- Encadré pour les points de vie -->
 <div id="fly-info-container" style="background-color: #f8f9fa; border: 1px solid #ccc; padding: 10px; text-align: center; margin-bottom: 20px;">
     <div id="fly-info" style="display: flex; justify-content: space-around; align-items: center;"></div>
@@ -37,9 +38,9 @@
     // Liste des images des mouches
     const flyImages = [
         'img/logo.svg',
-        'img/png/mouchegladiator/large.png',
-        'img/png/mouchegladiator/medium.png',
-        'img/png/mouchegladiator/small.png'
+        'img/logo.svg',
+        'img/logo.svg',
+        'img/logo.svg'
     ];
 
     // Paramètres communs
@@ -168,15 +169,9 @@
     animate();
 </script>
 
-<footer>
-        <nav>
-            <ul>
-                <li><a href="contact.php">Contact</a></li>
-                <li><p>&copy; 2024 Mouches de Combat</p></li>
-                <li><a href="mentions-legales.php">Mentions légales</a></li>
-            </ul>
-        </nav>
-</footer>
+    <footer>
+        <?php include('include/footer.php');?>
+    </footer>
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {

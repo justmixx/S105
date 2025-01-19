@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
-    <title>Combat de mouches</title>
+    <link rel="website icon" type="svg" href="img/logo.svg">
+    <title>Arène - combat de mouche</title>
     <style>
         canvas {
             background-color: #f0f8ff;

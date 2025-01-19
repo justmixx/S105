@@ -7,6 +7,7 @@
     <title>Catalogue - Mouches de Combat</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/catalogues.css">
+    <link rel="website icon" type="svg" href="img/logo.svg">
 </head>
 
 <body>

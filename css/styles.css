@@ -218,17 +218,10 @@ nav.shrink .nav-container .burger div .logo img {
         flex-wrap: wrap;
     }
     
-    footer nav ul {
-        flex-direction: column;
-        gap: 15px; 
-    }
-
-    footer nav ul li {
-        display: block;
-    }
-
-    footer nav ul li a, footer nav ul li p {
-        font-size: 1em; 
+    footer ul {
+        flex-direction: column; 
+        align-items: center;   
+        gap: 10px;           
     }
 }
 
@@ -239,43 +232,41 @@ nav.shrink .nav-container .burger div .logo img {
     }
 }
 
-/*footer*/
-/* Footer de base */
+
+/* Footer en bas de page */
 footer {
-    background: #4D59D6;
-    color: white;
-    padding: 20px 0;
+    margin-top: auto;
+    background-color: #333;
+    color: #fff;
     text-align: center;
-    font-family: 'Arial', sans-serif;
-    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.5);
+    padding: 10px 0;
 }
 
-footer nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+/* Style pour le <ul> */
+footer ul {
     display: flex;
-    justify-content: center;
-    gap: 30px;
+    justify-content: center; 
+    list-style: none;
+    gap: 20px; 
+    padding: 0;
 }
 
-footer nav ul li {
+
+footer ul li {
     display: inline;
 }
 
-footer nav ul li a {
-    color: white;
+footer ul li a {
+    color: #fff;
     text-decoration: none;
-    font-size: 1.1em;
     transition: color 0.3s ease;
 }
 
-footer nav ul li a:hover {
-    color: #ffcc00;
+footer ul li a:hover {
+    color: #1e90ff;
 }
 
-footer nav ul li p {
+footer ul li p {
     margin: 0;
-    font-size: 1em;
-    color: #dcdcdc;
+    color: #aaa;
 }

@@ -42,10 +42,10 @@
                         <img src="img/logo/facebook.png" alt="Facebook">
                     </a>
                     <a href="https://instagram.com" target="_blank">
-                        <img src="img/logo/instagram.ico" alt="Instagram">
+                        <img src="img/logo/Instagram.png" alt="Instagram">
                     </a>
                     <a href="https://twitter.com" target="_blank">
-                        <img src="img/twitter-icon.svg" alt="Twitter">
+                        <img src="img/logo/x.png" alt="Twitter">
                     </a>
                 </div>
             </div>

@@ -66,7 +66,6 @@ if (($handle = fopen("products.csv", "r")) !== FALSE) {
             <div class='box-texte'>
                 <h3>{$data[0]}</h3>
                 <p>{$data[15]}</p>
-                <p class='prix'>{$data[1]} / {$data[2]} / {$data[3]} €</p>
             </div>
         </a>";
         
@@ -99,7 +98,6 @@ if (($handle = fopen("products.csv", "r")) !== FALSE) {
                     <div class='box-texte'>
                         <h3>{$data[0]}</h3>
                         <p>{$data[15]}</p>
-                        <p class='prix'>{$data[1]} / {$data[2]} / {$data[3]} €</p>
                     </div>
                 </a>";
             }

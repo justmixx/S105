@@ -13,7 +13,7 @@ section {
     text-align: center;
     align-items: center;
     width: 48%;
-    height: 500px; 
+    height: 400px; 
 }
 
 iframe {
@@ -23,7 +23,14 @@ iframe {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 48%; 
-    height: 500px;
+    height: 400px;
+}
+
+P {
+    max-width: 80%;
+    margin: auto;
+    padding: 20px;
+    
 }
 
 h2 {
@@ -141,10 +148,25 @@ figcaption {
 .slider-container {
     position: relative;
     width: 100vw; /* La largeur prend toute la vue */
-    height: 100vh; /* La hauteur prend toute la vue */
+    height: 60vh; /* La hauteur prend toute la vue */
     overflow: hidden;
 }
 
+.slider-container .button {
+    position: absolute;
+    top: 50%;
+    width: 250px;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 1.5rem;
+}
+
+.slider-container .button:hover {
+    color:#3b47b2;
+}
 .slider {
     display: flex;
     transition: transform 1s ease-in-out;  /* Transition plus lente (1 seconde) */

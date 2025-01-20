@@ -10,7 +10,7 @@ $titre='TITRE';
     <title>Accueil - Mouches de Combat</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="website icon" type="svg" href="img/logo.svg">
+    <link rel="website icon" href="img/logo.svg">
 </head>
 
 <body>

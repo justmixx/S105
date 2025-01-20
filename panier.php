@@ -2,8 +2,7 @@
 // Fonction pour vider le panier
 if (isset($_POST['clear_cart'])) {
     $cart_file = 'cart.csv';
-    $handle = fopen($cart_file, 'w'); // Vider le fichier
-    fclose($handle);
+    file_put_contents($cart_file, ""); // Vider le fichier
     $message = "Le panier a été vidé avec succès.";
 }
 
@@ -44,7 +43,7 @@ if (isset($_POST['update_quantity'])) {
         $current_index = 0;
         while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
             if ($current_index == $item_index) {
-                // Mettre à jour la quantité (au moins 1)
+                // Mettre à jour la quantité (minimum 1)
                 $data[4] = max(1, $data[4] + $quantity_change);
             }
             $updated_cart[] = $data;
@@ -64,101 +63,100 @@ if (isset($_POST['update_quantity'])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panier - mouche de combat</title>
+    <title>Panier - Mouches de Combat</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/panier.css">
-    <link rel="website icon" type="svg" href="img/logo.svg">
+    <link rel="icon" type="image/svg+xml" href="img/logo.svg">
 </head>
 <body>
     <header>
         <?php include('include/header.php'); ?>
     </header>
-    <h1>Votre Panier</h1>
+    <main>
+        <h1>Votre Panier</h1>
+        <?php
+        $cart_file = 'cart.csv';
+        $total_price = 0; // Initialiser le total à 0
 
-    <?php
-    $cart_file = 'cart.csv';
-    $total_price = 0; // Initialiser le total à 0
+        // Vérifier si le fichier panier existe et n'est pas vide
+        if (file_exists($cart_file) && filesize($cart_file) > 0) {
+            echo "<div class='cart-container'>";
 
-    // Vérifier si le fichier panier existe et n'est pas vide
-    if (file_exists($cart_file) && filesize($cart_file) > 0) {
-        echo "
-                <table>
-                <thead>
-                    <tr>
-                        <th>Produit</th>
-                        <th>Taille</th>
-                        <th>Prix Unitaire</th>
-                        <th>Quantité</th>
-                        <th>Sous-total</th>
-                        <th>Image</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>";
+            // Lire le fichier CSV
+            if (($handle = fopen($cart_file, 'r')) !== FALSE) {
+                $index = 0;
+                while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+                    $price = (float)$data[2];
+                    $quantity = (int)$data[4];
+                    $subtotal = $price * $quantity; // Calculer le sous-total
+                    $total_price += $subtotal; // Ajouter au total
 
-        // Lire le fichier CSV
-        if (($handle = fopen($cart_file, 'r')) !== FALSE) {
-            $index = 0;
-            while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
-                $price = (float) $data[2];
-                $quantity = (int) $data[4];
-                $subtotal = $price * $quantity; // Calculer le sous-total
-                $total_price += $subtotal; // Ajouter au total
-
-                echo "<tr>
-                        <td>{$data[0]}</td>
-                        <td>{$data[1]}</td>
-                        <td>{$price} €</td>
-                        <td>{$quantity}</td>
-                        <td>{$subtotal} €</td>
-                        <td><img src='{$data[3]}' alt='{$data[0]}' width='50'></td>
-                        <td>
-                            <form method='post' style='display: inline;'>
-                                <input type='hidden' name='item_index' value='{$index}'>
-                                <input type='hidden' name='quantity_change' value='1'>
-                                <button type='submit' name='update_quantity' class='plus'>+</button>
-                            </form>
-                            <form method='post' style='display: inline;'>
-                                <input type='hidden' name='item_index' value='{$index}'>
-                                <input type='hidden' name='quantity_change' value='-1'>
-                                <button type='submit' name='update_quantity' class='moin'>-</button>
-                            </form>
-                            <form method='post' style='display: inline;'>
-                                <input type='hidden' name='item_index' value='{$index}'>
-                                <button type='submit' name='remove_item' class='supprimer'>Supprimer</button>
-                            </form>
-                        </td>
-                    </tr>";
-                $index++;
+                    echo "
+                        <div class='cart-item'>
+                            <div class='product-info'>
+                                <img src='{$data[3]}' alt='{$data[0]}' class='product-image'>
+                                <span class='product-name'>{$data[0]}</span>
+                            </div>
+                            <div class='product-details'>
+                                <span class='product-size'>{$data[1]}</span>
+                                <span class='product-price'>{$price} €</span>
+                                <div class='quantity-controls'>
+                                    <form method='post' style='display: inline;'>
+                                        <input type='hidden' name='item_index' value='{$index}'>
+                                        <input type='hidden' name='quantity_change' value='1'>
+                                        <button type='submit' name='update_quantity' class='quantity-increase'>+</button>
+                                    </form>
+                                    <!-- Affichage de la quantité -->
+                                    <span class='product-quantity'>{$quantity}</span>
+                                    <form method='post' style='display: inline;'>
+                                        <input type='hidden' name='item_index' value='{$index}'>
+                                        <input type='hidden' name='quantity_change' value='-1'>
+                                        <button type='submit' name='update_quantity' class='quantity-decrease'>-</button>
+                                    </form>
+                                </div>
+                                <span class='product-subtotal'>{$subtotal} €</span>
+                            </div>
+                            <div class='product-actions'>
+                                <form method='post'>
+                                    <input type='hidden' name='item_index' value='{$index}'>
+                                    <button type='submit' name='remove_item' class='remove-item'>Supprimer</button>
+                                </form>
+                            </div>
+                        </div>
+                        ";
+                    $index++;
+                }
+                fclose($handle);
             }
-            fclose($handle);
+
+            // Afficher le total du panier
+            echo "
+                <div class='cart-total'>
+                    <strong>Total : {$total_price} €</strong>
+                </div>";
+
+            // Bouton pour vider le panier
+            echo "
+                <form method='post' class='clear-cart-form'>
+                    <button type='submit' name='clear_cart' class='clear-cart-button'>Vider le panier</button>
+                </form>";
+            echo "</div>"; // Fermeture du conteneur principal
+        } else {
+            echo "<p>Votre panier est vide.</p>";
         }
 
-        echo "</tbody>
-            </table>";
-
-        // Afficher le total du panier
-        echo "<div style='text-align: center; margin-top: 10px;'>
-                <strong>Total : {$total_price} €</strong>
-              </div>";
-
-        // Bouton pour vider le panier
-        echo "<form method='post' style='text-align: center; margin-top: 10px;'>
-                <button type='submit' name='clear_cart'>Vider le panier</button>
-              </form>";
-    } else {
-        echo "<p>Votre panier est vide.</p>";
-    }
-
-    // Afficher un message de confirmation après une action
-    if (isset($message)) {
-        echo "<p style='color: green;'>$message</p>";
-    }
-    ?>
-    <a href="index.php">Retour à la boutique</a>
+        // Afficher un message de confirmation après une action
+        if (isset($message)) {
+            echo "<p class='message'>$message</p>";
+        }
+        ?>
+        <div class="return-link">
+            <a href="index.php">Retour à la boutique</a>
+        </div>
+    </main>
 </body>
 </html>

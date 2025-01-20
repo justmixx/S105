@@ -71,6 +71,11 @@ nav.shrink .logo img {
     width: 0px;
     position: relative;
 }
+.logo img:hover{
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1);
+    }
 
 nav.shrink .cart-link a {
     background-color: #252525;
@@ -278,3 +283,4 @@ footer ul li p {
     margin: 0;
     color: #aaa;
 }
+

@@ -1,0 +1,36 @@
+
+    .container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 20px;
+        background: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    h1, h2 {
+        color: #444;
+        text-align: center;
+    }
+    .section {
+        margin-bottom: 20px;
+    }
+    p {
+        text-align: center;
+    }
+    .section h2 {
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    @media (max-width: 768px) {
+        .container {
+            padding: 10px;
+        }
+        h1 {
+            font-size: 1.8em;
+        }
+    }
+
+    @media (max-width: 480px) {
+        h1 {
+        font-size: 1.5em;
+    }
+}

@@ -1,3 +1,14 @@
+/* Corps de la page */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #252525;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
 canvas {
     background-color: #f0f8ff;
     display: block;
@@ -8,8 +19,75 @@ canvas {
 
 .title {
     text-align: center;
-    margin-top: 90px;
     font-weight: 900;
     font-size: 2em;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* Style du sélecteur */
+select {
+    background-color: #7883F3;
+    color: white; 
+    border: 2px solid #7883F3; 
+    border-radius: 5px; 
+    padding: 10px; 
+    font-size: 16px; 
+    outline: none; 
+  }
+  
+  select:hover {
+    background-color: #C2C7FA;
+  }
+  
+  select:focus {
+    border-color: #7883F3; 
+  }
+
+/* Style pour l'input */
+input {
+    background-color: #7883F3;
+    margin-top: 25px;
+    color: white;
+    border: 2px solid #7883F3;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    outline: none;
+    width: 10%; 
+    box-sizing: border-box; 
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+input:hover {
+    background-color: #C2C7FA;
+}
+
+input:focus {
+    border-color: #4A59C6; 
+    background-color: #C2C7FA; 
+}
+
+
+@media (max-width: 1100px) {
+    input {
+        width: 40%; 
+    }
+}
+
+.boutton {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 15px 40px;
+    font-size: 1rem;
+    background-color: #7883F3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.boutton:hover {
+    background-color: #C2C7FA;
 }

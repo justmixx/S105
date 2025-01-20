@@ -59,7 +59,7 @@ $titre='TITRE';
     <!-- Bloc 2 sous les sections -->
     <div class="bloc2" id="trackingDiv">
         <h2>Entrez dans l’arène !</h2>
-        <img class="dessin" src="img/arene.jpg" alt="Illustration de l'arène">
+        <img class="dessin" src="img/Arene.jpeg" alt="Illustration de l'arène">
         <a class="followbut button anchor" id="followButton" href="arene.php">COMBAT !</a>
     </div>
     <script>

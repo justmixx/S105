@@ -4,6 +4,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
+
 .product-details {
     display: flex;
     flex-direction: row;
@@ -23,7 +24,7 @@ body {
 .product-image img {
     max-width: 100%;
     border-radius: 8px;
-    box-shadow: 0 5px 5px #252525;
+    box-shadow: 0 0px 40px 10px #7883F3;
 }
 
 .product-info {
@@ -34,7 +35,7 @@ body {
 .product-info h2 {
     font-size: 3rem;
     margin-bottom: 50px;
-    color: #252525;
+    color: #ffffff;
     font-family: 'Arial Black', sans-serif;
 }
 
@@ -42,7 +43,7 @@ body {
     font-size: 1.3rem;
     margin-left: 2rem;
     margin-right: 2rem;
-    color: #252525;
+    color: #ffffff;
 }
 
 form {
@@ -72,7 +73,7 @@ form {
     display: flex;
     gap: 10px;
     margin-bottom: 15px;
-    box-shadow:#ffffff;
+    box-shadow: none;
 }
 
 .size-button {
@@ -125,6 +126,7 @@ width: 400px;
 background-color: white;
 border-radius: 5px;
 padding: 10px;
+align-items: center;
 }
 
 .stats h3 {
@@ -143,6 +145,7 @@ padding: 10px;
 .description {
     text-align: center;
     font-size: 1rem;
+    color:#252525;
 }
 
 /* Responsivité */

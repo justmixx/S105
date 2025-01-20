@@ -22,6 +22,7 @@
         </div>
     </div>
 </nav>
+<div class="marge"></div>
 <script>
     // Sélectionner l'élément 'nav'
     const nav = document.querySelector('nav');

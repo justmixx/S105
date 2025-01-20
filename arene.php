@@ -41,7 +41,7 @@
     <!-- Affichage des crédits et des paris -->
     <div style="text-align: center; margin-top: 20px;">
         <p>Crédits disponibles: <span id="credits">10</span></p>
-        <p>Faites votre pari (avant que la mouche n'atteigne 50 HP):</p>
+        <p>Faites votre pari (avant que les mouche n'atteigne 50 HP):</p>
         <form id="bet-form">
             <label for="bet-mouche">Choisissez votre mouche:</label>
             <select id="bet-mouche"></select>
@@ -49,7 +49,7 @@
             <label for="bet-amount">Montant du pari:</label>
             <input type="number" id="bet-amount" min="1" value="1">
             <br>
-            <button type="submit">Parier</button>
+            <button type="submit" class="boutton">Parier</button>
         </form>
         <p id="bet-status"></p>
     </div>

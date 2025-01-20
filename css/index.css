@@ -26,11 +26,14 @@ iframe {
     height: 400px;
 }
 
-P {
+p {
+    margin-top: 40px;
     max-width: 80%;
     margin: auto;
     padding: 20px;
-    
+    font-size: 1.5rem;
+    border: solid 2px #3b47b2;
+    border-radius: 5px;
 }
 
 h2 {
@@ -77,9 +80,12 @@ section h2 {
 }
 
 section p {
-    margin-bottom: 10px;
     color: #4D59D6;
     text-align: left;
+    font-size: 1em;
+    border : none;
+    padding: none;
+    max-width: 100%;
 }
 
 /* Vidéo et figure */
@@ -313,7 +319,7 @@ button:hover {
     }
 }
 
-.marge {
+.marge:first-child {
     padding: 0;
     margin: 0;
 }

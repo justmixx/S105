@@ -44,7 +44,10 @@ $titre='TITRE';
     </div>
 
     <script src="script.js"></script>
-    <p>Plongez dans un monde <strong>fascinant</strong> où stratégie et passion se rencontrent. Nous vous proposons une collection <unique de mouches de combat soigneusement sélectionnées pour leur force, leur agilité et leur caractère exceptionnel.
+
+    <div class="marge"></div>
+    
+    <p>Plongez dans un monde <strong>fascinant</strong> où stratégie et passion se rencontrent. Nous vous proposons une collection <strong>unique de mouches de combat</strong> soigneusement sélectionnées pour leur force, leur agilité et leur caractère exceptionnel.
 
 Que vous soyez amateur ou passionné confirmé, découvrez des spécimens remarquables, des conseils d’experts et tout ce qu’il faut pour élever vos champions. Ici, chaque mouche est plus qu’un simple insecte, c’est une véritable légende en devenir.
 

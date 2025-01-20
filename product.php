@@ -6,9 +6,9 @@ if (isset($_GET['name'])) {
             if ($data[0] == $product_name) {
                 // Définir les données spécifiques pour chaque taille
                 $sizes = [
-                    "small" => ["price" => $data[1], "image" => $data[4]],
-                    "medium" => ["price" => $data[2], "image" => $data[5]],
-                    "large" => ["price" => $data[3], "image" => $data[6]],
+                    "petite" => ["price" => $data[1], "image" => $data[4]],
+                    "moyenne" => ["price" => $data[2], "image" => $data[5]],
+                    "grande" => ["price" => $data[3], "image" => $data[6]],
                 ];
 
                 // Description du produit
@@ -49,21 +49,21 @@ if (isset($_GET['name'])) {
                     <div class="product-details">
                         <!-- Image du produit -->
                         <div class="product-image">
-                            <img id="product-image" src="<?= $sizes['small']['image']; ?>" alt="<?= $data[0]; ?>">
+                            <img id="product-image" src="<?= $sizes['petite']['image']; ?>" alt="<?= $data[0]; ?>">
                         </div>
                             <div class="product-info">
                                 <h2 class="title"><?= $data[0]; ?></h2>
                                 <p>Description : <?= $description; ?></p>
-                                <p>Prix : <span id="product-price"><?= $sizes['small']['price']; ?> €</span></p>
+                                <p>Prix : <span id="product-price"><?= $sizes['petite']['price']; ?> €</span></p>
                                 <form action="add_to_cart.php" method="post">
                                     <input type="hidden" name="product" value="<?= $data[0]; ?>">
-                                    <input type="hidden" name="price" id="hidden-price" value="<?= $sizes['small']['price']; ?>">
-                                    <input type="hidden" name="image" id="hidden-image" value="<?= $sizes['small']['image']; ?>">
+                                    <input type="hidden" name="price" id="hidden-price" value="<?= $sizes['petite']['price']; ?>">
+                                    <input type="hidden" name="image" id="hidden-image" value="<?= $sizes['petite']['image']; ?>">
                                     <label for="size">Choisissez une taille :</label>
                                     <select name="size" id="size" onchange="updateProductDetails(this.value)">
-                                        <option value="small">Small</option>
-                                        <option value="medium">Medium</option>
-                                        <option value="large">Large</option>
+                                        <option value="petite">Petite</option>
+                                        <option value="moyenne">Moyenne</option>
+                                        <option value="grande">Grande</option>
                                     </select>
                                     <button type="submit" class="add-to-cart-button" id="add-to-cart">Ajouter au panier</button>
                                 </form>

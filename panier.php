@@ -70,7 +70,7 @@ if (isset($_POST['update_quantity'])) {
     <title>Panier - Mouches de Combat</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/panier.css">
-    <link rel="icon" type="image/svg+xml" href="img/logo.svg">
+    <link rel="website icon" href="img/logo.svg">
 </head>
 <body>
     <header>

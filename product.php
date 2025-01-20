@@ -21,7 +21,7 @@ if (isset($_GET['name'])) {
                 $description3 = $data[13];
                 ?>
                 <!DOCTYPE html>
-                <html lang="en">
+                <html lang="fr">
                 <head>
                     <meta charset="UTF-8">
                     <title><?= $data[0]; ?></title>

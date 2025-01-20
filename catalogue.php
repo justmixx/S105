@@ -7,7 +7,7 @@
     <title>Catalogue - Mouches de Combat</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/catalogues.css">
-    <link rel="website icon" type="svg" href="img/logo.svg">
+    <link rel="website icon" href="img/logo.svg">
 </head>
 
 <body>
@@ -46,7 +46,6 @@ if (($handle = fopen("products.csv", "r")) !== FALSE) {
         fclose($handle);
     }
     ?>
-    </div>
     <h2 id="un" class="center"> Nos dernières espèces </h2>
     <div class="container">
     <?php

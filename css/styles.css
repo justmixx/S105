@@ -49,6 +49,12 @@ nav {
     padding: 20px 0;
     transition: padding 0.3s ease, background-color 0.3s ease;
     z-index: 1000;
+    margin-bottom: 20px;
+}
+
+.marge {
+    margin: 0 20px;
+    padding: 10px;
 }
 
 /* Style du nav après défilement */

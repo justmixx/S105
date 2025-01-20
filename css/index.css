@@ -6,14 +6,28 @@
 }
 
 section {
-    padding: 100px;
+    padding: 50px;
     background-color: #fff;
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
+    align-items: center;
     width: 48%;
-    margin-bottom: 30px; 
-    height: 70%; 
+    height: 500px; 
+}
+
+iframe {
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 48%; 
+    height: 500px;
+}
+
+h2 {
+    color: white;
 }
 
 /* Bloc 2 */

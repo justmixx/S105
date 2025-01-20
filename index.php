@@ -53,12 +53,7 @@ $titre='TITRE';
         </section>
 
         <!-- Deuxième section à droite de la première -->
-        <section>
-            <h2>Les combats de mouches accessibles facilement.</h2>
-            <p class="text">Avec notre système de combat, il n'a jamais été aussi simple de combattre.</p>
-            <a class="bouton button" href="arene.php">Entrez dans l'arène</a>
-        </section>
-    </div>
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=tkrRWp-IoU2xxi51" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    </div>
 
     <!-- Bloc 2 sous les sections -->
     <div class="bloc2" id="trackingDiv">

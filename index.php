@@ -53,8 +53,7 @@ $titre='TITRE';
         </section>
 
         <!-- Deuxième section à droite de la première -->
-        <iframe src="https://www.youtube.com/embed/PL3Odw-k8W4?si=Vw31byHBnJZfvxnj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=tkrRWp-IoU2xxi51" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    </div>
 
     <!-- Bloc 2 sous les sections -->
     <div class="bloc2" id="trackingDiv">

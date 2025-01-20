@@ -143,6 +143,21 @@ h1 {
   background-color: #218838;
 }
 
+.clear {
+  padding: 10px 20px;
+  background-color: #ec1717;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.clear:hover {
+  background-color: #218838;
+}
+
+
 /* Message de confirmation */
 .message {
   color: green;

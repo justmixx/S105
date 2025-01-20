@@ -143,6 +143,9 @@ if (isset($_POST['update_quantity'])) {
             echo "
                 <form method='post' class='clear-cart-form'>
                     <button type='submit' name='clear_cart' class='clear-cart-button'>Vider le panier</button>
+                </form>
+                <form class='clear-cart-form'>
+                    <button class='clear-cart-button'>Passez commande</button>
                 </form>";
             echo "</div>"; // Fermeture du conteneur principal
         } else {

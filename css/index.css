@@ -272,7 +272,7 @@ button:hover {
 
 .bloc2 h2 {
     font-size: 2rem;
-    color: #333;
+    color: white;
 }
 
 .bloc2 img {
@@ -289,4 +289,9 @@ button:hover {
     h2 {
         font-size: 1.5rem; /* Encore plus petit sur les très petits écrans */
     }
+}
+
+.marge {
+    padding: 0;
+    margin: 0;
 }

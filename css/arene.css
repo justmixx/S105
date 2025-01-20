@@ -91,3 +91,9 @@ input:focus {
 .boutton:hover {
     background-color: #C2C7FA;
 }
+
+nav.shrink {
+  display: none;
+  margin: none;
+  padding: none;
+}

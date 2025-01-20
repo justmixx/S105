@@ -257,6 +257,7 @@ footer ul {
     list-style: none;
     gap: 20px; 
     padding: 0;
+    font-size: 1.5em;
 }
 
 
@@ -271,7 +272,7 @@ footer ul li a {
 }
 
 footer ul li a:hover {
-    color: #1e90ff;
+    color: #4D59D6;
 }
 
 footer ul li p {

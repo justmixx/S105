@@ -154,9 +154,21 @@ if (isset($_POST['update_quantity'])) {
             echo "<p class='message'>$message</p>";
         }
         ?>
-        <div class="return-link">
-            <a href="index.php">Retour à la boutique</a>
-        </div>
     </main>
+
+    
+    <footer>
+        <?php include('include/footer.php');?>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const burger = document.querySelector('.burger');
+            const navLinks = document.querySelector('.nav-links');
+
+            burger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 </html>

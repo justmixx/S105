@@ -1,11 +1,3 @@
-/* CSS de base pour le panier */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
-}
-
 header {
   background-color: #333;
   color: #fff;
@@ -16,7 +8,8 @@ header {
 main {
   max-width: 1200px;
   margin: 20px auto;
-  background-color: #fff;
+  background-color: #333;
+  color: #fff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -24,7 +17,7 @@ main {
 
 h1 {
   text-align: center;
-  color: #333;
+  color: #fff;
   font-size: 2rem;
   margin-bottom: 20px;
 }
@@ -40,9 +33,10 @@ h1 {
   display: flex;
   justify-content: space-between;
   padding: 15px;
-  background-color: #fafafa;
+  background-color: rgb(79, 79, 79);
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0px 10px 5px #7883F3;
+  margin-top: 10px;
 }
 
 .product-info {
@@ -60,21 +54,21 @@ h1 {
 .product-name {
   font-size: 1.2rem;
   font-weight: bold;
-  color: #333;
+  color: #fff;
 }
 
 .product-details {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  color: #333;
+  color: #fff;
 }
 
 .product-size,
 .product-price,
 .product-subtotal {
   margin: 5px 0;
-  color: #333;
+  color: #fff;
 }
 
 .quantity-controls {
@@ -125,7 +119,7 @@ h1 {
   font-weight: bold;
   margin-top: 20px;
   padding: 10px;
-  background-color: #f0f0f0;
+  background-color: #333;
   border-radius: 8px;
 }
 
